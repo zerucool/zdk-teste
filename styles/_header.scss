@@ -1,5 +1,5 @@
 /***** Header *****/
-$header-height: 71px;
+$header-height: 64px;
 
 .header {
   @include max-width-container;
@@ -11,7 +11,7 @@ $header-height: 71px;
 }
 
 .logo img {
-  max-height: 37px;
+  max-height: 40px;
 }
 
 .user-nav {
@@ -23,7 +23,7 @@ $header-height: 71px;
   &[aria-expanded="true"] {
     background-color: #fff;
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, .15), 0 4px 10px 0 rgba(0, 0, 0, .1);
-    border: solid 1px #ddd;
+    border: solid 1px $border-color;
     right: 0;
     left: 0;
     top: $header-height;
@@ -31,7 +31,7 @@ $header-height: 71px;
 
     > a {
       display: block;
-      margin: 20px;
+      margin: 1.25rem;
     }
   }
 }
@@ -45,11 +45,11 @@ $header-height: 71px;
     border: 0;
     color: $link_color;
     display: none;
-    font-size: 14px;
-    padding: 0 20px 0 0;
+    font-size: $font-size-navigation;
+    padding: 0 1.25rem 0 0;
     width: auto;
 
-    [dir="rtl"] & { padding: 0 0 0 20px;}
+    [dir="rtl"] & { padding: 0 0 0 1.25rem;}
 
     &:hover,
     &:focus,
@@ -106,8 +106,8 @@ $header-height: 71px;
   font-size: 14px;
   justify-content: center;
   left: -999px;
-  margin: 20px;
-  padding: 20px;
+  margin: 1.25rem;
+  padding: 1.25rem;
   overflow: hidden;
   position: absolute;
   top: auto;

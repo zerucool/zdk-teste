@@ -22,18 +22,14 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $heading_font;
-  font-weight: $font-weight-base;
+  font-weight: $font-semibold;
   margin-top: 0;
+  color: $hue-dark;
 }
 
-h1 { font-size: 18px; }
-h2 { font-size: 18px; }
-h3, h4 {
-  font-size: 16px;
-  font-weight: $font-weight-semibold;
-}
+h1, h2, h3, h4 { font-size: $font-size-base; }
 
-h5, h6 { font-size: 13px; }
+h5, h6 { font-size: $font-size-base; }
 
 a {
   color: $link_color;
@@ -111,7 +107,7 @@ textarea {
 
 .container-divider {
   border-top: 1px solid $border-color;
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 }
 
 ul {

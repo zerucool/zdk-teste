@@ -1,6 +1,5 @@
-<div class="container-divider"></div>
-<div class="container">
-  <nav class="sub-nav">
+<div id="ccs-page" class="container">
+  <nav id="ccs-page--nav" class="sub-nav">
     {{breadcrumbs}}
     <div class="search-container">
       <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="search-icon">
@@ -11,14 +10,20 @@
     </div>
   </nav>
 
-  <h1>
-    {{t 'submit_a_request'}}
-    <span class="follow-up-hint">
-      {{follow_up}}
-    </span>
-  </h1>
 
-  <div id="main-content" class="form">
-    {{request_form}}
+  <div id="ccs-page--wrapper" >
+    
+    <header id="ccs-page--title" class="page-header">
+      <h1>
+        {{t 'submit_a_request'}}
+        <span class="follow-up-hint">
+          {{follow_up}}
+        </span>
+      </h1>
+    </header>
+    <div id="ccs-page--content" class="form">
+      {{request_form}}
+    </div>
+    
   </div>
 </div>

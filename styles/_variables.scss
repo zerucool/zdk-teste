@@ -1,3 +1,7 @@
+$hue-outline: #a1a3a8;
+$hue-interface: #F1F3F5;
+$border-radius: 4px;
+
 // Variables
 $homepage_background_image: 'https://cdn.cnetcontent.com/sites/portal/zendesk.jpg';
 $community_image: 'https://cdn.cnetcontent.com/sites/portal/zendesk.jpg';
@@ -6,39 +10,39 @@ $community_background_image: 'https://cdn.cnetcontent.com/sites/portal/zendesk.j
 // Colors
 $brand_color: #004499 !default;
 $brand_text_color: #fff !default; //Color for text with an accent color background
-$text_color: #001122 !default;
-$link_color: #001122 !default;
-$background_color: #fff !default;
+$text_color: $hue-text !default;
+$link_color: $hue-dark !default;
+$background_color: #C5C7CB !default;
 
 $visited-link-color: zass-darken($link_color, 20%);
 $hover-button-color: zass-darken($brand_color, 20%);
-$secondary-text-color: zass-lighten($text_color, 20%);
+$secondary-text-color: $hue-muted;
 
-$primary-shade: zass-darken($background_color, 3%); //#f8f8f8 for the default background_color
+$primary-shade: $hue-primary; //#f8f8f8 for the default background_color
 $secondary-shade: zass-darken($background_color, 5%); //#f2f2f2 for the default background_color
 
-$font-size-bigger: 16px;
-$font-size-base: 13px;
-$font-size-navigation: 13px;
-$font-size-small: 13px;
-$font-size-smaller: 11px;
+$font-size-bigger: $font-large;
+$font-size-base: $font-normal;
+$font-size-navigation: $font-small;
+$font-size-small: $font-small + 1px;
+$font-size-smaller: $font-mini;
 
-$border-color: #ddd;
+$border-color: $hue-line;
 
 $button-color: $brand_color;
 
-$input-font-size: 13px;
-$field-text-color: #666;
-$field-text-focus-color: #555;
+$input-font-size: $font-base;
+$field-text-color: $hue-primary;
+$field-text-focus-color: $brand_color;
 
 // Breakpoints variables
-$tablet-width: 768px;
-$desktop-width: 1024px;
-$max-width-container: 1160px;
+$tablet-width: 0;
+$desktop-width: auto;
+$max-width-container: 100%;
 
 // Fonts
-$heading_font: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif !default;
-$text_font: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif !default;
-$font-weight-base: 400;
-$font-weight-light: 300;
-$font-weight-semibold: 600;
+$heading_font: "Lato", -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif !default;
+$text_font: "Lato", -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif !default;
+$font-weight-base: $font-regular;
+$font-weight-light: $font-regular;
+$font-weight-semibold: $font-semibold;

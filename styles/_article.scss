@@ -13,6 +13,8 @@
   }
 
   flex: 1 0 auto; //Explicit values needed whith flex-direction: column for IE11
+  padding: 0 1rem;
+  font-size: .875rem;
 
   &-container {
     @include desktop {
@@ -34,16 +36,16 @@
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-bottom: 40px;
-    margin-top: 20px;
+    //margin-bottom: 2rem;
+    margin-top: 1rem;
   }
 
   &-avatar {
-    margin-right: 10px;
+    margin-right: .8rem;
   }
 
   &-author {
-    margin-bottom: 10px;
+    margin-bottom: .8rem;
   }
 
   &-title {
@@ -80,7 +82,7 @@
 
   &-content {
     line-height: 1.6;
-    margin: 40px 0;
+    margin: 1rem 0;
     word-wrap: break-word;
   }
 
@@ -88,7 +90,7 @@
     align-items: center;
     display: flex;
     justify-content: space-between;
-    padding-bottom: 20px;
+    padding-bottom: 2rem;
   }
 
   &-comment-count {
@@ -114,11 +116,14 @@
       height: auto;
     }
 
-    border-bottom: 1px solid $border-color;
-    border-top: 1px solid $border-color;
+    //border-bottom: 1px solid $border-color;
+    //border-top: 1px solid $border-color;
     flex: 1 0 auto; //Explicit values needed whith flex-direction: column for IE11
-    margin-bottom: 20px;
     padding: 0;
+    background: $hue-interface;
+    margin: 0 -1rem 1rem;
+    border-radius: $border-radius $border-radius 0 0;
+    height: 2.5rem;
   }
 
   &-relatives {
@@ -146,18 +151,18 @@
 
   &-votes {
     border-top: 1px solid $border-color;
-    padding: 30px 0;
+    padding: 3rem 0;
     text-align: center;
   }
 
   &-vote {
-    margin: 10px 5px;
+    margin: 1rem .5rem;
     min-width: 90px;
     width: auto;
   }
 
   &-more-questions {
-    margin: 10px 0 20px;
+    margin: 1rem 0 2rem;
     text-align: center;
   }
 
@@ -194,7 +199,8 @@
   &-title {
     font-size: $font-size-base;
     position: relative;
-    font-weight: 600;
+    font-weight: $font-bold;
+    color: $hue-dark;
   }
 
   &-item {
@@ -202,8 +208,8 @@
     color: $text_color;
     display: block;
     font-weight: $font-weight-light;
-    margin-bottom: 10px;
-    padding: 10px;
+    margin-bottom: 1rem;
+    padding: 1rem;
 
     &.current-article,
     &:hover {
