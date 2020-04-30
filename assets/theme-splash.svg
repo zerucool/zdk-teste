@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="431px" height="240px" viewBox="0 0 431 240" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>splash</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="440" height="240"></rect>
+        <radialGradient cx="49.95%" cy="50%" fx="49.95%" fy="50%" r="50.5395%" gradientTransform="translate(0.499500,0.500000),scale(1.000000,0.979220),translate(-0.499500,-0.500000)" id="radialGradient-3">
+            <stop stop-color="#0088DD" offset="0%"></stop>
+            <stop stop-color="#0066BB" offset="41.9%"></stop>
+            <stop stop-color="#0044AA" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="splash" transform="translate(-9.000000, 0.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <g id="Rectangle"></g>
+            <path d="M1136.77462,-595.099747 L-558.833488,-595.099747 C-390.500042,-544.825676 -233.881546,-437.215752 -120.742272,-278.503463 C135.306081,80.6736909 71.4440878,565.269975 -262.634164,803.422213 C-322.3888,846.107105 -388.541696,879.033885 -458.62234,900.972889 L1136.77462,900.972889 L1136.77462,-595.099747 Z" id="Path_3733-2" fill="#004499" fill-rule="nonzero" mask="url(#mask-2)"></path>
+            <path d="M1506.58125,422.976351 L54.8498311,-729.008446 C164.770819,-571.625507 225.457981,-373.25266 214.478209,-160.554054 C189.628505,320.794679 -193.594003,692.625042 -641.307264,669.513514 C-721.483641,665.449372 -800.507035,648.686834 -875.428885,619.851351 L490.280574,1703.55068 L1506.58125,422.976351 Z" id="Path_3766-2" fill="url(#radialGradient-3)" fill-rule="nonzero" mask="url(#mask-2)"></path>
+        </g>
+    </g>
+</svg>

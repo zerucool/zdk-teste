@@ -18,7 +18,7 @@
   }
 
   &-sidebar {
-    border-top: 1px solid $border-color;
+    //border-top: 1px solid $border-color;
     flex: 1 0 auto;
     margin-bottom: 20px;
     padding: 0;
@@ -43,7 +43,7 @@
     }
 
     .collapsible-sidebar {
-      margin-bottom: 30px;
+      margin-bottom: 2rem;
 
       &[aria-expanded="false"] {
         .multibrand-filter-list {
@@ -90,12 +90,12 @@
   }
 
   &-list {
-    margin-bottom: 25px;
+    margin-bottom: 2rem;
     > li {
-      padding: 20px 0;
-      &:first-child {
-        border-top: 1px solid $border-color;
-      }
+      padding: 2rem 0;
+      // &:first-child {
+      //   border-top: 1px solid $border-color;
+      // }
 
       h2 {
         margin-bottom: 0;

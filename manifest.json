@@ -1,5 +1,5 @@
 {
-  "name": "CCS Theme",
+  "name": "CCS Iframe",
   "author": "CNET Content Solutions",
   "version": "2.2.6",
   "api_version": 2,
@@ -64,8 +64,8 @@
               "value": "Arial, 'Helvetica Neue', Helvetica, sans-serif"
             },
             {
-              "label": "Arial Black",
-              "value": "'Arial Black', Arial, 'Helvetica Neue', Helvetica, sans-serif"
+              "label": "Lato",
+              "value": "'Lato', Arial, 'Helvetica Neue', Helvetica, sans-serif"
             },
             {
               "label": "Baskerville",
@@ -137,8 +137,8 @@
               "value": "Arial, 'Helvetica Neue', Helvetica, sans-serif"
             },
             {
-              "label": "Arial Black",
-              "value": "'Arial Black', Arial, 'Helvetica Neue', Helvetica, sans-serif"
+              "label": "Lato",
+              "value": "'Lato', Arial, 'Helvetica Neue', Helvetica, sans-serif"
             },
             {
               "label": "Baskerville",
