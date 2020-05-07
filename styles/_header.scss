@@ -1,5 +1,10 @@
 /***** Header *****/
 $header-height: 64px;
+#ccs-support--header {
+  .search-container {
+    display: none;
+  }
+}
 
 .header {
   @include max-width-container;
