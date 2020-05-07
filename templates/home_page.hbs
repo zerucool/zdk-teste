@@ -15,7 +15,7 @@
   </section>
 
 
-  <div class="container" style="margin: 0 2rem">
+  <div class="container" style="margin: 0 1rem">
     <section class="section knowledge-base">
       <h2 class="visibility-hidden">{{ t 'categories' }}</h2>
       <section class="categories blocks">
@@ -31,6 +31,11 @@
               {{#each sections}}
                 <li class="blocks-item">
                   <a href='{{url}}' class="blocks-item-link">
+                    {{#is id 360008463631}}<img class="ccs-ico" src="{{asset 'icon-launch.svg'}}" />{{/is}}
+                    {{#is id 360008355672}}<img class="ccs-ico" src="{{asset 'icon-reader.svg'}}" />{{/is}}
+                    {{#is id 360008355712}}<img class="ccs-ico" src="{{asset 'icon-faqs.svg'}}" />{{/is}}
+                    {{#is id 360008463611}}<img class="ccs-ico" src="{{asset 'icon-text.svg'}}" />{{/is}}
+                    {{#is id 360008355692}}<img class="ccs-ico" src="{{asset 'icon-teacher.svg'}}" />{{/is}}
                     <span class="blocks-item-title">
                       {{name}}
                     </span>
