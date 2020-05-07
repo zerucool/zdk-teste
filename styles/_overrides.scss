@@ -90,4 +90,18 @@ html {
   border: solid 1px rgba($hue-outline,.9);
 }
 
+#ccs-support--header {
+  background-color: #248;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#248), to(#247));
+  background-image: linear-gradient(to bottom, #248 0%, #247 150%);
+  background-repeat: repeat-x;
+  background-size: 100%;
+  color: white;
+  min-height: 64px;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row wrap;
+}
 
