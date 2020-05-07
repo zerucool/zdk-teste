@@ -20,10 +20,11 @@ $header-height: 64px;
 }
 
 .user-nav {
-  @include tablet { position: relative; }
+  //@include tablet { position: relative; }
   display: inline-block;
-  position: absolute;
+  //position: absolute;
   white-space: nowrap;
+  overflow:hidden;
 
   &[aria-expanded="true"] {
     background-color: #fff;
@@ -43,13 +44,13 @@ $header-height: 64px;
 
 .nav-wrapper {
   a {
-    @include tablet {
-      display: inline-block;
-    }
+    //@include tablet {
+    //  display: inline-block;
+    //}
 
     border: 0;
     color: $link_color;
-    display: none;
+    //display: none;
     font-size: $font-size-navigation;
     padding: 0 1.25rem 0 0;
     width: auto;
@@ -67,14 +68,14 @@ $header-height: 64px;
     &.sign-in { display: inline-block; }
   }
 
-  .hide-on-mobile {
-    @include mobile {
-      @include visually-hidden;
-    }
-  }
+  //.hide-on-mobile {
+  //  @include mobile {
+  //    @include visually-hidden;
+  //  }
+  //}
 
   .menu-button {
-    @include tablet { display: none; }
+    //@include tablet { display: none; }
     background: none;
     border: 0;
     color: $link_color;
