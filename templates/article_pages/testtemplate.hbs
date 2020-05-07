@@ -1,19 +1,9 @@
 <div class="container-divider"></div>
 <div class="container">
-  <nav class="sub-nav">
-    {{breadcrumbs}}
-    <div class="search-container">
-      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="search-icon">
-        <circle cx="4.5" cy="4.5" r="4" fill="none" stroke="currentColor"/>
-        <path stroke="currentColor" stroke-linecap="round" d="M11 11L7.5 7.5"/>
-      </svg>
-      {{search scoped=settings.scoped_kb_search submit=false}}
-    </div>
-  </nav>
 
   <div class="article-container" id="article-container">
     <aside class="article-sidebar" aria-labelledby="section-articles-title">
-      {{#if settings.show_articles_in_section}}
+      {{breadcrumbs}} > {{#if settings.show_articles_in_section}}
         <div class="collapsible-sidebar">
           <button type="button" class="collapsible-sidebar-toggle" aria-labelledby="section-articles-title" aria-expanded="false">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" focusable="false" viewBox="0 0 12 12" aria-hidden="true" class="collapsible-sidebar-toggle-icon chevron-icon">

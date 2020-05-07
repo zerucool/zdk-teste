@@ -5,9 +5,10 @@
     <div class="hero-inner">
       <h1 class="heading">How can we help?</h1>
       <h2 class="visibility-hidden">{{ t 'search' }}</h2>
-      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="search-icon" aria-hidden="true">
-        <circle cx="4.5" cy="4.5" r="4" fill="none" stroke="currentColor"/>
-        <path stroke="currentColor" stroke-linecap="round" d="M11 11L7.5 7.5"/>
+      <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px" viewBox="0 0 32 32" version="1.1">  
+        <g id="inline-sprites" transform="translate(-80, -160)" fill="currentColor">
+          <path d="M98.4246212,168 C101.73833,168 104.424621,170.686292 104.424621,174 C104.424621,177.313708 101.73833,180 98.4246212,180 C97.0005481,180 95.6923507,179.503877 94.6634409,178.675044 L89.4142136,183.924621 L88,182.510408 L93.3331325,177.175911 C92.7573789,176.254835 92.4246212,175.166277 92.4246212,174 C92.4246212,170.686292 95.1109127,168 98.4246212,168 Z M98.4246212,170 C96.2154822,170 94.4246212,171.790861 94.4246212,174 C94.4246212,176.209139 96.2154822,178 98.4246212,178 C100.63376,178 102.424621,176.209139 102.424621,174 C102.424621,171.790861 100.63376,170 98.4246212,170 Z" transform="translate(96, 175) scale(-1, 1) translate(-96, -175) "/>
+        </g>
       </svg>
       {{search submit=false instant=settings.instant_search class='search search-full'}}
     </div>
