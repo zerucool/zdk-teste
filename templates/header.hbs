@@ -1,28 +1,26 @@
-<a class="skip-navigation" tabindex="1" href="#main-content">{{t 'skip_navigation' }}</a>
-<header id="ccs-support--header" class=''>
-  <div id="ccs-support--branding">
+<div id="AppLayout">
+<header id="AppHeader">
+  <div class="ccs-branding">
+    <button class="ccs-btn-icon" id="AppButton" onclick="toggleDrawer()"> <i class="ccs-icons">menu</i></button>
     <a href="https://extranetsandbox.zendesk.com/hc/en-us"><img src="{{asset 'content-solutions-dark.svg'}}" /></a>
-    <i class="spacer"></i>
-    <h1 class="title">Extranet Help</h1>
+    <p class="ccs-product">Extranet Help</p>
   </div>
-  <!-- a class="ccs-contact" href="/hc/en-us/requests/new">Contact</a-->
-  <div class="search-container">
-    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32px" height="32px" viewBox="0 0 32 32" version="1.1">  
-      <g id="inline-sprites" transform="translate(-80, -160)" fill="currentColor">
-        <path d="M98.4246212,168 C101.73833,168 104.424621,170.686292 104.424621,174 C104.424621,177.313708 101.73833,180 98.4246212,180 C97.0005481,180 95.6923507,179.503877 94.6634409,178.675044 L89.4142136,183.924621 L88,182.510408 L93.3331325,177.175911 C92.7573789,176.254835 92.4246212,175.166277 92.4246212,174 C92.4246212,170.686292 95.1109127,168 98.4246212,168 Z M98.4246212,170 C96.2154822,170 94.4246212,171.790861 94.4246212,174 C94.4246212,176.209139 96.2154822,178 98.4246212,178 C100.63376,178 102.424621,176.209139 102.424621,174 C102.424621,171.790861 100.63376,170 98.4246212,170 Z" transform="translate(96, 175) scale(-1, 1) translate(-96, -175) "/>
-      </g>
-    </svg>
-    {{search submit=false}}
+  <div id="AppSearch" class="ccs-search">
+    <div class="ccs-input-group">
+      <label for="input-2c"><i class="ccs-icons">search</i></label>
+      {{search submit=false}}
+    </div>
   </div>
 </header>
-<div id="ccs-support--naviagtion">
-  <div class="nav-wrapper">
-    <nav class="user-nav" id="ccs-user-nav">
-      {{#link 'new_request' class='submit-a-request'}}Contact Support{{/link}}
-      <a href="/hc/en-us/sections/360008463631-Quick-Start-Guide">Quick Start Guide</a>
-      <a href="/hc/en-us/sections/360008355672-Documentation">Documentation</a>
-      <a href="/hc/en-us/sections/360008463611-Release-Notes">Release Notes</a>
-      <a href="/hc/en-us/sections/360008355692-Technical-Bulletin">Technical Bulletin</a>
-      <a href="/hc/en-us/sections/360008355712-FAQ">FAQs</a></nav>
-  </div>
-</div>
+<span class="ccs-anchor" id="top" name="top"></span>
+<nav id="AppNav" aria-label="desktop">
+  {{#link 'new_request' class='submit-a-request'}}Contact Support{{/link}}
+  <a data-topic="Quick Start Guide" href="/hc/en-us/sections/360008463631-Quick-Start-Guide">Quick Start Guide</a>
+  <a data-topic="Documentation" href="/hc/en-us/sections/360008355672-Documentation">Documentation</a>
+  <a data-topic="Release Notes" href="/hc/en-us/sections/360008463611-Release-Notes">Release Notes</a>
+  <a data-topic="Technical-Bulletin" href="/hc/en-us/sections/360008355692-Technical-Bulletin">Technical Bulletin</a>
+  <a data-topic="FAQ" href="/hc/en-us/sections/360008355712-FAQ">FAQs</a></nav>
+</nav>
+<section id="AppPage">
+  <div id="ArticleLayout">
+  <!-- a class="skip-navigation" tabindex="1" href="#main-content" style="display:none">{{t 'skip_navigation' }}</a -->
