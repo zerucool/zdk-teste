@@ -1,22 +1,23 @@
 
-<div id="ccs-page" class="container">
-
-  <div id="ccs-page--wrapper" class="search-results">
-
-    <section id="main-content" class="search-results-column">
-      <div id="ccs-page--title">
-        <h1 class="search-results-subheading">
-          {{#is current_filter.identifier 'unified'}}
+<section class="ccs-doc-page">
+  <article class="ccs-doc-content">
+    
+    <header class="ccs-doc-header">
+      <nav class="ccs-doc-path" aria-label="breadcrumbs">{{breadcrumbs}}</nav>
+      <h1 class="ccs-doc-heading">
+        {{#is current_filter.identifier 'unified'}}
+          {{t 'results' query=query count=results_count}}
+        {{else}}
+          {{#unless current_subfilter.identifier}}
             {{t 'results' query=query count=results_count}}
           {{else}}
-            {{#unless current_subfilter.identifier}}
-              {{t 'results' query=query count=results_count}}
-            {{else}}
-              {{t 'results_with_scope' query=query count=results_count scope_name=current_subfilter.name}}
-            {{/unless}}
-          {{/is}}
-        </h1>
-      </div>
+            {{t 'results_with_scope' query=query count=results_count scope_name=current_subfilter.name}}
+          {{/unless}}
+        {{/is}}
+      </h1>
+    </header>
+
+    <section id="main-content" class="search-results-column">
       <!--
       <aside class="search-results-sidebar">
         {{#if help_center_filters}}
@@ -181,6 +182,6 @@
       </div>
       
     </section>
-  </div>
+  </article>
   {{pagination}}
-</div>
+</section>

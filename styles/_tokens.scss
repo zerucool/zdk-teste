@@ -1,11 +1,11 @@
+
 //Font Size -- 16px Base
-$font-huge: 40px !default;
-$font-xlarge: 20px !default;   // 1.25em
-$font-large: 18px !default;  // 1.125em
-$font-normal: 16px !default;     // 1em
-$font-base: 14px !default;   // 0.875em
-$font-small: 12px !default;   // 0.75em
-$font-mini: 10px !default;   // 0.625em 
+$font-xlarge: 2rem !default;   // 1.25em
+$font-large: 1.8rem !default;  // 1.125em
+$font-normal: 1.6rem !default;     // 1em
+$font-base: 1.4rem !default;   // 0.875em
+$font-small: 1.2rem !default;   // 0.75em
+$font-xsmall: 1rem !default;   // 0.625em 
 
 //Font Weight -- DONE
 $font-thin: 200 !default;
@@ -14,6 +14,7 @@ $font-regular: 400 !default;
 $font-medium: 500 !default;
 $font-semibold: 600 !default;
 $font-bold: 700 !default;
+$font-heavy: 900 !default;
 
 //Font Family  - DONE
 $font-title: Lato, sans-serif !default;
@@ -45,26 +46,30 @@ $opacity-sheer: 0.6 !default;
 $hue-dark: #123 !default;
 $hue-text: #495867 !default;
 $hue-muted: #89A !default;
-$hue-line: rgba(#C1C7CD, $opacity-soften) !default;
+$hue-line: #cfd9db !default;
 $hue-disabled: #E3E6E9 !default;
 $hue-silver: #EEF0F1 !default;
+$hue-soft: #EFF3F4 !default;
+$hue-softer: #EFF3F4 !default;
 
 //Colors
 $hue-primary: #25A !default;
 $hue-success: #390 !default;
 $hue-warning: #D34 !default;
-$hue-active: #DDEEFFcc !default;
+$hue-active: rgba(221, 238, 255, 0.8) !default;
 $hue-info: #09B !default;
 $hue-navy: #136 !default;
 
 //Wrapper
 $drawer-color: #334455 !default;
-$drawer-text: #A5ADB6 !default;
+$drawer-text: #89A!default;
 $drawer-link: rgba($hue-silver,$opacity-soften) !default;
 $drawer-active: #162534 !default;
+
 $header-title: #9BD !default;
-//$header-subtle: rgba(#9AC,$opacity-fade);
 $header-text: rgba($hue-silver,$opacity-fade) !default;
+$header-height: 6.4rem;
+$header-color: #18428f;
 
 //Box Shadow
 $box-overlay: 0 3px 5px -1px rgba(black, 0.2), 0 6px 10px 0 rgba(black, 0.1), 0 1px 18px 0 rgba(black, 0.1), 0 0 0 1px $hue-line !default;
@@ -80,8 +85,8 @@ $box-border-right: inset ($border-width * -1) 0 0 0 rgba($hue-line, $opacity-she
 $box-border-bottom: inset 0 ($border-width * -1) 0 0 rgba($hue-line, $opacity-sheer) !default;
 
 //Border Radius
-$rounded-medium: 3px !default;
-$rounded-large: 6px !default;
+$rounded-medium: .4rem !default;
+$rounded-large: .6rem !default;
 
 //Icon Size
 $icon-small: 18px !default;
@@ -91,10 +96,10 @@ $icon-large: 36px !default;
 $icon-huge: 48px !default;
 
 //Forms
-$button-height: 2rem !default;
-$button-font-size: 0.75rem !default;
-$button-padding: 1.5rem !default;
-$button-radius: 6px !default;
+$button-height: 3.2rem !default;
+$button-size: $font-small !default;
+$button-padding: 1.4rem !default;
+$button-radius: .6rem !default;
 $button-color: $hue-primary !default;
 
 //$transition: all 300ms ease-in-out;

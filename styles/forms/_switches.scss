@@ -1,0 +1,91 @@
+.ccs-form--switch {
+  position: relative;
+  display: inline;
+  min-height: 16px;
+  margin: 8px 0;
+  + .ccs-form--switch {
+    margin: .5rem 0 .5rem 1rem;
+  }
+  input {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    cursor: pointer;
+    z-index: 1;
+  }
+  &.error {
+    input:not(:checked) ~ .ccs-form--switch-slider {
+      background-color: tint($hue-warning,30);
+      &:before {
+        background-color: $hue-warning;
+      }
+    }
+  }
+}
+
+.ccs-form--switch-slider {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  right: 0;
+  bottom: 2px;
+  width: 36px;
+  background-color: tint($hue-muted,30);
+  transition: .4s;
+  border-radius: 8px;
+  &:before {
+    border-radius: 50%;
+    position: absolute;
+    content: '';
+    height: 16px;
+    width: 16px;
+    left: 0;
+    bottom: -2px;
+    background-color: $hue-muted;
+    -webkit-transition: .3s;
+    transition: .3s;
+    box-shadow: 0 0 0 2px white;
+    cursor: pointer;
+  }
+}
+
+.ccs-form--title {
+  margin-left: 44px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+input:checked + .ccs-form--switch-slider {
+  background-color: desaturate(tint($hue-success,40),8);
+  &::before {
+    background: $hue-success;
+    left: 4px;
+  }
+}
+
+input:focus + .ccs-form--switch-slider {
+  box-shadow: 0 0 1px white;
+}
+
+input:checked + .ccs-form--switch-slider:before {
+  -webkit-transform: translateX(16px);
+  -ms-transform: translateX(16px);
+  transform: translateX(16px);
+}
+
+.ccs-form--switch input[disabled] {
+  cursor: not-allowed;
+  ~ .ccs-form--switch-slider {
+    opacity: $opacity-sheer;
+    &:before {
+      cursor: default;
+    }
+  }
+}
+
+

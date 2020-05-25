@@ -1,0 +1,87 @@
+.ccs-form--checkbox {
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  color: $hue-text;
+  display: inline-block;
+  min-height: 1rem;
+  padding: 0 0 0 1.7rem;
+  position: relative;
+  user-select: none;
+  vertical-align: middle;
+  line-height: $font-normal;
+  margin: .5rem 0;
+  max-width: 304px;
+  + .ccs-form--checkbox {
+    margin: .5rem 0 .5rem 1rem;
+  }
+  input {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+    ~ .ccs-form--checkmark {
+      cursor: pointer;
+    }
+    &:checked ~ .ccs-form--checkmark {
+      background-color: $hue-success;
+      box-shadow: inset 0 0 0 2px $hue-success;
+      &:after {
+        display: block;
+      }
+    }
+    &[disabled]:checked ~ .ccs-form--checkmark {
+      background-color: $hue-muted;
+    }
+    &[disabled] ~ .ccs-form--checkmark {
+      cursor: default;
+      box-shadow: inset 0 0 0 2px $hue-muted;
+      opacity: $opacity-fade;
+    }
+  }
+  &.error {
+    input:checked ~ .ccs-form--checkmark {
+      background-color: $hue-warning;
+    }
+    input:checked ~ .ccs-form--checkmark, 
+    input ~ .ccs-form--checkmark {
+      box-shadow: inset 0 0 0 2px $hue-warning;
+    }
+  }
+  &.full {
+    width: 100%;
+    + .ccs-form--checkbox {
+      margin: .3rem 0;
+    }
+  }
+}
+
+
+.ccs-form--checkmark {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  background-color: white;
+  box-shadow: inset 0 0 0 2px rgba($hue-text, $opacity-sheer);
+  border-radius: $rounded-medium - 1;
+}
+
+.ccs-form--checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+.ccs-form--checkbox .ccs-form--checkmark:after {
+  left: 6px;
+  top: 1px;
+  width: 4px;
+  height: 11px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}

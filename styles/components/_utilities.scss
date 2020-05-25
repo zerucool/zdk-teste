@@ -1,0 +1,164 @@
+.ccs-margin {
+  margin: $spacing-base;
+
+  &-top {
+    margin-top: $spacing-base;
+
+    &-large {
+      margin-top: $spacing-large;
+    }
+
+    &-small {
+      margin-top: $spacing-small;
+    }
+
+    &-none {
+      margin-top: 0;
+    }
+  }
+
+  &-right {
+    margin-right: $spacing-base;
+
+    &-large {
+      margin-right: $spacing-large;
+    }
+
+    &-small {
+      margin-right: $spacing-small;
+    }
+
+    &-none {
+      margin-right: 0;
+    }
+  }
+
+  &-bottom {
+    margin-bottom: $spacing-base;
+
+    &-large {
+      margin-bottom: $spacing-large;
+    }
+
+    &-small {
+      margin-bottom: $spacing-small;
+    }
+
+    &-none {
+      margin-bottom: 0;
+    }
+  }
+
+  &-left {
+    margin-left: $spacing-base;
+
+    &-large {
+      margin-left: $spacing-large;
+    }
+
+    &-small {
+      margin-left: $spacing-small;
+    }
+
+    &-none {
+      margin-left: 0;
+    }
+  }
+
+  &-large {
+    margin: $spacing-large;
+  }
+
+  &-small {
+    margin: $spacing-small;
+  }
+
+  &-none {
+    margin: 0;
+  }
+}
+
+.ccs-padding {
+  padding: $spacing-base;
+
+  &-top {
+    padding-top: $spacing-base;
+
+    &-large {
+      padding-top: $spacing-large;
+    }
+
+    &-small {
+      padding-top: $spacing-small;
+    }
+
+    &-none {
+      padding-top: 0;
+    }
+  }
+
+  &-right {
+    padding-right: $spacing-base;
+
+    &-large {
+      padding-right: $spacing-large;
+    }
+
+    &-small {
+      padding-right: $spacing-small;
+    }
+
+    &-none {
+      padding-right: 0;
+    }
+  }
+
+  &-bottom {
+    padding-bottom: $spacing-base;
+
+    &-large {
+      padding-bottom: $spacing-large;
+    }
+
+    &-small {
+      padding-bottom: $spacing-small;
+    }
+
+    &-none {
+      padding-bottom: 0;
+    }
+  }
+
+  &-left {
+    padding-left: $spacing-base;
+
+    &-large {
+      padding-left: $spacing-large;
+    }
+
+    &-small {
+      padding-left: $spacing-small;
+    }
+
+    &-none {
+      padding-left: 0;
+    }
+  }
+
+  &-large {
+    padding: $spacing-large;
+  }
+
+  &-small {
+    padding: $spacing-small;
+  }
+
+  &-none {
+    padding: 0;
+  }
+}
+
+.ccs-text-heavy {
+  -webkit-font-smoothing: antialiased;
+  font-weight: $font-heavy;
+}

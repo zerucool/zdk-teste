@@ -1,0 +1,79 @@
+
+//Import dependencies
+@import "color-palettes";
+
+//Get a color
+@function create-color($color, $index: "base") {
+  $list: map-get($theme-palette, "#{$color}");
+  $value: map-get($list, "#{$index}");
+  @return $value;
+}
+
+//Get the base color
+@function create-color-base($color) {
+  @return create-color($color, "base");
+}
+
+//Get the light variant of the color
+@function create-color-light($color) {
+  @return create-color($color, "light");
+}
+
+//Get the extra-light variant of the color
+@function create-color-extra-light($color) {
+  @return create-color($color, "extra-light");
+}
+
+//Get the dark variant of the color
+@function create-color-dark($color) {
+  @return create-color($color, "dark");
+}
+
+//Get the extra-dark variant of the color
+@function create-color-extra-dark($color) {
+  @return create-color($color, "extra-dark");
+}
+
+//Get the over color [DEPRECATED]
+//Use the create-color-invert function instead. 
+@function create-color-over($color) {
+  @if $color == "grey" {
+    @return black;
+  } @else {
+    @return white;
+  }
+}
+
+//Return the luminance of a color
+//From: https://css-tricks.com/snippets/sass/luminance-color-function/ 
+//Reference: http://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef 
+@function create-color-luminance($color) {
+  $colors: ("red": red($color), "green": green($color), "blue": blue($color));
+  @each $name, $value in $colors {
+    $adjusted: 0;
+    $value: $value / 255;
+    @if $value < 0.03928 {
+      $value: $value / 12.92;
+    } @else {
+      $value: ($value + .055) / 1.055;
+      //Terrible hack to calculate pow($value, 2.4)
+      $value: $value * $value;
+    }
+    $colors: map-merge($colors, ($name: $value));
+  }
+  @return (map-get($colors, "red") * .2126) + (map-get($colors, "green") * .7152) + (map-get($colors, "blue") * .0722);
+}
+
+
+//Invert a color
+@function create-color-invert($color) {
+  @if create-color-luminance($color) > 0.55 {
+    //Return the default dark color
+    @return black;
+  } @else {
+    //Return the default white color
+    @return white;
+  }
+}
+
+

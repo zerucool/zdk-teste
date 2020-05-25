@@ -1,0 +1,41 @@
+@font-face {
+  font-display: fallback;
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src:  url('#{$path-fonts}/MaterialIcons-Regular.eot?#iefix'); //* For IE6-8 */
+  src:  local('Material Icons'), local('MaterialIcons-Regular'),
+        url('#{$path-fonts}/MaterialIcons-Regular.woff2') format('woff2'),
+        url('#{$path-fonts}/MaterialIcons-Regular.woff') format('woff'),
+        url('#{$path-fonts}/MaterialIcons-Regular.ttf') format('truetype');
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+}
+
+.ccs-icons {
+  align-items: center;
+  direction: ltr;
+  display: flex;
+  font-family: 'Material Icons';
+  font-feature-settings: 'liga';
+  font-size: 24px;
+  font-style: normal;
+  font-weight: normal;
+  justify-content: center;
+  line-height: 1;
+  outline: none;
+  text-align: center;
+  text-indent: 0;
+  text-transform: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+//.material-icons.small   { max-height: unset; max-width: unset; font-size: $icon-small !important; height: $icon-small !important; width: $icon-small !important; }
+//.material-icons.medium  { max-height: unset; max-width: unset; font-size: $icon-medium !important; height: $icon-medium !important; width: $icon-medium !important; }
+//.material-icons.regular { max-height: unset; max-width: unset; font-size: $icon-default !important; height: $icon-default !important; width: $icon-default !important; }
+//.material-icons.large   { max-height: unset; max-width: unset; font-size: $icon-large !important; height: $icon-large !important; width: $icon-large !important; }
+//.material-icons.xlarge  { max-height: unset; max-width: unset; font-size: $icon-huge !important; height: $icon-huge !important; width: $icon-huge !important; }

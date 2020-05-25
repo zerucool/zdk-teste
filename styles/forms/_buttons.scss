@@ -1,0 +1,149 @@
+[class^='ccs-btn'] {
+  align-items: center;
+  appearance: none;
+  background-position: center;
+  border-radius: $rounded-medium;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: $font-title;
+  font-size: $button-size;
+  //font-weight: $font-regular;
+  line-height: $button-height;
+  max-height: $button-height;
+  min-width: $button-height;
+  outline: none;
+  padding: 0 $button-padding;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  @include ripple($color: currentColor);
+  &::selection, *::selection {
+    background: transparent;
+  }
+  &:hover, &:active {
+    text-decoration: none !important;
+  }
+  span, input, i {
+    appearance: none;
+    background: transparent;
+    border: none;
+    //color: currentColor;
+    cursor: pointer;
+    display: inline-flex;
+    //font-weight: $font-semibold;
+    height: $button-height;
+    margin: auto;
+    //max-width: 100%;
+    outline: none;
+    padding: 0;
+  }
+  + [class*='ccs-btn'] {
+    margin-left: .5rem;
+  }
+}
+
+.ccs-btn {
+  &-icon {
+    background: transparent;
+    color: currentColor;
+    padding: 0;
+    text-align: center;
+    max-height: none;
+    max-width: none;
+    &[disabled] {
+      color: rgba($hue-text, $opacity-sheer);
+      cursor: auto;
+      user-select: none;
+    }
+    &::selection {
+      background: transparent;
+    }
+  }
+  &-subtle {
+    height: $button-height;
+    //box-shadow: $box-stroke;
+    text-shadow: none;
+    color: $hue-text !important;;
+    font-weight: $font-semibold;
+    background: rgba($hue-disabled, $opacity-fade);
+    .ccs-icons {
+      font-weight: $font-regular;
+      opacity: $opacity-fade;
+    }
+    &:hover {
+      color: $hue-dark !important;
+      background: rgba($hue-disabled, 1);
+    }
+    &-link {
+      color: $hue-primary;
+    }
+    &-warning {
+      color: $hue-warning;
+    }
+  }
+  &-primary, &-success, &-warning, &-default {
+    font-weight: $font-semibold;
+    @include ripple($color: white);
+  }
+  &-primary {
+    background: $hue-primary;
+    color: create-color-invert($hue-primary);
+  }
+  &-success {
+    background: $hue-success;
+    color: create-color-invert($hue-success);
+  }
+  &-warning {
+    background: $hue-warning;
+    color: create-color-invert($hue-warning);
+  }
+  &-default {
+    background: $hue-text;
+    color: create-color-invert($hue-text);
+  }
+  &-group {
+    padding: 0;
+    [class*='ccs-btn'] {
+      &:first-child {
+        border-bottom-left-radius: $rounded-medium;
+        border-top-left-radius: $rounded-medium;
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+        margin-right: -1px;
+      }
+      + [class*='ccs-btn'] {
+        border-radius: 0;
+        margin: 0 0 0 -1px;
+      }
+      &:last-child {
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+        border-bottom-right-radius: $rounded-medium;
+        border-top-right-radius: $rounded-medium;
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+[class*='ccs-btn']:not([class$='-icon']).icon {
+  padding: 0;
+  // .material-icons {
+  //   margin: 0 .5rem;
+  // }
+}
+
+[class*='ccs-btn']:not([class$='-icon']), .ccs-btn-subtle {
+  &[disabled] {
+    background: $hue-disabled;
+    color: rgba($hue-text, $opacity-fade);
+    cursor: auto;
+    user-select: none;
+    //font-weight: $font-medium;
+    &:hover, &:active {
+      background: $hue-disabled;
+      color: rgba($hue-text, $opacity-fade);
+    }
+  }
+}

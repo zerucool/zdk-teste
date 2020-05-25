@@ -1,0 +1,83 @@
+
+//Darker/lighter amount
+$theme-color-amount: 10%;
+$theme-color-extra-amount: 20%;
+
+//Base colors
+$theme-color-silver: $hue-silver;
+$theme-color-grey: $hue-text;
+$theme-color-blue: $hue-primary;
+$theme-color-green: $hue-success;
+$theme-color-red: $hue-warning;
+
+$theme-color-aqua: #0099BB;
+$theme-color-purple: #8866BB;
+$theme-color-orange: #FF9911;
+$theme-color-yellow: #FFCC00;
+
+//Colors palette
+$theme-palette: (
+  "green": (
+      "extra-dark": darken($theme-color-green, $theme-color-extra-amount),
+      "dark": darken($theme-color-green, $theme-color-amount),
+      "base": $theme-color-green, 
+      "light": lighten($theme-color-green, $theme-color-amount),
+      "extra-light": lighten($theme-color-green, $theme-color-extra-amount)
+      ),
+  "blue": (
+      "extra-dark": darken($theme-color-blue, $theme-color-extra-amount),
+      "dark": darken($theme-color-blue, $theme-color-amount),
+      "base": $theme-color-blue, 
+      "light": lighten($theme-color-blue, $theme-color-amount),
+      "extra-light": lighten($theme-color-blue, $theme-color-extra-amount)
+      ),
+  "aqua": (
+      "extra-dark": darken($theme-color-aqua, $theme-color-extra-amount),
+      "dark": darken($theme-color-aqua, $theme-color-amount),
+      "base": $theme-color-aqua, 
+      "light": lighten($theme-color-aqua, $theme-color-amount),
+      "extra-light": lighten($theme-color-aqua, $theme-color-extra-amount)
+      ),
+  "purple": (
+      "extra-dark": darken($theme-color-purple, $theme-color-extra-amount),
+      "dark": darken($theme-color-purple, $theme-color-amount),
+      "base": $theme-color-purple, 
+      "light": lighten($theme-color-purple, $theme-color-amount),
+      "extra-light": lighten($theme-color-purple, $theme-color-extra-amount)
+      ),
+  "red": (
+      "extra-dark": darken($theme-color-red, $theme-color-extra-amount),
+      "dark": darken($theme-color-red, $theme-color-amount),
+      "base": $theme-color-red, 
+      "light": lighten($theme-color-red, $theme-color-amount),
+      "extra-light": lighten($theme-color-red, $theme-color-extra-amount)
+      ),
+  "orange": (
+      "extra-dark": darken($theme-color-orange, $theme-color-extra-amount),
+      "dark": darken($theme-color-orange, $theme-color-amount),
+      "base": $theme-color-orange, 
+      "light": lighten($theme-color-orange, $theme-color-amount),
+      "extra-light": lighten($theme-color-orange, $theme-color-extra-amount)
+      ),
+  "yellow": (
+      "extra-dark": darken($theme-color-yellow, $theme-color-extra-amount),
+      "dark": darken($theme-color-yellow, $theme-color-amount),
+      "base": $theme-color-yellow, 
+      "light": lighten($theme-color-yellow, $theme-color-amount),
+      "extra-light": lighten($theme-color-yellow, $theme-color-extra-amount)
+      ),
+  "silver": (
+      "extra-dark": darken($theme-color-silver, $theme-color-extra-amount),
+      "dark": darken($theme-color-silver, $theme-color-amount),
+      "base": $theme-color-silver, 
+      "light": lighten($theme-color-silver, $theme-color-amount),
+      "extra-light": lighten($theme-color-silver, $theme-color-extra-amount)
+      ),
+  "grey": (
+      "extra-dark": darken($theme-color-grey, $theme-color-extra-amount * 0.5),
+      "dark": darken($theme-color-grey, $theme-color-amount * 0.5),
+      "base": $theme-color-grey, 
+      "light": lighten($theme-color-grey, $theme-color-amount * 0.5),
+      "extra-light": lighten($theme-color-grey, $theme-color-extra-amount * 0.5)
+      )
+);

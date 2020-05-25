@@ -1,0 +1,40 @@
+//* kalam-regular - latin */
+@font-face {
+  font-family: 'Kalam';
+  font-style: normal;
+  font-weight: 400;
+  src: url('#{$path-fonts}/Kalam.eot'); //* IE9 Compat Modes */
+  src: local('Kalam'), local('Kalam-Regular'),
+       url('#{$path-fonts}/Kalam-Regular.eot?#iefix') format('embedded-opentype'), //* IE6-IE8 */
+       url('#{$path-fonts}/Kalam-Regular.woff2') format('woff2'), //* Super Modern Browsers */
+       url('#{$path-fonts}/Kalam-Regular.woff') format('woff'), //* Modern Browsers */
+       url('#{$path-fonts}/Kalam-Regular.ttf') format('truetype'), //* Safari, Android, iOS */
+       url('#{$path-fonts}/Kalam-Regular.svg#Kalam') format('svg'); //* Legacy iOS */
+}
+
+//* kalam-300 - latin */
+@font-face {
+  font-family: 'Kalam';
+  font-style: normal;
+  font-weight: 300;
+  src: url('#{$path-fonts}/Kalam-Light.eot'); //* IE9 Compat Modes */
+  src: local('Kalam Light'), local('Kalam-Light'),
+       url('#{$path-fonts}/Kalam-Light.eot?#iefix') format('embedded-opentype'), //* IE6-IE8 */
+       url('#{$path-fonts}/Kalam-Light.woff2') format('woff2'), //* Super Modern Browsers */
+       url('#{$path-fonts}/Kalam-Light.woff') format('woff'), //* Modern Browsers */
+       url('#{$path-fonts}/Kalam-Light.ttf') format('truetype'), //* Safari, Android, iOS */
+       url('#{$path-fonts}/Kalam-Light.svg#Kalam') format('svg'); //* Legacy iOS */
+}
+//* kalam-700 - latin */
+@font-face {
+  font-family: 'Kalam';
+  font-style: normal;
+  font-weight: 700;
+  src: url('#{$path-fonts}/Kalam-Bold.eot'); //* IE9 Compat Modes */
+  src: local('Kalam Bold'), local('Kalam-Bold'),
+       url('#{$path-fonts}/Kalam-Bold.eot?#iefix') format('embedded-opentype'), //* IE6-IE8 */
+       url('#{$path-fonts}/Kalam-Bold.woff2') format('woff2'), //* Super Modern Browsers */
+       url('#{$path-fonts}/Kalam-Bold.woff') format('woff'), //* Modern Browsers */
+       url('#{$path-fonts}/Kalam-Bold.ttf') format('truetype'), //* Safari, Android, iOS */
+       url('#{$path-fonts}/Kalam-Bold.svg#Kalam') format('svg'); //* Legacy iOS */
+}
