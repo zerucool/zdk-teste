@@ -1,19 +1,10 @@
 
-<div id="ccs-page" class="container">
-
-  <div id="ccs-page--wrapper" >
-    
-    <header id="ccs-page--title" class="page-header">
-      <h1>
-        {{breadcrumbs}} <!-- > {{t 'submit_a_request'}} -->
-        <span class="follow-up-hint">
-          {{follow_up}}
-        </span>
-      </h1>
-    </header>
-    <div id="ccs-page--content" class="form">
+<section id="TemplateRequest" class="ccs-doc-page">
+  <article class="ccs-doc-content">
+    <nav class="ccs-doc-path" aria-label="breadcrumbs">{{breadcrumbs}}</nav>
+    <header id="ccs-page--title" class="page-header"><h1>{{t 'submit_a_request'}} <span class="follow-up-hint">{{follow_up}}</span></h1></header>
+    <div class="ccs-doc-body">
       {{request_form}}
     </div>
-    
-  </div>
-</div>
+  </article>
+</section>

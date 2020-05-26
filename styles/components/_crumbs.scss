@@ -37,13 +37,11 @@
       opacity: $opacity-fade;
     }
     &.active > a, &.active > a:hover {
-      font-weight: $font-bold;
-      color: $hue-primary;
+      color: $hue-muted;
     }
     &:last-child {
       > a {
-        font-weight: $font-bold;
-        color: $hue-primary;
+        color: $hue-muted;
         text-decoration: none;
       }
       &::after {

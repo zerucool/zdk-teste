@@ -30,13 +30,17 @@
     align-items: center;
     color: $hue-dark;
     display: inline-flex;
-    font-weight: $font-semibold;
+    font-weight: $font-bold;
     height: 5.6rem;
     overflow: visible;
     padding: 0 1.6rem;
     position: relative;
     text-align: center;
     text-decoration: none;
+    .ccs-glyph {
+      margin-right: 1.6rem;
+      opacity: $opacity-fade;
+    }
   }
   a:hover {
     text-decoration: underline;
@@ -45,14 +49,14 @@
     display: inline; 
   }
   .active {
-    color: $hue-primary;
+    color: $hue-azure;
     cursor: default;
     font-weight: $font-bold;
     &::after {
       content: '';
       display: block;
       height: .3rem;
-      background: $hue-primary;
+      background: $hue-azure;
       position: absolute;
       right: -.1rem;
       left: -.1rem;

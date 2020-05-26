@@ -28,13 +28,10 @@
     appearance: none;
     background: transparent;
     border: none;
-    //color: currentColor;
     cursor: pointer;
     display: inline-flex;
-    //font-weight: $font-semibold;
     height: $button-height;
     margin: auto;
-    //max-width: 100%;
     outline: none;
     padding: 0;
   }
@@ -66,14 +63,14 @@
     text-shadow: none;
     color: $hue-text !important;;
     font-weight: $font-semibold;
-    background: rgba($hue-disabled, $opacity-fade);
+    background-color: rgba($hue-line, .4);
     .ccs-icons {
       font-weight: $font-regular;
       opacity: $opacity-fade;
     }
     &:hover {
       color: $hue-dark !important;
-      background: rgba($hue-disabled, 1);
+      background-color: rgba($hue-line, $opacity-fade);
     }
     &-link {
       color: $hue-primary;

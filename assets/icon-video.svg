@@ -1,11 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="28px" height="16px" viewBox="0 0 28 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>video-solid</title>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Main" transform="translate(-80.000000, -569.000000)" fill="#A9ABB0" fill-rule="nonzero">
-            <g id="video-solid" transform="translate(80.000000, 569.000000)">
-                <path d="M0,0 L0,16 L22,16 L22,12.625 L28,15.625 L28,0.375 L22,3.375 L22,0 L0,0 Z M2,2 L20,2 L20,14 L2,14 L2,2 Z M26,3.625 L26,12.375 L22,10.375 L22,5.625 L26,3.625 Z" id="Shape"></path>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg width="28" height="16" viewBox="0 0 28 16" xmlns="http://www.w3.org/2000/svg"><path d="M0 0v16h22v-3.375l6 3V.375l-6 3V0H0zm2 2h18v12H2V2zm24 1.625v8.75l-4-2v-4.75l4-2z" fill="#89a"/></svg>

@@ -9,7 +9,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 10000;
+  z-index: 999;
   .inner {
     @include wrapper;
     @include center;
@@ -19,13 +19,10 @@
   }
 }
 
-#AppSearch {
+#AppActions {
   align-items: center;
-  justify-content: end;
-  min-width: 32rem;
-  //@include screen($min: 1440px) {
-  //  min-width: 33.6rem;
-  //}
+  justify-content: flex-end;
+  display: flex;
   input[type='search'] {
     @media screen and (min-width: $small-screen) {
       min-width: calc(30.4rem - 5.8rem);
@@ -65,17 +62,15 @@
   display: flex;
   margin: 0 auto 0 0;
   min-height: 6.4rem;
-  @include screen($min: $small-screen) {
-    img {
-      max-height: 4.0rem;
-    }  
-  }
+  img {
+    max-height: 4.0rem;
+  }  
 }
 
 #AppProduct {
   font-size: $font-large;
   align-items: center;
-  color: #9bbbeb;
+  color: rgba($header-title, $opacity-fade);
   font-weight: $font-bold;
   letter-spacing: 0.02em;
   word-spacing:0.04em;
@@ -89,7 +84,7 @@
     content: '';
     display: flex;
     height: 3.2rem;
-    margin: 0 1.6rem;
+    margin: 0 2.4rem;
     opacity: .4;
     width: .2rem;
   }

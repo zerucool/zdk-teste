@@ -6,7 +6,7 @@
 @import 'hero';
 
 body {
-  @include scrollbar;
+  //@include scrollbar;
   background: $hue-line;
 }
 
@@ -127,7 +127,7 @@ body {
         text-decoration: underline;
       }
       &.active {
-        color: $hue-primary;
+        color: $hue-azure;
         font-weight: $font-bold;
         position: relative;
         &::after {
@@ -139,7 +139,7 @@ body {
           bottom: -.1rem;
           width: .3rem;
           height: 100%;
-          background: $hue-primary;
+          background: $hue-azure;
         }
       }
     }
@@ -209,16 +209,21 @@ body {
   position: relative;
   min-height: 5.6rem;
   background: white;
-  padding-top: 3.2rem;
-  padding-bottom: 1.6rem;
+  padding: 0.8rem 0 1.6rem;
+  flex-flow: column;
+  //border-bottom: 1px $hue-line solid;
+  font-size: $font-xlarge;
   @media screen and (min-width: $small-screen) {
     display: flex;
-    flex-flow: column;
+    flex-flow: row;
     justify-content: space-between;
-    //margin: 0 -2.4rem 1.6rem;
-    //padding: 0 2.4rem .8rem;
-    //width: calc(100% + 3.2rem);
   }
+}
+
+.ccs-doc-footer {
+  padding-top: 1.6rem;
+  padding-right: .8rem;
+  border-top: .2rem $hue-line solid;
 }
 
 .ccs-doc-path {
@@ -226,10 +231,6 @@ body {
   align-items: center;
   display: flex;
   flex-shrink: 0;
-}
-
-.ccs-doc-heading {
-  font-size: $font-xlarge;
 }
 
 .ccs-doc-list {
@@ -264,27 +265,8 @@ body {
       text-decoration: underline !important;
     }
   }
-
 }
-
-.ccs-doc-meta {
-  @media screen and (min-width: $small-screen) {
-    display: flex;
-    flex-direction: column;
-  }
-  .ccs-doc-author {
-    display: flex;
-    padding: 0 0 .8rem 0;
-    font-size: 1.2rem;
-    > a {
-      text-decoration: none;
-      &:hover {
-        text-decoration: underline !important;
-      }
-    }
-  }
-}
-
+ 
 .ccs-doc-page  {
   background: white;
   color: $hue-text;
@@ -305,6 +287,48 @@ body {
   }
 }
 
+.ccs-doc-details {
+  display: flex;
+}
+
+.ccs-doc-avatar {
+  display: flex;
+  position: relative;
+  height: 4.0rem;
+  width: 4.0rem;
+  .ccs-icons {
+    font-size: 1.8rem;
+    position: absolute;
+    right: -.6rem;
+    bottom: 0;
+    background: white;
+    border-radius: 2.4rem;
+  }
+}
+
+.ccs-doc-meta {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  padding-left: .8rem;
+  .ccs-doc-author {
+    display: inline-flex;
+    font-size: 1.3rem;
+    font-weight: $font-semibold;
+    > a {
+      text-decoration: none;
+    }
+  }
+  .ccs-doc-modified {
+    display: inline-flex;
+    padding-top: .4rem;
+    padding-right: .8rem;
+    span {
+      padding: 0 .4rem;
+    }
+  }
+}
+
 @include screen($min: $small-screen) { // DESKTOP
   #AppTop {
     position: absolute;
@@ -317,7 +341,9 @@ body {
     margin-right: .2rem;
   }
   .ccs-doc-body {
-    padding-right: 16px;
+    padding-right: 1.6rem;
+    padding-top: 2.4rem;
+    padding-bottom: 2.4rem;
   }  
   .ccs-doc-content {
     min-height: calc(100vh - 25.9rem);
@@ -335,7 +361,7 @@ body {
     position: fixed;
     margin-right: 2rem;
   }
-  #AppNav, #AppFooter, #AppSearch {
+  #AppNav, #AppFooter, #AppActions .ccs-btn-contact {
     display: none;
   }
   #AppNavToggle {
@@ -360,4 +386,83 @@ body {
   .ccs-doc-title {
     white-space: nowrap;
   }
+  .mobile #AppPage {
+    margin-left: 0 !important;
+  }
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  .inner {
+    display: flex;
+    max-width: 64.0rem;
+    width: calc(100% - 5.6rem);
+    margin: auto;
+    flex-flow: column;
+    height: 50vh;
+    min-height: 12.8rem;
+    max-height: 25.6rem;
+  }
+  .ccs-btn-close {
+    font-size: 4rem;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    margin: auto auto 0 auto;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+  .search {
+    margin: 1.6rem auto auto auto;
+    max-width: calc(100vw - 3.2rem);
+    width: 100%;
+  }
+}
+ zd-autocomplete {
+   display: flex;
+   flex-flow: column;
+   width: auto;
+   zd-autocomplete-multibrand {
+     padding: 1.6rem 2.4rem;
+     &:hover {
+       background: #FFED42 !important;
+     }
+     &:first-child {
+       
+     }
+     &:last-child {
+       
+     }
+   }
+   zd-autocomplete-breadcrumbs-multibrand { 
+     padding-top: .8rem;
+   }
+ }
+
+
+.overlay button {
+  float: left;
+  width: 20%;
+  padding: 15px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.overlay button:hover {
+  background: #bbb;
 }

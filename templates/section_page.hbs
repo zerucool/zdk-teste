@@ -14,7 +14,7 @@
     {{#if section.sections}}
     <div class="ccs-doc-body">
       <h2 class="ccs-doc-title">Table of Contents</h2>
-      <ul class="ccs-doc-list">
+      <ul>
         {{#each section.sections}}<li><a href="{{url}}" class="{{#is id ../section.id}}active{{/is}}">{{name}}</a></li>{{/each}}
       </ul>
     </div>  

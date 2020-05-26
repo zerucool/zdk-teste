@@ -25,35 +25,33 @@ docReady(function() {
     }
   };
   
+  function toggleDrawer() {
+    var x = document.getElementById("AppDrawer");
+    if (x.style.display === "flex") {
+      x.style.display = "none";
+      document.getElementById("AppDrawer").style.width = "0";
+      document.getElementById("AppPage").style.marginLeft = "0";
+      document.getElementById("AppNav").style.marginLeft = "0";
+    } else {
+      x.style.display = "flex";
+      document.getElementById("AppDrawer").style.width = "20.8rem";
+      document.getElementById("AppPage").style.marginLeft = "20.8rem";
+      document.getElementById("AppNav").style.marginLeft = "20.8rem";
+      document.getElementById("AppSearch").style.display = "none";
+    }
+  }
+
+  document.querySelector("#SearchOpen").addEventListener('click', function() {
+      document.querySelector("#AppOverlay").style.display = 'block';
+      document.querySelector("body").style.overflow = 'hidden';
+  });
+
+  document.querySelector("#SearchClose").addEventListener('click', function() {
+      document.querySelector("#AppOverlay").style.display = 'none';
+      document.querySelector("body").style.overflow = 'visible';
+  });
+  
 });
 
-function toggleDrawer() {
-  var x = document.getElementById("AppDrawer");
-
-  if (x.style.display === "flex") {
-    x.style.display = "none";
-    document.getElementById("AppDrawer").style.width = "0";
-    document.getElementById("AppPage").style.marginLeft = "0";
-    document.getElementById("AppNav").style.marginLeft = "0";
-  } else {
-    x.style.display = "flex";
-    document.getElementById("AppDrawer").style.width = "20.8rem";
-    document.getElementById("AppPage").style.marginLeft = "20.8rem";
-    document.getElementById("AppNav").style.marginLeft = "20.8rem";
-    document.getElementById("AppSearch").style.display = "none";
-  }
-}
 
 // https://abouolia.github.io/sticky-sidebar/
-
-// https://www.w3schools.com/howto/howto_css_fullscreen_search.asp
-
-// function openSearch() {
-//   document.getElementById("myOverlay").style.display = "block";
-// };
-
-// function closeSearch() {
-//   document.getElementById("myOverlay").style.display = "none";
-// };
-
-
