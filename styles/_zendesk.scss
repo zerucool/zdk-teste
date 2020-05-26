@@ -83,7 +83,7 @@
 
 .ccs-btn-up, .ccs-btn-down {
   &.selected {
-    background: $hue-primary;
+    background: $hue-azure;
     color: white;
     &::after {
       color: white;
@@ -110,8 +110,7 @@
     opacity: 1;
   }
   &:hover::after {
-    color: $header-title;
-    //opacity: $opacity-fade;
+    color: rgba($header-title,.8);
   }
   &::before{
     color: white;
@@ -123,6 +122,9 @@
   color: white;
   font-weight: $font-semibold;
   font-size: 1.4rem;
+  &:hover {
+    color: rgba($header-title,.8);
+  }
 }
 
 

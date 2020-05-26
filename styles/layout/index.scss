@@ -342,7 +342,7 @@ body {
   }
   .ccs-doc-body {
     padding-right: 1.6rem;
-    padding-top: 2.4rem;
+    //padding-top: 2.4rem;
     padding-bottom: 2.4rem;
   }  
   .ccs-doc-content {
@@ -426,32 +426,57 @@ body {
     padding: 0;
   }
   .search {
+    border-radius: $rounded-large;
+    height: 4.8rem;
     margin: 1.6rem auto auto auto;
     max-width: calc(100vw - 3.2rem);
     width: 100%;
+    padding: 0 1rem;
+    input[type='submit'] {
+      background-color: rgba($hue-line, .4);
+      border-radius: $rounded-medium;
+      border: none;
+      color: $hue-text !important;;
+      cursor: pointer;
+      font-weight: $font-semibold;
+      height: $button-height;
+      outline: none;
+      padding: 0 1.6rem;
+      text-shadow: none;
+      &:hover {
+        color: $hue-dark !important;
+        background-color: rgba($hue-line, $opacity-fade);
+      }
+    }
   }
 }
- zd-autocomplete {
-   display: flex;
-   flex-flow: column;
-   width: auto;
-   zd-autocomplete-multibrand {
-     padding: 1.6rem 2.4rem;
-     &:hover {
-       background: #FFED42 !important;
-     }
-     &:first-child {
-       
-     }
-     &:last-child {
-       
-     }
-   }
-   zd-autocomplete-breadcrumbs-multibrand { 
-     padding-top: .8rem;
-   }
- }
 
+zd-autocomplete {
+  display: flex;
+  flex-flow: column;
+  margin-top: 1.6rem;
+  border-radius: $rounded-large;
+  zd-autocomplete-multibrand {
+    padding: 1.6rem 2.4rem;
+    box-shadow: none;
+    &:hover {
+      background: rgba(#FFED42, .2) !important;
+    }
+    &:first-child {
+      border-radius: $rounded-large $rounded-large 0 0;
+    }
+    &:last-child {
+      border-radius: 0 0 $rounded-large $rounded-large;
+      border-bottom: none;
+    }
+  }
+  zd-autocomplete-breadcrumbs-multibrand { 
+    padding-top: .8rem;
+  }
+  zd-autocomplete-title-multibrand {
+    color: $hue-azure;
+  }
+}
 
 .overlay button {
   float: left;
