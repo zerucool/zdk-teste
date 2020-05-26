@@ -199,54 +199,37 @@
   opacity: $opacity-fade;
 }
 
-
-
-
-:root {
-  --contentHeight: 30vh;
-  --sectionWidth: 700px;
-}
-
-somethin {
-  max-width: var(--sectionWidth);
-  margin: 40px auto;
-  width: 97%;
-  color: #fff;
+details, summary {
+  outline: none;
 }
 
 summary {
   display: block;
   cursor: pointer;
-  padding: 10px;
-  font-size: 22px;
   transition: .3s;
-  border-bottom: 2px solid;
+  border-bottom: 1px solid $hue-softer;
+  border-top: 1px solid $hue-softer;
+  margin-top: -1px;
   user-select: none;
+  padding: .8rem .8rem .8rem 1.4rem;
+  &:hover {
+    background: rgba($hue-soft, $opacity-soften);
+  }
+  + div { 
+    padding: 0 .8rem 2.4rem 1.6rem; 
+  }
 }
 
 details > div {
-  display: flex;
-  flex-wrap: wrap;
   overflow: auto;
   height: 100%;
   user-select: none;
-  padding: 0 20px;
-  line-height: 1.5;
 }
 
 details > div > img {
-  align-self: flex-start;
   max-width: 100%;
-  margin-top: 20px;
 }
 
-details > div > p {
-  flex: 1;
-}
-
-details[open] > summary {
-   color: red;
-}
 
 @media (min-width: 768px) {
   details[open] > div > p {
@@ -255,8 +238,6 @@ details[open] > summary {
     animation-duration: 0.6s;
     animation-delay: 0.2s;
     animation-fill-mode: forwards;
-    margin: 0;
-    padding-left: 20px;
   }
 
   details[open] > div {
@@ -268,7 +249,6 @@ details[open] > summary {
   details[open] > div > img {
     opacity: 0;
     height: 100%;
-    margin: 0;
     animation-name: showImage;
     animation-duration: 0.3s;
     animation-delay: 0.15s;
@@ -279,14 +259,10 @@ details[open] > summary {
 @keyframes slideDown {
   from {
     opacity: 0;
-    height: 0;
-    padding: 0;
   }
 
   to {
     opacity: 1;
-    height: var(--contentHeight);
-    padding: 20px;
   }
 }
 

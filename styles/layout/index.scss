@@ -239,6 +239,7 @@ body {
   padding-top: 1.6rem;
   padding-right: .8rem;
   border-top: .2rem $hue-line solid;
+  margin-right: 1.6rem;
 }
 
 .ccs-doc-path {
@@ -328,7 +329,7 @@ body {
   display: flex;
   flex-flow: column;
   justify-content: center;
-  padding-left: .8rem;
+  padding: 0 .8rem;
   .ccs-doc-author {
     display: inline-flex;
     font-size: 1.3rem;
