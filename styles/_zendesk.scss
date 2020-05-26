@@ -2,10 +2,12 @@
   display: none;
 }
 
-#preview-bar-container {
+#preview-bar-container, #navbar-container {
   position: absolute;
   margin-top: -50px;
-}
+  zd-hc-navbar {
+    height: 48px;
+  }
 
 .ccs-btn-previous, .ccs-btn-next, .ccs-btn-top, .ccs-btn-up, .ccs-btn-down, .ccs-btn-search {
   position: relative;
