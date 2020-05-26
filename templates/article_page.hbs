@@ -6,15 +6,13 @@
     
     <header class="ccs-doc-header">
       <h1 class="ccs-doc-heading{{#if article.internal}} internal{{/if}}">{{article.title}}</h1>
-        
-        {{#if settings.show_article_author}}
-        <div class="ccs-doc-details">
-          <div class="ccs-doc-meta">
-            <span class="ccs-doc-modified">{{t 'updated'}} <span style="opacity: 0.6">&bull;</span> {{#is article.created_at article.edited_at}}<time>{{date article.created_at timeago=true}}{{else}}{{date article.edited_at timeago=true}}</time>{{/is}}</span>
-          </div>
+      {{#if settings.show_article_author}}
+      <div class="ccs-doc-details">
+        <div class="ccs-doc-meta">
+          <span class="ccs-doc-modified">{{t 'updated'}} <span style="opacity: 0.6">&bull;</span> {{#is article.created_at article.edited_at}}<time>{{date article.created_at timeago=true}}{{else}}{{date article.edited_at timeago=true}}</time>{{/is}}</span>
         </div>
-        {{/if}}
-        
+      </div>
+      {{/if}}
     </header>
   
     

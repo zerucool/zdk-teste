@@ -1,6 +1,5 @@
 
 
-
 <section id="TemplateSection" class="ccs-doc-page">
   <article class="ccs-doc-content">
     
@@ -10,15 +9,30 @@
       <h1 class="ccs-doc-heading">{{section.name}}</h1>
       {{#if section.description}}<p class="ccs-doc-description">{{section.description}}</p>{{/if}}
     </header>
-    
+  
+    <div class="row"> {{!!- было section-tree --}}
     {{#if section.sections}}
-    <div class="ccs-doc-body">
-      <h2 class="ccs-doc-title">Table of Contents</h2>
-      <ul>
-        {{#each section.sections}}<li><a href="{{url}}" class="{{#is id ../section.id}}active{{/is}}">{{name}}</a></li>{{/each}}
-      </ul>
-    </div>  
+      {{#each section.sections}}
+        <div class="sm-12 md-6 lg-4 col" style="padding: 0 0 3.2rem">
+          <h3>{{name}}</h3>
+          {{#if articles}}
+            <ul>
+              {{#each articles}}
+                <li class="{{#if promoted}}promoted{{/if}}">
+                  <a href="{{url}}" class="{{#if internal}}internal{{/if}}">{{title}}</a>
+                </li>
+              {{/each}}
+            </ul>
+          {{#if more_articles}}
+            <br><a href="{{url}}" class="ccs-btn-subtle">{{t 'show_all_articles' count=article_count}}</a>
+            {{else}}
+            <br><a href="{{url}}" class="ccs-btn-subtle">View Section</a>
+          {{/if}}
+          {{/if}}
+        </div>
+      {{/each}}
     {{/if}}
+    </div>
     
   </article>
   
@@ -44,7 +58,5 @@
   {{/if}} 
    
 </aside>
-
-
 
 

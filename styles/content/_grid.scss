@@ -48,8 +48,6 @@ $number-columns: 12;
 }
 
 .col {
-  padding: 1rem;
-
   @include screen(sm) {
     @include col-size(100%);
   }
