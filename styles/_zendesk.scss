@@ -10,7 +10,38 @@
   }
 }
 
-.ccs-btn-previous, .ccs-btn-next, .ccs-btn-top, .ccs-btn-up, .ccs-btn-down, .ccs-btn-search {
+.recent-activity-controls a {
+  //box-shadow: $box-stroke;
+  //font-weight: $font-regular;
+  align-items: center;
+  appearance: none;
+  background-color: rgba($hue-line, .4);
+  background-position: center;
+  border-radius: $rounded-medium;
+  border: none;
+  color: $hue-text !important;;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: $font-title;
+  font-size: $button-size;
+  font-weight: $font-semibold;
+  height: $button-height;
+  line-height: $button-height;
+  max-height: $button-height;
+  min-width: $button-height;
+  outline: none;
+  padding: 0 $button-padding;
+  text-decoration: none !important;
+  text-shadow: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  &:hover {
+    color: $hue-dark !important;
+    background-color: rgba($hue-line, $opacity-fade);
+  }
+}
+
+.ccs-btn-previous, .ccs-btn-next, .ccs-btn-top, .ccs-btn-up, .ccs-btn-down, .ccs-btn-search, .recent-activity-controls {
   position: relative;
   font-weight: $font-semibold;
   color: $hue-text;
@@ -136,4 +167,35 @@
   }
 }
 
+.recent-activity-accessibility-label, .recent-activity-comment-icon {
+  display: none;
+}
 
+.recent-activity-item {
+  padding: 0.8rem 0;
+}
+.recent-activity-controls {
+  margin-top: 1.6rem;
+}
+
+.recent-activity-item-time {
+  font-size: 1.2rem;
+}
+
+.recent-activity-item-parent, .recent-activity-item-link {
+  font-size: 1.2rem;
+  //font-weight: $font-semibold;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.recent-activity-item-parent::after {
+  display: block;
+  content: '\e5cc';
+  font-family: $font-icons;
+  font-size: $icon-small;
+  color: $hue-muted;
+  opacity: $opacity-fade;
+}
+ 

@@ -6,6 +6,7 @@
   #AppPage .inner { max-width: 100% }
   .ccs-doc-content, .ccs-hero-inner { margin: 0 auto; max-width: calc(1440px - 2rem); width: 100% }
   .search { max-width: 480px; margin-left: 0 }
+  .ccs-doc-activity { margin: 0 1.6rem 3.2rem; }
 </style>
 
 <header id="TemplateHome" class="ccs-hero">
@@ -42,14 +43,22 @@
       </ul>
       {{pagination}}
     </section>
-    {{#if promoted_articles}}
-    <section class="ccs-section">
-      <h2 class="ccs-doc-title">{{t 'promoted_articles'}}</h2>
-      <ul class="ccs-doc-list">
-        {{#each promoted_articles}}<li><a href="{{url}}" {{#if internal}}class="internal"{{/if}}>{{title}}</a></li>{{/each}}
-      </ul>
-    </section>
+    
+    {{#if settings.show_recent_activity}}
+      <section class="ccs-doc-activity">
+        {{recent_activity}}
+      </section>
     {{/if}}
+    
+    {{#if promoted_articles}}
+      <section class="ccs-doc-articles">
+        <h2 class="ccs-doc-title">{{t 'promoted_articles'}}</h2>
+        <ul class="ccs-doc-list">
+          {{#each promoted_articles}}<li><a href="{{url}}" {{#if internal}}class="internal"{{/if}}>{{title}}</a></li>{{/each}}
+        </ul>
+      </section>
+    {{/if}}
+  
   </div>
 </div>
 
