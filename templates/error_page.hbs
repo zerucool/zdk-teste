@@ -1,24 +1,24 @@
 
 
-<section class="ccs-doc-page-full" style="padding-top:1.6rem">
+<section id="AppError" class="ccs-doc-page-full">
   <article class="ccs-doc-content">
-    <header class="ccs-doc-header" style="justify-content:center">
+    <header class="ccs-doc-header">
       <h1 class="ccs-doc-heading">{{t 'oops'}}</h1>
     </header>
     <div class="ccs-doc-body">
       {{#is error 'unauthorized'}}
-        <p >{{link 'sign_in'}}</p>
+        <p >{{link 'sign_in'}}</p><br>
         <img src="{{asset 'error-403-locked.svg'}}" />
       {{/is}}
 
       {{#is error 'forbidden'}}
-        <p>{{t 'not_authorized'}}</p>
+        <p>{{t 'not_authorized'}}</p><br>
         <img src="{{asset 'error-500-mistake.svg'}}" />
       {{/is}}
 
       {{#is error 'not_found'}}
-        <p><b>{{t 'nonexistent_page'}}</b></p>
-        <p>{{t 'mistyped_address_or_moved_page'}}</p>
+        <p>{{t 'nonexistent_page'}}</p>
+        <p>{{t 'mistyped_address_or_moved_page'}}</p><br>
         <img src="{{asset 'error-404-missing.svg'}}" />
       {{/is}}
 

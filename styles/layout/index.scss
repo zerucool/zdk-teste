@@ -79,12 +79,21 @@ body {
   visibility: hidden;
   width: 100%;
 }
+#AppError {
+  padding-top: 1.6rem;
+  .ccs-doc-content {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+  }
+}
 
 .ccs-doc-page-full {
   padding: 0 1.6rem;
   width: 100%;
   display: flex;
   flex-flow: column;
+  background: white;
 }
 
 .ccs-doc-content {
@@ -217,6 +226,10 @@ body {
     display: flex;
     flex-flow: row;
     justify-content: space-between;
+  }
+  .ccs-doc-heading {
+    font-size: 3.2rem;
+    font-weight: $font-bold;
   }
 }
 
