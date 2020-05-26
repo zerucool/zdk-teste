@@ -59,6 +59,11 @@
     content: 'keyboard_backspace';
     height: 32px;
     width: 32px;
+    color: $hue-text;
+  }
+  &:hover::after {
+    color: $hue-dark;
+    opacity:1;
   }
 }
 
@@ -89,7 +94,8 @@
     background: $hue-azure;
     color: white;
     &::after {
-      color: white;
+      color: $header-title;
+      opacity: 1;
     }
   }
 }
