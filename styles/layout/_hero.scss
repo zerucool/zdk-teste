@@ -47,6 +47,9 @@
     height: 4.0rem;
     padding: 0 1rem;
     max-width: 38rem;
+    @include screen($max: $small-screen) {
+      max-width: 100%;
+    }
   }
 }
 
