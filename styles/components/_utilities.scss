@@ -1,14 +1,14 @@
-.ccs-margin {
+.ccs-mar {
   margin: $spacing-base;
 
   &-top {
     margin-top: $spacing-base;
 
-    &-large {
+    &-lar {
       margin-top: $spacing-large;
     }
 
-    &-small {
+    &-sma {
       margin-top: $spacing-small;
     }
 
@@ -20,11 +20,11 @@
   &-right {
     margin-right: $spacing-base;
 
-    &-large {
+    &-lg {
       margin-right: $spacing-large;
     }
 
-    &-small {
+    &-sm {
       margin-right: $spacing-small;
     }
 
@@ -33,14 +33,14 @@
     }
   }
 
-  &-bottom {
+  &-bot {
     margin-bottom: $spacing-base;
 
-    &-large {
+    &-lg {
       margin-bottom: $spacing-large;
     }
 
-    &-small {
+    &-sm {
       margin-bottom: $spacing-small;
     }
 
@@ -52,11 +52,11 @@
   &-left {
     margin-left: $spacing-base;
 
-    &-large {
+    &-lg {
       margin-left: $spacing-large;
     }
 
-    &-small {
+    &-sm {
       margin-left: $spacing-small;
     }
 
@@ -65,11 +65,11 @@
     }
   }
 
-  &-large {
+  &-lg {
     margin: $spacing-large;
   }
 
-  &-small {
+  &-sm {
     margin: $spacing-small;
   }
 
@@ -78,17 +78,17 @@
   }
 }
 
-.ccs-padding {
+.ccs-pad {
   padding: $spacing-base;
 
   &-top {
     padding-top: $spacing-base;
 
-    &-large {
+    &-lg {
       padding-top: $spacing-large;
     }
 
-    &-small {
+    &-sm {
       padding-top: $spacing-small;
     }
 
@@ -100,11 +100,11 @@
   &-right {
     padding-right: $spacing-base;
 
-    &-large {
+    &-lg {
       padding-right: $spacing-large;
     }
 
-    &-small {
+    &-sm {
       padding-right: $spacing-small;
     }
 
@@ -113,14 +113,14 @@
     }
   }
 
-  &-bottom {
+  &-bot {
     padding-bottom: $spacing-base;
 
-    &-large {
+    &-lg {
       padding-bottom: $spacing-large;
     }
 
-    &-small {
+    &-sm {
       padding-bottom: $spacing-small;
     }
 
@@ -132,11 +132,11 @@
   &-left {
     padding-left: $spacing-base;
 
-    &-large {
+    &-lg {
       padding-left: $spacing-large;
     }
 
-    &-small {
+    &-sm {
       padding-left: $spacing-small;
     }
 
@@ -145,11 +145,11 @@
     }
   }
 
-  &-large {
+  &-lg {
     padding: $spacing-large;
   }
 
-  &-small {
+  &-sma {
     padding: $spacing-small;
   }
 

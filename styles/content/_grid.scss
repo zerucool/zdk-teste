@@ -76,22 +76,29 @@ $number-columns: 12;
   align-self: flex-end;
 }
 
-@mixin container {
+.align-center {
+  text-align: center;
+}
+
+@mixin container() {
   margin: 0 auto;
-  max-width: calc(#{$xlarge-screen} - 2rem);
+  max-width: calc(#{$large-screen} - 3.2rem);
   position: relative;
   width: 100%;
+  padding: 1.6rem 3.2rem;
   @include screen(medium) {
-    width: 85%;
+    max-width: calc(#{$medium-screen} - 2.4rem);
+    padding: .8rem 2.4rem;
   }
   @include screen(xsmall) {
-    width: 90%;
+    max-width: calc(#{$xsmall-screen} - 1.6rem);
+    padding: .8rem 1.6rem;
   }
 }
 
-@mixin wrapper {
+@mixin wrapper($width: $xlarge-screen) {
   margin: 0 auto;
-  max-width: calc(#{$xlarge-screen} - 2rem);
+  max-width: calc(#{$width} - 2rem);
   position: relative;
   width: 100%;
   //@include screen(medium) {

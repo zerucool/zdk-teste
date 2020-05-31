@@ -1,0 +1,302 @@
+@import 'header';
+@import 'drawer';
+@import 'footer';
+
+#AppLayout {
+  font-size: $font-base;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+  &::before {
+    content: '';
+    display: block;
+    height: 8rem;
+    visibility: hidden;
+  }
+  main[role='main'] {
+    background: $hue-line;
+    display: flex;
+    width: 100%;
+  }
+  picture {
+    display: flex;
+  }
+}
+
+#AppPage {
+  background: white;
+  flex: 1;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 0;
+  position: relative;
+  transition: margin-left .5s;
+  .inner {
+    @include container;
+    font-size: 1.6rem;
+    line-height: 1.4;
+    .text p {
+      margin: 2.4rem 0;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    li {
+      margin-top: .8rem;
+    }
+    p a, li a {
+      color: $hue-dark;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    strong {
+      font-weight: $font-heavy;
+    }
+    h1 {
+      font-size: 4.0rem;
+      line-height: 1.1;
+      font-weight: $font-heavy;
+      margin: 1.6rem 0;
+    }
+    h2, h3, h4 {
+      font-size: 2.4rem;
+      font-weight: $font-heavy;
+      line-height: 1.2;
+      margin: 1.6rem 0;
+    }
+    h5, h6 {
+      font-size: 1.6rem;
+      font-weight: $font-heavy;
+      line-height: 1.3;
+      margin: 1.6rem 0;
+    }
+  }
+}
+
+#AppTop {
+  @include elevation-2;
+  background: white;
+  border-radius: 50%;
+  bottom: 0;
+  display: flex;
+  height: .5rem;
+  justify-content: center;
+  margin: 0 0.4rem 2rem 0;
+  padding: 2.5rem;
+  right: 0;
+  text-decoration: none;
+  vertical-align: middle;
+  width: .5rem;
+}
+
+#top {
+  left: 0;
+  position: absolute;
+  top: -10.4rem;
+  visibility: hidden;
+  width: 100%;
+}
+
+#AppError {
+  padding-top: 1.6rem;
+  .ccs-doc-content {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+  }
+}
+
+
+@include screen($min: $medium-screen) { // DESKTOP
+  // #AppTop {
+  //   position: absolute;
+  // }
+  // #AppDrawer, #AppNavToggle {
+  //   display: none;
+  // }
+  [class^='block-']:not([id='overview']) {
+    .row {
+      .col {
+        padding-right: 4.0rem;
+        padding-left: 4.0rem;
+      }
+      .col:first-child {
+        padding-left: 0;
+      }
+      .col:last-child {
+        padding-right: 0;
+      }
+    }    
+  }
+}
+
+@include screen($max: $medium-screen) {
+  [class^='block-']:not([id='overview']) {
+    .text + .visual {
+      padding-top: 3.2rem;
+      padding-bottom: 1.6rem;
+    }
+    .visual + .text {
+      padding-top: 1.6rem;;
+      padding-bottom: 3.2rem;
+    }  
+  }
+}
+
+@include screen($max: $medium-screen, $min: $small-screen) { 
+  [class^='block']:not([id='overview']) {
+    .row {
+      .col {
+        padding-right: 3.2rem;
+        padding-left: 3.2rem;
+      }
+      .col:first-child {
+        padding-left: 0;
+      }
+      .col:last-child {
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+@include screen($max: $small-screen) { // MOBILE
+  #AppTop {
+    position: fixed;
+    margin-right: 2rem;
+  }
+  #AppActions {
+    display: none;
+  }
+  // #AppNavToggle {
+  //   display: block;
+  // }
+  .visual {
+    order: 1;
+  }
+  .text {
+    order: 2;
+  }
+  [class^='block'] {
+    padding-bottom: 4rem;
+  }
+}
+
+// @include screen($max: $small-screen) { // PHONE
+//   .mobile #AppPage {
+//     margin-left: 0 !important;
+//   }
+// }
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  .card {
+    max-width: 800px;
+    margin: 4.8rem auto 0;
+    .card-body {
+      padding: 1.6rem 3.2rem;
+    }
+    .card-header {
+      padding: 1.6rem 3.2rem 0;
+      h2 {
+        text-align: center;
+        width: 100%;
+        font-size: 2.4rem;
+      }
+    }
+  }
+  .ccs-btn-close {
+    font-size: 4rem;
+    cursor: pointer;
+    color: $hue-text;
+    text-decoration: none;
+    margin: 0 0 auto auto;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+}
+
+.overlay .form {
+  background: white;
+}
+
+.ccs-btn-stroke {
+  background: rgba(0,0,0,0.05);
+  border: solid 2px rgba(153,187,221,0.65);
+  padding: 0 3.2rem;
+  border-radius: 30px;
+  font-size: 1.5rem;
+  font-weight: $font-semibold;
+  min-height: 3.6rem;
+  color: white;
+}
+
+.ccs-btn-brand {
+  background-color: #cc0001;
+  border-color: #cc0001;
+  color: #ffffff;
+  min-height: 40px;
+  padding: 0 3.2rem;
+  border-radius: 30px;
+  font-size: 1.5rem;
+  font-weight: $font-bold;
+}
+
+#formAlert {
+  position: fixed;
+  z-index: 9000;
+  top: 5rem;
+  left: 50%;
+  min-width: 24rem;
+  margin-left: -12rem;
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  font-weight: 700;
+  line-height: 3rem;
+  color: rgba(0,0,0,.9);
+  border-radius: .25rem;
+  background-color: #ffed42;
+  font-size: 1rem;
+  box-shadow: 2.5px 4px 30px 0 rgba(0,0,0,.5);
+  cursor: pointer;
+  font-size: 1.8rem;
+}
+
+#formAlert .close {
+    padding-left: 2rem;
+    font-style: normal;
+    font-size: 2.4rem;
+    position: absolute;
+    opacity: .6;
+}
+
+
+.ccs-label {
+  padding: 1.4rem 1.6rem;
+  font-size: 1rem;
+  color: #89a;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: .04em;
+  word-spacing: .06em;
+  position: absolute;
+  z-index: 9;
+}

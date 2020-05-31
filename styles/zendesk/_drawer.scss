@@ -1,0 +1,42 @@
+#AppDrawer {
+  font-size: 1.3rem; 
+  background-color: $drawer-color;
+  color: $drawer-text;
+  display: none;
+  flex-direction: column;
+  flex-direction: column;
+  height: calc(100vh - 6.4rem);
+  justify-content: space-between;
+  left: 0;
+  overflow-x: hidden;
+  overflow: auto;
+  position: fixed;
+  top: 6.4rem;
+  transition: .5s;
+  z-index: 99;
+  nav {
+    padding-top: 1.36rem;
+    a, p {
+      display: flex;
+      height: 32px;
+      padding: 0 1.36rem;
+      align-items: center;
+      font-weight: $font-medium;
+    }
+    a {
+      color: $drawer-link;
+      text-decoration: none;
+      &.active {
+        background: #162534;
+        font-weight: $font-semibold;
+      }
+    }
+    &.bottom {
+      box-shadow: 0 -1px 0 0 rgba(black, .4);
+      margin-top: 1.6rem;
+    }
+  }
+}
+
+// @include screen($min: $small-screen) { // DESKTOP }
+// @include screen($max: $small-screen) { // MOBILE }

@@ -2,7 +2,7 @@
 // @import 'global.css/src/mixins/grid';
 // @import 'global.css/src/mixins/ellipsis';
 
-@import 'color-variables';
+//@import 'color-variables';
 
 @mixin font-title($size: '$font-large', $weight: '$font-bold', $margin: '.5em auto') {
   font-family: $font-title;

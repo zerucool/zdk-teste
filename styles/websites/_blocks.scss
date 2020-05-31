@@ -1,0 +1,319 @@
+$hue-smoke: #e7ebec;
+
+.slick-prev, .slick-next {
+  background: white ;
+  height: 100% !important;
+  width: 4rem !important;
+  z-index: 100;
+}
+
+.slick-next {
+  background: linear-gradient(90deg, rgba(white,.10) 0%, white 50%) !important;
+  right: 0 !important;
+}
+
+.slick-prev {
+  background: linear-gradient(-90deg, rgba(white,.10), white 50%) !important;
+  left: 0 !important;
+}
+
+.slick-prev:before, .slick-next:before {
+  font-family: $font-icons !important;
+  color: $hue-dark !important;
+  font-size: $icon-default !important;
+}
+
+.slick-prev:before {
+  content: 'arrow_back' !important;
+}
+
+.slick-next:before {
+  content: 'arrow_forward' !important;
+}
+
+.ccs-figure {
+  height: 0;
+  padding-top: 48%;
+  position: relative;
+  margin: 0;
+}
+
+.ccs-picture > img, img.image-x {
+  position: absolute;
+  bottom: 0;
+}
+
+@include screen($min: $small-screen) {
+  .ccs-figure {
+    padding-top: 73%;
+    margin: 0 -16rem 0 0;
+  }
+  .text {
+    padding-bottom: 2.4rem;
+  }
+}
+
+#cycler{position:relative;}
+#cycler img{position:absolute;z-index:1}
+#cycler img.active{z-index:3}
+
+
+[class^='block'] {
+  h2, h3, h4 {
+    margin-top: 0 !important;
+  }
+}
+
+#overview {
+  padding-top: 3rem;
+  background-image: url('images/scene-wall.jpg');
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  padding: 6rem 0 9rem;
+  .inner {
+    position: relative;
+    -webkit-transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 9;
+    &::before {
+      position: absolute;
+      bottom: -40%;
+      right: -50%;
+      left: 25%;
+      width: 150%;
+      height: 300px;
+      display: flex;
+      content: '';
+      z-index: 0;
+      transition: opacity 1s;
+      background: linear-gradient(90deg, rgba(white,1) 85%, rgba(white,0) 100%);
+      box-shadow: 20px -20px 40px -30px rgba(black,.1);
+      @include screen($max: $medium-screen) {
+        opacity: 0;
+      }
+      @include screen($min: $medium-screen) {
+        opacity: 1;
+      }
+    }
+  }
+  .media, .text {
+    padding: 0;
+    position: relative;
+    z-index: 99;
+  }
+}
+
+#features {
+  margin-top: -1px;
+  .inner li {
+    padding: 0;
+    margin: 0;
+    a {
+      display: inline-flex;
+      min-height: 3.2rem;
+      align-items: center;
+    }
+  }
+}
+
+#program {
+  background-image: url('images/group-of-person-sitting-indoors.jpg');
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  padding: 0 0 9rem;
+  position: relative;
+  .card-icon {
+    opacity: $opacity-fade;
+  }
+  .ccs-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 0;  
+    background-color: black;
+    opacity: 0.6;
+  }
+  .card-footer {
+    justify-content: space-evenly;
+    align-items: center; 
+    flex-flow: row; 
+  }
+  h1 {
+    text-align: center;
+    color: white;
+    margin: 9rem auto 3rem !important;
+  }
+  @include screen($max: $small-screen) {
+    .sm-6 + .sm-6 {
+      margin-top: 4.8rem;
+    }
+  }
+}
+
+#clients {
+  padding: 4rem 0 6rem;
+  h6 {
+    font-weight: 700 !important;
+    font-size: 1.8rem !important;
+  }
+}
+
+#contact {
+  background-color: $hue-smoke;
+  padding: 9.6rem 0 4.8rem;
+  .ccs-icon {
+    height: 6.4rem;
+    color: shade($hue-line,10);
+  }
+  .row {
+    .col {
+      padding-right: 2.4rem;
+      padding-left: 2.4rem;
+    }
+  }
+}
+
+#product {
+  background-color: $hue-smoke;
+  padding: 6.4rem 0 0rem;
+  margin-bottom: -3.2rem;
+  .ccs-icon {
+    height: 6.4rem;
+    color: $hue-line;
+  }
+  .inner {
+    margin: 3.2rem auto 0;
+  }
+  .card-header {
+    padding-top: 2.4rem;
+    justify-content: center;
+    flex-flow: column;
+    h1, h2 { margin-bottom: 0 }
+  }
+  .card {
+    min-height: auto;
+  }
+  .card-body {
+    padding: 3.2rem;
+    p {
+      margin: 0;
+    }
+  }
+  .card-footer {
+    flex-flow: row;
+    background: white;
+    border-top: solid 1px $hue-disabled;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow: hidden;
+    a {
+      text-decoration: underline;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    span {
+      color: transparent;
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      flex-flow: row;
+      &::after {
+        background: $hue-disabled;
+        content: "";
+        display: inline-flex;
+        width: .1rem;
+        margin: -3.2rem auto;
+      }
+    }
+  }
+}
+
+#support {
+  padding-bottom: 9rem;
+}
+
+.ccs-btn-primary {
+  padding: 0 4.0rem;
+  border-radius: 3.2rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  min-height: 3.6rem;
+}
+.ccs-form-feild {
+  max-width: none;
+  display: flex;
+  flex-flow: column;
+  min-height: 6.4rem;
+  position: relative;
+  label {
+    padding: 1.4rem 1.6rem 0;
+    font-size: 1rem;
+    color: $hue-muted;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: .04em;
+    word-spacing: .06em;
+    position: absolute;
+    z-index: 9;
+  }
+  input {
+    padding: 3.2rem 1.6rem 1.3rem;
+    margin: 0;
+    font-weight: 600;
+    border: solid 1px $hue-line;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    &:focus {
+      outline: none;
+    }
+  }
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset
+  }
+}
+
+.form {
+  max-width: 800px !important;
+  margin: auto;
+  .row {
+    margin-bottom: 2.4rem;
+  }
+}
+@include screen($max: $small-screen) {
+  .form .sm-6 + .sm-6 {
+    padding-top: 2.4rem;
+  }
+}
+@include screen($min: $small-screen) {
+  .form {
+    .col {
+      padding-right: 1.6rem;
+      padding-left: 1.6rem;
+      &.sm-12 {
+        padding: 0;
+      }
+    }
+    .col:first-child {
+      padding-left: 0;
+    }
+    .col:last-child {
+      padding-right: 0;
+    }
+  }
+}
+
+
+
+
+
