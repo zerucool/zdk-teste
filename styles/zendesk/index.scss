@@ -65,7 +65,7 @@ body {
   display: flex;
   height: .5rem;
   justify-content: center;
-  margin: 0 0.4rem 2rem 0;
+  margin: 2rem 3rem;
   padding: 2.5rem;
   right: 0;
   text-decoration: none;
@@ -110,10 +110,11 @@ body {
 .ccs-doc-content {
   position: relative;
   a {
+    color: $hue-azure;
     text-decoration: none;
     &:hover {
       text-decoration: underline;
-      color: $hue-dark;
+      //color: $hue-primary;
     }
   }
   p {
@@ -364,7 +365,8 @@ body {
 @include screen($min: $small-screen) { // DESKTOP
   #AppTop {
     position: fixed;
-    margin: 0 37.5rem 3rem 0;
+    top: calc(100vh - 100px);
+    right: calc(50vw - 340px);
   }
   #AppDrawer, #AppNavToggle {
     display: none;
@@ -392,7 +394,7 @@ body {
 @include screen($max: $small-screen) { // MOBILE
   #AppTop {
     position: fixed;
-    margin-right: 2rem;
+    //margin-right: 2rem;
   }
   #AppNav, #AppFooter, #AppActions .ccs-btn-contact {
     display: none;

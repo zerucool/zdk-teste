@@ -1,9 +1,9 @@
 
 <section id="TemplateArticle" class="ccs-doc-page">
   <article class="ccs-doc-content">
-    
+
     <nav class="ccs-doc-path" aria-label="breadcrumbs">{{breadcrumbs}}</nav>
-    
+
     <header class="ccs-doc-header">
       <h1 class="ccs-doc-heading{{#if article.internal}} internal{{/if}}">{{article.title}}</h1>
       {{#if settings.show_article_author}}
@@ -14,11 +14,11 @@
       </div>
       {{/if}}
     </header>
-  
-    
+
+
     <div class="ccs-doc-body">
       {{article.body}}
-      
+
       {{#if attachments}}
       <div class="ccs-doc-attachments">
         <ul class="ccs-doc-list">
@@ -51,7 +51,6 @@
       <small><p class="ccs-doc-questions">{{request_callout}}</p></small>
       <br>
     </footer>
-    <a id="AppTop" class="ccs-btn-top" aria-label="jump" href="#top"></a>
   </article>
 </section>
 
@@ -68,12 +67,12 @@
     {{#if section.more_articles}}<br><a href="{{section.url}}" class="ccs-btn-subtle" role="button">{{t 'see_more'}}</a>{{/if}}
     </section>
   {{/if}}
-  
-  
+
+
   {{#if settings.show_recently_viewed_articles}}
     {{recent_articles}}
   {{/if}}
-    
+
 
   {{#if settings.show_related_articles}}
     {{related_articles}}
@@ -81,4 +80,4 @@
 
 </aside>
 
-
+<a id="AppTop" class="ccs-btn-top" aria-label="jump" href="#top"></a>

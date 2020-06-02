@@ -9,12 +9,13 @@
     display: inline;
   }
 
-  a {
+  li > a {
     display: inline-block;
     text-align: center;
     padding: 1.36rem 0;
     font-size: 1.3rem;
     text-decoration: none;
+    color: $hue-text;
     &:hover {
       text-decoration: underline !important;
       color: $hue-dark;
