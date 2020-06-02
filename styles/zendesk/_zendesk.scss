@@ -65,7 +65,7 @@
   }
 }
 
-.ccs-btn-previous { 
+.ccs-btn-previous {
   padding-left: 3.2rem;
   &::after {
     content: 'keyboard_backspace';
@@ -74,7 +74,7 @@
   }
 }
 
-.ccs-btn-next { 
+.ccs-btn-next {
   padding-right: 3.2rem;
   &::after {
     content: 'keyboard_backspace';
@@ -143,7 +143,7 @@
   @media screen and (max-width: $xsmall-screen) {
     margin: auto -1.4rem auto .4rem !important;
   }
-  &::after { 
+  &::after {
     content: 'search';
     font-size: $icon-medium;
     color: white;
@@ -183,11 +183,12 @@
 }
 
 .recent-activity-item-parent, .recent-activity-item-link {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   //font-weight: $font-semibold;
   position: relative;
   display: inline-flex;
   align-items: center;
+  line-height: 2.6rem;
 }
 
 .recent-activity-item-parent::after {
@@ -215,8 +216,8 @@ summary {
   &:hover {
     background: rgba($hue-soft, $opacity-soften);
   }
-  + div { 
-    padding: 0 .8rem 2.4rem 1.6rem; 
+  + div {
+    padding: 0 .8rem 2.4rem 1.6rem;
   }
 }
 
@@ -307,13 +308,10 @@ zd-autocomplete {
       border-bottom: none;
     }
   }
-  zd-autocomplete-breadcrumbs-multibrand { 
+  zd-autocomplete-breadcrumbs-multibrand {
     padding-top: .8rem;
   }
   zd-autocomplete-title-multibrand {
     color: $hue-azure;
   }
 }
-
-
- 

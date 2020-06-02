@@ -52,24 +52,20 @@
         text-decoration: none;
       }
     }
-    strong {
-      font-weight: $font-heavy;
-    }
     h1 {
       font-size: 4.0rem;
       line-height: 1.1;
-      font-weight: $font-heavy;
+      letter-spacing: -0.008em;
       margin: 1.6rem 0;
+      font-weight: 900;
     }
     h2, h3, h4 {
       font-size: 2.4rem;
-      font-weight: $font-heavy;
       line-height: 1.2;
       margin: 1.6rem 0;
     }
     h5, h6 {
       font-size: 1.6rem;
-      font-weight: $font-heavy;
       line-height: 1.3;
       margin: 1.6rem 0;
     }
@@ -129,7 +125,7 @@
       .col:last-child {
         padding-right: 0;
       }
-    }    
+    }
   }
 }
 
@@ -142,11 +138,11 @@
     .visual + .text {
       padding-top: 1.6rem;;
       padding-bottom: 3.2rem;
-    }  
+    }
   }
 }
 
-@include screen($max: $medium-screen, $min: $small-screen) { 
+@include screen($max: $medium-screen, $min: $small-screen) {
   [class^='block']:not([id='overview']) {
     .row {
       .col {
@@ -242,7 +238,7 @@
   padding: 0 3.2rem;
   border-radius: 30px;
   font-size: 1.5rem;
-  font-weight: $font-semibold;
+  font-weight: $font-bold;
   min-height: 3.6rem;
   color: white;
 }

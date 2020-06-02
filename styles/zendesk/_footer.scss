@@ -2,6 +2,7 @@
   font-size: $font-base;
   background-color: $drawer-color;
   color: $drawer-text;
+  font-weight: bold;
   .inner {
     @include wrapper;
     @include center;

@@ -1,5 +1,5 @@
 #AppDrawer {
-  font-size: 1.3rem; 
+  font-size: 1.3rem;
   background-color: $drawer-color;
   color: $drawer-text;
   display: none;
@@ -21,7 +21,6 @@
       height: 32px;
       padding: 0 1.36rem;
       align-items: center;
-      font-weight: $font-medium;
     }
     p {
       line-height: 1.3;
@@ -31,7 +30,6 @@
       text-decoration: none;
       &.active {
         background: #162534;
-        font-weight: $font-semibold;
       }
     }
     &.bottom {

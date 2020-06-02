@@ -6,11 +6,10 @@
   padding: 0; margin: 0;
   @include scrollbar;
   ul,  ol {
-    display: inline; 
+    display: inline;
   }
-  
+
   a {
-    color: $hue-dark;
     display: inline-block;
     text-align: center;
     padding: 1.36rem 0;
@@ -18,6 +17,7 @@
     text-decoration: none;
     &:hover {
       text-decoration: underline !important;
+      color: $hue-dark;
     }
   }
 
@@ -36,7 +36,7 @@
       color: $hue-muted;
       opacity: $opacity-fade;
     }
-    &.active > a, &.active > a:hover {
+    &.active > a {
       color: $hue-muted;
     }
     &:last-child {
@@ -51,6 +51,3 @@
   }
 
 }
-
-
-

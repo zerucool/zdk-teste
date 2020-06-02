@@ -38,7 +38,7 @@
     color: white;
     font-size: 3.2rem;
     -webkit-font-smoothing: antialiased;
-    font-weight: $font-heavy;
+    //font-weight: $font-heavy;
     @include screen($max: $small-screen) {
       font-size: 2.4rem;
     }
@@ -86,13 +86,16 @@
       flex: 1;
       border-radius: inherit;
       text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
     }
     .ccs-block-title {
       @include ellipsis(1);
       align-self: center;
       font-size: .875rem;
       font-size: 1.4rem;
-      font-weight: $font-bold;
+      //font-weight: $font-bold;
       line-height: 2rem;
       margin: 0;
       padding-left: 1.6rem;
@@ -107,4 +110,3 @@
 // @include screen($min: $small-screen) { // DESKTOP }
 // @include screen($max: $small-screen) { // TABLET }
 // @include screen($max: $xsmall-screen) { // PHONE }
-

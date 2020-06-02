@@ -64,21 +64,22 @@
   min-height: 6.4rem;
   img {
     max-height: 4rem;
-  }  
+  }
 }
 
 #AppProduct {
+  -webkit-font-smoothing: antialiased;
   font-size: $font-large;
   align-items: center;
   color: rgba($header-title, .8);
-  font-weight: $font-bold;
-  letter-spacing: 0.02em;
-  word-spacing:0.04em;
+  font-weight: $font-heavy;
+  //letter-spacing: 0.02em;
+  //word-spacing:0.04em;
   min-width: 1%;
   span {
     @include ellipsis(1);
     flex: 1;
-    color: transparent;
+    //color: transparent;
   }
   &::before {
     background: $header-text;
@@ -109,4 +110,3 @@
     display: flex;
   }
 }
-

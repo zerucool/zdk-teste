@@ -38,9 +38,9 @@ h4,
 h5,
 h6 {
   font-family: $body-font, sans-serif;
-  font-weight: $font-bold;  
+  font-weight: $font-bold;
   color: $hue-dark;
-  font-size: $font-large;
+  font-size: 1.6rem;
 }
 
 a {
@@ -69,4 +69,3 @@ small {
 .text-right {
   text-align: right;
 }
-

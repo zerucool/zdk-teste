@@ -28,9 +28,8 @@
   // }
   a {
     align-items: center;
-    color: $hue-dark;
     display: inline-flex;
-    font-weight: $font-bold;
+    //font-weight: $font-bold;
     height: 5.6rem;
     overflow: visible;
     padding: 0 1.6rem;
@@ -45,9 +44,10 @@
   }
   a:hover {
     text-decoration: underline;
+    color: $hue-dark;
   }
   ul, ol, li {
-    display: inline; 
+    display: inline;
   }
   .active {
     color: $hue-azure;
