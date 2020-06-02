@@ -2,15 +2,15 @@
 
 <section id="TemplateSection" class="ccs-doc-page">
   <article class="ccs-doc-content">
-    
+
     <nav class="ccs-doc-path" aria-label="breadcrumbs">{{breadcrumbs}}</nav>
-    
+
     <header class="ccs-doc-header">
       <h1 class="ccs-doc-heading">{{section.name}}</h1>
       {{#if section.description}}<p class="ccs-doc-description">{{section.description}}</p>{{/if}}
     </header>
-  
-    <div class="row"> {{!!- было section-tree --}}
+
+    <div class="row">
     {{#if section.sections}}
       {{#each section.sections}}
         <div class="sm-12 md-6 lg-4 col" style="padding: 0 0 3.2rem">
@@ -32,15 +32,27 @@
         </div>
       {{/each}}
     {{/if}}
-    </div>
-    
+  </div>
+
+  <!--
+  {{#if section.sections}}
+   <ul class="ccs-section-list">
+     {{#each section.sections}}
+     <li><a href="{{url}}">{{name}}</a><i class="material-icons">chevron_right</i></li>
+     {{/each}}
+   </ul>
+   <br>
+  {{/if}}
+  -->
+
+
   </article>
-  
+
   {{pagination}}
 </section>
 
 <aside class="ccs-doc-nav" role="navigation">
-  
+
   {{#if section.articles}}
   <section class="ccs-doc-block">
     <p class="ccs-doc-title">{{t 'articles_in_section'}}</p>
@@ -52,11 +64,9 @@
   </section>
   {{else}}
   {{/if}}
-  
+
   {{#if settings.show_recently_viewed_articles}}
     {{recent_articles}}
-  {{/if}} 
-   
+  {{/if}}
+
 </aside>
-
-

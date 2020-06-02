@@ -1,57 +1,56 @@
+
+
 details, summary {
   outline: none;
 }
 
-summary {
-  display: block;
-  cursor: pointer;
+details {
+  //border: solid 1px $hue-line;
+  background: white;
+  padding: .8rem 1.6rem;
+  margin: .8rem auto;
+  border-radius: .3rem;
   transition: .3s;
-  border-bottom: 1px solid $hue-softer;
-  border-top: 1px solid $hue-softer;
-  margin-top: -1px;
-  user-select: none;
-  padding: .8rem .8rem .8rem 1.4rem;
-  &:hover {
-    background: rgba($hue-soft, $opacity-soften);
+  &[open] {
+    padding: .8rem 1.6rem;
+    //summary {
+    //  margin-bottom: .4rem;
+    //}
   }
-  + div { 
-    padding: 0 .8rem 2.4rem 1.6rem; 
+  summary {
+    font-weight: bold;
+    cursor: pointer;
+    margin: -.8rem -1.6rem;
+    padding: .8rem 1.6rem;
+    &:hover {
+      text-decoration: underline;
+    }
   }
-}
-
-details > div {
-  overflow: auto;
-  height: 100%;
-  user-select: none;
-}
-
-details > div > img {
-  max-width: 100%;
+  div {
+    overflow: auto;
+    height: 100%;
+  }
+  img {
+    max-width: 100%;
+  }
 }
 
 
 @media (min-width: 768px) {
-  details[open] > div > p {
-    opacity: 0;
-    animation-name: showContent;
-    animation-duration: 0.6s;
-    animation-delay: 0.2s;
-    animation-fill-mode: forwards;
-  }
 
-  details[open] > div {
-    animation-name: slideDown;
-    animation-duration: 0.3s;
-    animation-fill-mode: forwards;
-  }
-
-  details[open] > div > img {
-    opacity: 0;
-    height: 100%;
-    animation-name: showImage;
-    animation-duration: 0.3s;
-    animation-delay: 0.15s;
-    animation-fill-mode: forwards;
+  details[open] {
+    > div, p {
+      opacity: 0;
+      animation-name: showContent;
+      animation-duration: 0.6s;
+      //animation-delay: 0.2s;
+      animation-fill-mode: forwards;
+    }
+    > div {
+      animation-name: slideDown;
+      animation-duration: 0.3s;
+      animation-fill-mode: forwards;
+    }
   }
 }
 
