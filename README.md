@@ -1,5 +1,5 @@
-# Zendesk-Theme v1
+# Zendesk Theme
 
-Overview
+Our Product Help Center base theme utilizes a minimal standalone design. This is our first stable iteration it excludes the customer form community functionality. 
 
-This is the repository and documentation around our Help Centers. Here you can access a copy of the current theme applied to our New Support System. O
+Please contact Alexander Bakulin with questions or for details around updates.
