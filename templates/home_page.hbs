@@ -1,64 +1,112 @@
-<style> 
-  #AppActions .ccs-btn-search, #AppNav { display: none }
-  #AppLayout { min-height: calc(100vh - 4.0rem) }
-  #AppLayout main[role=main] { flex-direction: column; background: white; }
-  #AppPage { margin-top: 0 }
-  #AppPage .inner { max-width: 100% }
-  .ccs-doc-content, .ccs-hero-inner { margin: 0 auto; max-width: calc(1440px - 2rem); width: 100% }
-  .search { max-width: 480px; margin-left: 0 }
-  .ccs-doc-activity { margin: 0 1.6rem 3.2rem; }
-</style>
 
-<header id="TemplateHome" class="ccs-hero">
-  <div class="ccs-hero-inner">
-    <h1 class="ccs-hero-heading">How can we help?</h1>
-    {{search submit=false instant=settings.instant_search}}
+<h1 class="visibility-hidden">{{ help_center.name }}</h1>
+
+<section id="main-content" class="section hero">
+  <div class="hero-inner">
+    <h2>DataSource Knowledge Base</h2>
+    <div class="customer">
+      <p>Search our Help Center for quick answers</p>
+      {{search submit=false instant=settings.instant_search placeholder='Enter Keywords'}}
+    </div>
   </div>
-</header>
+</section>
 
-<section class="ccs-doc-page-full">
-  
-  <section class="ccs-doc-content">
-    <section class="ccs-doc-section">
-      <ul class="ccs-block-list">
-        {{#each categories}}
-          {{#if ../has_multiple_categories}}
-            <li><a href='{{url}}'><p class="ccs-doc-title">{{name}}</p></a></li>
-          {{else}}
-            {{#each sections}}
-              <li>
-                <a href='{{url}}'>
-                  {{#is id 360008463631}}<img class="ccs-glyph" src="{{asset 'icon-launch.svg'}}" />{{/is}}
-                  {{#is id 360008355672}}<img class="ccs-glyph" src="{{asset 'icon-reader.svg'}}" />{{/is}}
-                  {{#is id 360008355712}}<img class="ccs-glyph" src="{{asset 'icon-faqs.svg'}}" />{{/is}}
-                  {{#is id 360008463611}}<img class="ccs-glyph" src="{{asset 'icon-text.svg'}}" />{{/is}}
-                  {{#is id 360008355692}}<img class="ccs-glyph" src="{{asset 'icon-teacher.svg'}}" />{{/is}}
-                  <p class="ccs-block-title">{{name}}</p>
-                  <p class="ccs-block-desc">{{excerpt description}}</p>
-                </a>
-              </li>
-            {{/each}}
-          {{/if}}
+<div class="container">
+
+  <section class="anonymous">
+    <p>Please log to the Extranet to view this content. If you have a DataSource account but never used the Extranet you can register and representive will set your account up.</p><br>
+    <p><a href="http://extranet.cnetcontent.com" target="_blank" class="button button-primary"><span>Login</span></a><span>&nbsp;&nbsp;or&nbsp;&nbsp;</span><a href="http://cnetcontent.com/register" target="_blank" class="button button-secondary"><span>Register</span></a></p><br>
+    <p>Learn more about <a href="http://cnetcontent.com/datasource" target="_blank">DataSource</a> or <a href="http://cnetcontent.com/contact" target="_blank">contact a representive</a> for more details.</p><br>
+  </section>
+
+  <section class="customer" class="blocks">
+    <br>
+    <ul class="blocks-list">
+      {{#each categories}}
+        {{#if ../has_multiple_categories}}
+          <li class="blocks-item">
+            <a href='{{url}}' class="blocks-item-link">
+              <span class="blocks-item-title">{{name}}</span>
+              <span class="blocks-item-description">{{excerpt description}}</span>
+            </a>
+          </li>
+        {{else}}
+          {{#each sections}}
+            <li class="blocks-item">
+              {{#is id 360008463631}}<svg class="icon-launch"><use xlink:href="#icon-launch"/></svg>{{/is}}
+              {{#is id 360008355672}}<svg class="icon-reader"><use xlink:href="#icon-reader"/></svg>{{/is}}
+              {{#is id 360008355712}}<svg class="icon-faqs"><use xlink:href="#icon-faqs"/></svg>{{/is}}
+              {{#is id 360008463611}}<svg class="icon-text"><use xlink:href="#icon-text"/></svg>{{/is}}
+              {{#is id 360008355692}}<svg class="icon-teacher"><use xlink:href="#icon-teacher"/></svg>{{/is}}
+              <a href='{{url}}' class="blocks-item-link">
+                <span class="blocks-item-title">
+                  {{name}}
+                </span>
+                <span class="blocks-item-description">{{excerpt description}}</span>
+              </a>
+            </li>
+          {{/each}}
+          <li class="blocks-item">
+            <svg class="icon-video"><use xlink:href="#icon-video"/></svg>
+            <a href="javascript:void(0)" class="blocks-item-link">
+              <span class="blocks-item-title">Training Videos</span>
+            </a>
+          <li>
+        {{/if}}
+      {{/each}}
+    </ul>
+    {{pagination}}
+  </section>
+
+  {{#if promoted_articles}}
+    <section class="customer" class="articles">
+      <h2 class="section-header">{{t 'promoted_articles'}}</h2>
+      <ul class="article-list promoted-articles">
+        {{#each promoted_articles}}
+          <li class="promoted-articles-item">
+              <a href="{{url}}">
+                {{title}}
+                {{#if internal}}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16" class="icon-lock" title="{{t 'internal'}}">
+                    <rect width="12" height="9" x="2" y="7" fill="currentColor" rx="1" ry="1"/>
+                    <path fill="none" stroke="currentColor" d="M4.5 7.5V4a3.5 3.5 0 017 0v3.5"/>
+                  </svg>
+                {{/if}}
+              </a>
+          </li>
         {{/each}}
       </ul>
-      {{pagination}}
     </section>
-    
-    {{#if settings.show_recent_activity}}
-      <section class="ccs-doc-activity">
-        {{recent_activity}}
-      </section>
-    {{/if}}
-    
-    {{#if promoted_articles}}
-      <section class="ccs-doc-articles">
-        <h2 class="ccs-doc-title">{{t 'promoted_articles'}}</h2>
-        <ul class="ccs-doc-list">
-          {{#each promoted_articles}}<li><a href="{{url}}" {{#if internal}}class="internal"{{/if}}>{{title}}</a></li>{{/each}}
-        </ul>
-      </section>
-    {{/if}}
-  
-  </div>
+  {{/if}}
+
+  {{#if settings.show_recent_activity}}
+  <section class="customer" class="section home-section activity">
+    {{recent_activity}}
+  </section>
+  {{/if}}
+
 </div>
 
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="icon-faqs" viewBox="0 0 24 20">
+    <path fill="currentColor" d="M0 0v2h2V0H0zm4 0v2h20V0H4zM0 5v2h2V5H0zm4 0v2h20V5H4zm-4 8v2h2v-2H0zm4 0v2h20v-2H4zm-4 5v2h2v-2H0zm4 0v2h20v-2H4z"/>
+  </symbol>
+  <symbol id="icon-launch" viewBox="0 0 27 26">
+    <path fill="currentColor" d="M23.906 0c-.695 0-1.664.031-2.687.125-2.047.191-4.41.535-5.875 2-1.23 1.23-3.774 4.496-6.125 7.563-.465.605-.446.593-.875 1.156l-1.719-.094a3.982 3.982 0 00-3.313 1.469L1.22 14.78.187 16.094l1.625.312 3.282.657 3.843 3.843.657 3.282.344 1.625 1.28-1.032 2.563-2.093a3.982 3.982 0 001.469-3.313l-.094-1.688c.582-.44.563-.43 1.188-.906 3.074-2.355 6.351-4.883 7.562-6.093 1.453-1.454 1.778-3.852 1.969-5.907.191-2.054.094-3.812.094-3.812l-.032-.906-.906-.032S24.601 0 23.906 0zM23 2c.398 0 .68.023.969.031.011.582.035 1.188-.094 2.563-.176 1.894-.754 4.004-1.406 4.656-.89.89-4.282 3.59-7.344 5.938a1031.119 1031.119 0 01-5.156 3.937l-3.063-3.063c.41-.55 1.813-2.464 3.875-5.156 2.344-3.054 5.051-6.457 5.969-7.375.684-.683 2.77-1.261 4.656-1.437A18.28 18.28 0 0123 2zm-4.563 3.531c-1.117 0-2 .914-2 2.032 0 1.117.883 2.03 2 2.03a2.037 2.037 0 002.032-2.03 2.037 2.037 0 00-2.032-2.032zM6.5 12.75l.375.031c-.602.797-1.586 2.074-1.719 2.25l-1.343-.281 1.03-1.25a2.002 2.002 0 011.657-.75zm-2.281 5.188c-.856.855-1.344 2.039-1.688 3.03-.344.993-.5 1.813-.5 1.813L1.72 24.25l1.468-.281s.797-.137 1.782-.469c.984-.332 2.168-.824 3.062-1.719l-1.406-1.406c-.445.445-1.328.836-2.125 1.125.305-.832.75-1.777 1.125-2.156L4.22 17.937zm9 1.187l.031.375a1.965 1.965 0 01-.719 1.656l-1.281 1.032-.281-1.344c.176-.13 1.453-1.121 2.25-1.719z"/>
+  </symbol>
+  <symbol id="icon-reader" viewBox="0 0 28 24">
+    <path fill="currentColor" d="M14 0c-3.3 0-6 2.7-6 6 0 1.008.246 1.945.688 2.781A28.076 28.076 0 002 8H.719l3.5 14H5c3.406 0 5.5.488 6.719.938.61.226.996.449 1.219.593.222.145.25.157.25.157l.28.312h1.063l.281-.313s.028-.011.25-.156c.223-.144.61-.367 1.22-.593C17.5 22.488 19.593 22 23 22h.781l3.5-14H26c-2.629 0-4.848.316-6.656.75A5.91 5.91 0 0020 6c0-3.3-2.7-6-6-6zm0 2c2.223 0 4 1.777 4 4s-1.777 4-4 4-4-1.777-4-4 1.777-4 4-4zM3.312 10.125c3.11.152 5.649.691 7.313 1.313 1.34.5 2 .886 2.375 1.124v8.75c-.18-.082-.344-.167-.563-.25-1.351-.5-3.57-.921-6.656-1l-2.468-9.937zm21.375 0l-2.468 9.938c-3.086.078-5.305.5-6.657 1-.218.082-.382.167-.562.25v-8.75c.375-.243 1.031-.633 2.344-1.126 1.652-.62 4.195-1.16 7.343-1.312z"/>
+  </symbol>
+  <symbol id="icon-search" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+  </symbol>
+  <symbol id="icon-teacher" viewBox="0 0 26 20">
+    <path fill="currentColor" d="M0 0v2h22v16H8v2h18v-2h-2V0H0zm4.002 3A4.016 4.016 0 000 7c0 2.199 1.804 4 4.002 4A4.014 4.014 0 008 7c0-2.197-1.802-4-3.998-4zM10 4v2h5V4h-5zm7 0v2h3V4h-3zM4.002 5C5.116 5 6 5.883 6 7c0 1.12-.883 2-1.998 2C2.882 9 2 8.12 2 7c0-1.117.883-2 2.002-2zM10 8v2h10V8H10zM0 12v8h2v-6h3v6h2v-5.342l2.064 1.092c.585.31 1.288.309 1.872 0v.002l3.53-1.867-.933-1.77-3.531 1.867-3.096-1.634A3.005 3.005 0 005.504 12H0z"/>
+  </symbol>
+  <symbol id="icon-text" viewBox="0 0 26 18">
+    <path fill="currentColor" d="M0 0v2h26V0H0zm0 4v2h18V4H0zm0 4v2h26V8H0zm0 4v2h18v-2H0zm0 4v2h26v-2H0z"/>
+  </symbol>
+  <symbol id="icon-video" viewBox="0 0 28 16">
+    <path fill="currentColor" d="M0 0v16h22v-3.375l6 3V.375l-6 3V0H0zm2 2h18v12H2V2zm24 1.625v8.75l-4-2v-4.75l4-2z"/>
+  </symbol>
+</svg>

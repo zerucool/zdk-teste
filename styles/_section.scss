@@ -1,0 +1,100 @@
+/***** Section pages *****/
+.section {
+
+  &-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &-content {
+    @include desktop {
+      flex: 1 1 100%;
+    }
+    flex: 1;
+  }
+
+  &-subscribe button {
+    //@extend .button;
+    &[data-selected="true"] {
+      //@extend .button-primary;
+    }
+  }
+
+}
+
+.section-list {
+  margin: 2.4rem 0 4.8rem;
+  border: 2px solid $divider-color;
+  border-radius: 1.6rem;
+}
+
+.section-list--collapsed .section-list-item:nth-child(1n + 6) {
+  display: none;
+}
+
+li.section-list-item {
+  border-top: 2px solid $divider-color;
+  font-size: 1.6rem;
+  padding: .8rem 2.4rem;
+  font-weight: 500;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+
+  &:first-child {
+    border: none !important;
+  }
+
+  &::after {
+    font-family: Material Icons;
+    content: "chevron_right";
+    margin-left: 2rem;
+    font-size: 24px;
+    vertical-align: middle;
+  }
+
+  a {
+    align-items: center;
+    color: $dark-color;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    &:hover {
+      color: $brand_color;
+      text-decoration: underline;
+    }
+  }
+
+}
+
+.see-all-sections-trigger {
+  @include tablet { width: auto; }
+  @include button-base;
+  border-top: 2px solid $divider-color;
+  font-size: 1.6rem;
+  padding: 1.6rem 2.4rem;
+  font-weight: 500;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  outline: none;
+  &:hover {
+    --btn-hue-fill: #E5EEFC;
+    --btn-hue-label: $brand_color;
+    a {
+      text-decoration: none;
+    }
+  }
+  a {
+    color: inherit;
+  }
+
+  &[aria-hidden="true"] {
+    display: none;
+  }
+
+}

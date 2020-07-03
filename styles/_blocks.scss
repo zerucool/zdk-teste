@@ -1,0 +1,128 @@
+/***** Blocks *****/
+.blocks {
+
+  &-header {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: $dark-color;
+    text-align: center;
+    margin: 3.2rem 0 5.6rem;
+    position: relative;
+    &::after {
+      content: "";
+      display: block;
+      width: 36px;
+      height: 3px;
+      background-color: $brand_color;
+      position: absolute;
+      left: 50%;
+      margin-left: -1.8rem;
+      bottom: -1.8rem;
+    }
+  }
+
+  &-list {
+    @include tablet {
+      margin: 0 -15px;
+    }
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    list-style: none;
+    padding: 0;
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 24px;
+  }
+
+  &-item {
+    @include tablet {
+      margin: 0 15px 3rem;
+    }
+    background: white;
+    flex-direction: column;
+    box-shadow: 0 0 0 2px $divider-color;
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: flex;
+    flex: 1 0 240px;
+    margin: 0 0 3rem;
+    max-width: 100%;
+    text-align: center;
+    padding: 4.8rem 1.6rem 3.2rem;
+    color: $text_color;
+
+    svg {
+      max-width: 3.2rem;
+      max-height: 3.2rem;
+      color: $muted-color;
+      margin: auto;
+    }
+
+
+    &:hover {
+      svg, a {
+        color: $brand_color;
+      }
+    }
+
+
+    // &:hover {
+    //   box-shadow: 0 0 0 2px $brand_color;
+    // }
+
+    &-internal {
+      background-color: transparent;
+      border: 1px solid $border-color;
+
+      .icon-lock {
+        height: 15px;
+        width: 15px;
+        bottom: 5px;
+        position: relative;
+      }
+
+    }
+  }
+
+  &-item-link {
+    color: $dark-color;
+    border-radius: inherit;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    padding: 12px;
+    padding: 2rem 3rem;
+    font-weight: 500;
+
+
+    &:hover,
+    &:active {
+      color: $brand_color;
+
+      //text-decoration: none;
+      //background: #E7F3FB;
+    }
+
+    //&:focus {
+    //  //@include focus-ring;
+    //  text-decoration: none;
+    //}
+  }
+
+  &-item-title {
+    margin-bottom: 0;
+    font-size: 1.8rem;
+  }
+
+  &-item-description {
+    font-weight: $font-weight-light;
+    margin: 0;
+  }
+
+  &-item-description:not(:empty) {
+    margin-top: 1rem;
+  }
+}

@@ -1,38 +1,14 @@
-<a id="top" name="top"></a>
-<div id="AppLayout">
-
-  <aside id="AppOverlay" class="overlay">
-    <div class="inner">
-      <a id="SearchClose" class="ccs-btn-close" href="javascript:void(0)" title="close">×</a>
-      {{search submit=true instant=settings.instant_search placeholder='Keyword or Phrase'}}
+<a class="skip-navigation" tabindex="1" href="#main-content">{{t 'skip_navigation' }}</a>
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">
+      {{#link 'help_center'}}
+        <img src="{{asset 'content-solutions-dark.svg'}}" alt="Extranet Help Center">
+      {{/link}}
+      <span>Extranet Help</span>
     </div>
-  </aside>
-
-  <section id="AppHeader">
-    <header class="inner">
-      <div id="AppBranding">
-        <button id="AppNavToggle" onclick="toggleDrawer()"></button>
-        <a id="AppLogo" href="/hc/en-us"><img src="{{asset 'content-solutions-dark.svg'}}" /></a>
-        <p id="AppProduct"><span>Extranet Help</span></p>
-      </div>
-      <div id="AppActions">
-        {{#link 'new_request' class='ccs-btn-contact'}}Contact Support{{/link}}
-        <a id="SearchOpen" href="javascript:void(0)" class="ccs-btn-search"></a>
-      </div>
-    </header>
-  </section>
-
-  <section id="AppNav">
-    <nav class="inner">
-      <a href="/hc/en-us/sections/360008463631-Quick-Start-Guide"><img class="ccs-glyph" src="{{asset 'icon-launch.svg'}}" />Quick Start Guide</a>
-      <a href="/hc/en-us/sections/360008355672-Documentation"><img class="ccs-glyph" src="{{asset 'icon-reader.svg'}}" /> Documentation</a>
-      <a href="/hc/en-us/sections/360008463611-Release-Notes"><img class="ccs-glyph" src="{{asset 'icon-text.svg'}}" /> Release Notes</a>
-      <a href="/hc/en-us/sections/360008355692-Technical-Bulletin"><img class="ccs-glyph" src="{{asset 'icon-teacher.svg'}}" /> Technical Bulletin</a>
-      <a href="/hc/en-us/sections/360008355712-FAQ"><img class="ccs-glyph" src="{{asset 'icon-faqs.svg'}}" /> FAQs</a>
-    </nav>
-  </section>
-
-  <section id="AppPage">
-  <a href="#content" tabindex="1" style="display:none">{{t 'skip_navigation' }}</a>
-  <div class="inner">
-
+    <div class="nav-wrapper">
+      <a class="new-request" href="/hc/en-us/requests/new">Contact Us</a>
+    </div>
+  </div>
+</header>

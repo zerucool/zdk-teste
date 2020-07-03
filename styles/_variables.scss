@@ -1,0 +1,109 @@
+// Variables
+
+// Colors
+$brand_color: #0161cd !default;
+$brand_text_color: #fff !default; // Color for text with an accent color background
+$text_color: #374957 !default;
+$link_color: $brand_color !default;
+$background_color: white !default; // #eef0f1
+
+$visited-link-color: darken($link_color, 20%);
+$hover-button-color: darken($brand_color, 20%);
+$secondary-text-color: lighten($text_color, 20%);
+$muted-color: #777;
+
+$primary-shade: darken($background_color, 3%); // #f8f8f8 for the default background_color
+$secondary-shade: darken($background_color, 5%); // #f2f2f2 for the default background_color
+
+$font-size-base: 1.6rem;
+$font-size-bigger: 2.4rem;
+$font-size-navigation: 1.4rem;
+$font-size-small: 1.2rem;
+$font-size-smaller: 1rem;
+
+$border-color: rgba(0, 0, 0, 0.2);
+$divider-color: rgba(0, 0, 0, 0.1);
+$button-color: $brand_color;
+$dark-color: rgba(0, 0, 0, 0.9);
+
+$input-font-size: 1.4rem;
+$field-text-color: $muted-color;
+$field-text-focus-color: $brand_color;
+
+// Breakpoints variables
+$tablet-width: 768px;
+$desktop-width: 1024px;
+$max-width-container: 1024px;
+
+// Fonts
+$heading_font: 'lato', sans-serif !default;
+$text_font: 'lato', sans-serif !default;
+$code_font: 'roboto mono' monospace !default;
+$font-weight-base: 500;
+$font-weight-light: 400;
+$font-weight-semibold: 700;
+
+:root {
+  --btn-hue-label: #{$dark-color};
+  --btn-hue-fill: #E5E5E5;
+  --btn-height: 3.8rem;
+  --btn-padding: 2.4rem;
+  --btn-font-size: 1.4rem;
+  --btn-font-weight: 700;
+  --btn-radius: 4rem;
+
+
+  --color-black: rgb(0, 0, 0);
+  --color-green-100: rgb(237, 248, 244);
+  --color-green-200: rgb(209, 232, 223);
+  --color-green-300: rgb(174, 207, 194);
+  --color-green-400: rgb(94, 174, 145);
+  --color-green-500: rgb(34, 143, 103);
+  --color-green-600: rgb(3, 129, 83);
+  --color-green-700: rgb(24, 97, 70);
+  --color-green-800: rgb(11, 59, 41);
+  --color-grey-100: rgb(248, 249, 249);
+  --color-grey-200: rgb(233, 235, 237);
+  --color-grey-300: rgb(216, 220, 222);
+  --color-grey-400: rgb(194, 200, 204);
+  --color-grey-500: rgb(135, 146, 157);
+  --color-grey-600: rgb(104, 115, 125);
+  --color-grey-700: rgb(73, 84, 92);
+  --color-grey-800: rgb(47, 57, 65);
+  --color-blue-100: rgb(237, 247, 255);
+  --color-blue-200: rgb(206, 226, 242);
+  --color-blue-300: rgb(173, 204, 228);
+  --color-blue-400: rgb(82, 147, 199);
+  --color-blue-500: rgb(51, 127, 189);
+  --color-blue-600: rgb(31, 115, 183);
+  --color-blue-700: rgb(20, 74, 117);
+  --color-blue-800: rgb(15, 53, 84);
+  --color-kale-100: rgb(245, 251, 252);
+  --color-kale-200: rgb(193, 214, 217);
+  --color-kale-300: rgb(129, 154, 158);
+  --color-kale-400: rgb(86, 119, 122);
+  --color-kale-500: rgb(51, 93, 99);
+  --color-kale-600: rgb(4, 68, 77);
+  --color-kale-700: rgb(3, 54, 61);
+  --color-kale-800: rgb(1, 43, 48);
+  --color-red-100: rgb(255, 240, 241);
+  --color-red-200: rgb(245, 213, 216);
+  --color-red-300: rgb(245, 181, 186);
+  --color-red-400: rgb(227, 91, 102);
+  --color-red-500: rgb(217, 63, 76);
+  --color-red-600: rgb(204, 51, 64);
+  --color-red-700: rgb(140, 35, 44);
+  --color-red-800: rgb(104, 18, 25);
+  --color-yellow-100: rgb(255, 248, 237);
+  --color-yellow-200: rgb(255, 240, 219);
+  --color-yellow-300: rgb(252, 219, 169);
+  --color-yellow-400: rgb(255, 182, 72);
+  --color-yellow-500: rgb(245, 161, 51);
+  --color-yellow-600: rgb(237, 150, 28);
+  --color-yellow-700: rgb(173, 94, 24);
+  --color-yellow-800: rgb(112, 59, 21);
+  --color-white: rgb(255, 255, 255);
+
+}
+
+// #bbcee0

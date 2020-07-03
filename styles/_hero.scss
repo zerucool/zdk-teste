@@ -1,0 +1,82 @@
+/***** Hero component *****/
+.hero {
+  background-image: url('assets/hero-desktop-light.jpg');
+  background-position: 50% 20%;
+  background-size: cover;
+  height: 248px;
+  padding: 0 2rem;
+  position: relative;
+  text-align: center;
+  font-weight: 600;
+  width: 100%;
+  @include tablet {
+    height: 288px;
+  }
+  &:before {
+    // background-image: linear-gradient(90deg, rgb(1, 43, 145) 0%, rgb(2, 108, 223) 50%, rgb(0, 41, 141) 100%);
+    // background-color: rgb(2, 108, 223);
+    bottom: 0;
+    content: "";
+    left: 0;
+    opacity: .64;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+  }
+  h2 {
+    font-weight: 800;
+    font-size: 3.2rem;
+    margin: 0;
+    color: black;
+    text-align: center;
+    text-shadow: 0 0 25px rgba(white, 0.25);
+    padding-top: 1.6rem;
+  }
+  p {
+    color: rgba(black, 0.50);
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-shadow: 0 0 12.5px rgba(white, 0.125);
+  }
+  &-inner {
+    @include vertical-align;
+    max-width: $desktop-width;
+    margin: 0 auto;
+    z-index: 10;
+  }
+  .search {
+    padding: 1.6rem 0 2.4rem;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    max-width: 55.4rem;
+    margin: auto;
+    &::before {
+      z-index: 10;
+      font-family: Material Icons;
+      content: "search";
+      font-size: 24px;
+      color: #666;
+      font-weight: 400;
+      position: absolute;
+      left: 1.6rem;
+      padding-top: .6rem;
+    }
+
+    input[type="search"] {
+      border-radius: 3rem;
+      border: none;
+      padding-left: 5.6rem;
+      font-size: 1.7rem;
+      font-weight: 500;
+      width: 100%;
+      line-height: 4.8rem;
+      height: 4.8rem;
+      &:focus {
+        color: $field-text-focus-color;
+        font-weight: 600;
+      }
+    }
+  }
+}

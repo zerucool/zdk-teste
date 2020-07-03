@@ -1,0 +1,37 @@
+/***** Breadcrumbs *****/
+.breadcrumbs {
+  @include tablet {
+    margin: 0;
+  }
+
+  margin: 0 0 1.6rem 0;
+  padding: 0;
+
+  li {
+    color: $muted-color;
+    display: inline;
+    font-size: 1.6rem;
+    max-width: 450px;
+    min-height: 5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    + li::before {
+      font-weight: 400;
+      color: $muted-color;
+      font-family: Material Icons;
+      content: "chevron_right";
+      font-size: 2.4rem;
+      vertical-align: middle;
+      margin: 0 .4rem;
+      min-height: 5rem;
+    }
+    
+    a:hover {
+      color: $link_color;
+      text-decoration: underline;
+      font-weight: 500;
+    }
+
+  }
+}

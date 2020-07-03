@@ -1,72 +1,57 @@
+<div class="container section-page">
+  <nav class="sub-nav">
+    {{breadcrumbs}}
+  </nav>
+
+  <div class="section-container">
+    <section id="main-content" class="section-content">
+      <header class="page-header">
+        <h1>{{section.name}}</h1>
+        {{#if settings.show_follow_section}}
+          <div class="section-subscribe">{{subscribe}}</div>
+        {{/if}}
+        {{#if section.description}}
+          <p class="page-header-description">{{section.description}}</p>
+        {{/if}}
+      </header>
 
 
-<section id="TemplateSection" class="ccs-doc-page">
-  <article class="ccs-doc-content">
+      {{#if section.articles}}
+        <ul class="article-list">
+          {{#each section.articles}}
+            <li class="article-list-item {{#if promoted}} article-promoted{{/if}}">
+              {{#if promoted}}
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 12 12" class="icon-star" title="{{t 'promoted'}}">
+                  <path fill="currentColor" d="M2.88 11.73c-.19 0-.39-.06-.55-.18a.938.938 0 01-.37-1.01l.8-3L.35 5.57a.938.938 0 01-.3-1.03c.12-.37.45-.63.85-.65L4 3.73 5.12.83c.14-.37.49-.61.88-.61s.74.24.88.6L8 3.73l3.11.17a.946.946 0 01.55 1.68L9.24 7.53l.8 3a.95.95 0 01-1.43 1.04L6 9.88l-2.61 1.69c-.16.1-.34.16-.51.16z"/>
+                </svg>
+              {{/if}}
+              <a href="{{url}}" class="article-list-link">{{title}}</a>
+              {{#if internal}}
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16" class="icon-lock" title="{{t 'internal'}}">
+                  <rect width="12" height="9" x="2" y="7" fill="currentColor" rx="1" ry="1"/>
+                  <path fill="none" stroke="currentColor" d="M4.5 7.5V4a3.5 3.5 0 017 0v3.5"/>
+                </svg>
+              {{/if}}
+            </li>
+          {{/each}}
+        </ul>
+        {{else}}
+        {{#if section.sections}}
+          <ul class="section-list">
+            {{#each section.sections}}
+            <li class="section-list-item">
+                <a href="{{url}}">
+                  <span>{{name}}</span>
+                </a>
+              </li>
+            {{/each}}
+            <a tabindex="0" class="see-all-sections-trigger" aria-hidden="true" id="see-all-sections-trigger" title="{{t 'see_all_sections'}}">{{t 'see_all_sections'}}</a>
+          </ul>
+        {{/if}}
+      {{/if}}
 
-    <nav class="ccs-doc-path" aria-label="breadcrumbs">{{breadcrumbs}}</nav>
+      {{pagination}}
 
-    <header class="ccs-doc-header">
-      <h1 class="ccs-doc-heading">{{section.name}}</h1>
-      {{#if section.description}}<p class="ccs-doc-description">{{section.description}}</p>{{/if}}
-    </header>
-
-    <div class="row">
-    {{#if section.sections}}
-      {{#each section.sections}}
-        <div class="sm-12 md-6 lg-4 col" style="padding: 0 0 3.2rem">
-          <h3>{{name}}</h3>
-          {{#if articles}}
-            <ul>
-              {{#each articles}}
-                <li class="{{#if promoted}}promoted{{/if}}">
-                  <a href="{{url}}" class="{{#if internal}}internal{{/if}}">{{title}}</a>
-                </li>
-              {{/each}}
-            </ul>
-          {{#if more_articles}}
-            <br><a href="{{url}}" class="ccs-btn-subtle">{{t 'show_all_articles' count=article_count}}</a>
-            {{else}}
-            <br><a href="{{url}}" class="ccs-btn-subtle">View Section</a>
-          {{/if}}
-          {{/if}}
-        </div>
-      {{/each}}
-    {{/if}}
+    </section>
   </div>
-
-  <!--
-  {{#if section.sections}}
-   <ul class="ccs-section-list">
-     {{#each section.sections}}
-     <li><a href="{{url}}">{{name}}</a><i class="material-icons">chevron_right</i></li>
-     {{/each}}
-   </ul>
-   <br>
-  {{/if}}
-  -->
-
-
-  </article>
-
-  {{pagination}}
-</section>
-
-<aside class="ccs-doc-nav" role="navigation">
-
-  {{#if section.articles}}
-  <section class="ccs-doc-block">
-    <p class="ccs-doc-title">{{t 'articles_in_section'}}</p>
-    <nav>
-      {{#each section.articles}}
-      <a href="{{url}}" {{#if promoted}}class="promoted"{{/if}}>{{title}}</a>
-      {{/each}}
-    </nav>
-  </section>
-  {{else}}
-  {{/if}}
-
-  {{#if settings.show_recently_viewed_articles}}
-    {{recent_articles}}
-  {{/if}}
-
-</aside>
+</div>

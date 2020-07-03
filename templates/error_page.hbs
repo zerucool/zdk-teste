@@ -1,30 +1,14 @@
-
-
-<section id="AppError" class="ccs-doc-page-full">
-  <article class="ccs-doc-content">
-    <header class="ccs-doc-header">
-      <h1 class="ccs-doc-heading">{{t 'oops'}}</h1>
-    </header>
-    <div class="ccs-doc-body">
-      {{#is error 'unauthorized'}}
-        <p >{{link 'sign_in'}}</p><br>
-        <img src="{{asset 'error-403-locked.svg'}}" />
-      {{/is}}
-
-      {{#is error 'forbidden'}}
-        <p>{{t 'not_authorized'}}</p><br>
-        <img src="{{asset 'error-500-mistake.svg'}}" />
-      {{/is}}
-
-      {{#is error 'not_found'}}
-        <p>{{t 'nonexistent_page'}}</p>
-        <p>{{t 'mistyped_address_or_moved_page'}}</p><br>
-        <img src="{{asset 'error-404-missing.svg'}}" />
-      {{/is}}
-
-      {{#link 'help_center'}}
-        <p>{{t 'back_to_homepage'}}</p>
-      {{/link}}
-    </div>
-  </article>
-</section>
+<div class="error-page" id="main-content">
+  <h1>{{t 'oops'}}</h1>{{#is error 'unauthorized'}}
+    <p>{{link 'sign_in'}} <br /></p><img src="{{asset 'error-403-locked.svg'}}" />
+  {{/is}}
+  {{#is error 'forbidden'}}
+    <p>{{t 'not_authorized'}} <br /></p><img src="{{asset 'error-500-mistake.svg'}}" />
+  {{/is}}
+  {{#is error 'not_found'}}
+    <p>{{t 'nonexistent_page'}} <br /></p>
+    <p>{{t 'mistyped_address_or_moved_page'}} <br /></p><img src="{{asset 'error-404-missing.svg'}}" />
+  {{/is}}
+  {{#link 'help_center'}}
+  <p>{{t 'back_to_homepage'}} <br /></p>{{/link}}
+</div>
