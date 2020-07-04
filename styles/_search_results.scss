@@ -108,7 +108,7 @@
     @include desktop { display: flex; }
     align-items: center;
     clear: both;
-    color: #666;
+    color: var(--color-grey-500);
 
     > li {
       display: block;

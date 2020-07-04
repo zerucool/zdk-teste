@@ -24,7 +24,7 @@
 
 .section-list {
   margin: 2.4rem 0 4.8rem;
-  border: 2px solid $divider-color;
+  border: 2px solid var(--color-grey-300);
   border-radius: 1.6rem;
 }
 
@@ -33,13 +33,14 @@
 }
 
 li.section-list-item {
-  border-top: 2px solid $divider-color;
+  border-top: 2px solid var(--color-grey-300);
   font-size: 1.6rem;
   padding: .8rem 2.4rem;
   font-weight: 500;
   position: relative;
   display: flex;
   justify-content: space-between;
+  color: var(--color-grey-400);
 
   &:first-child {
     border: none !important;
@@ -51,13 +52,14 @@ li.section-list-item {
     margin-left: 2rem;
     font-size: 24px;
     vertical-align: middle;
+    color: inherit;
   }
 
   a {
     align-items: center;
     color: $dark-color;
-    display: flex;
-    justify-content: space-between;
+    display: inline-flex;
+    //justify-content: space-between;
     font-weight: 600;
     &:hover {
       color: $brand_color;
@@ -69,25 +71,16 @@ li.section-list-item {
 
 .see-all-sections-trigger {
   @include tablet { width: auto; }
-  @include button-base;
-  border-top: 2px solid $divider-color;
-  font-size: 1.6rem;
+  @include button-base(initial);
+  border-top: 2px solid var(--color-grey-300);
   padding: 1.6rem 2.4rem;
-  font-weight: 500;
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
-  cursor: pointer;
-  outline: none;
+  display: block;
+  text-align: center;
+  color: $brand_color;
   &:hover {
     --btn-hue-fill: #E5EEFC;
     --btn-hue-label: $brand_color;
-    a {
-      text-decoration: none;
-    }
+    text-decoration: underline;
   }
   a {
     color: inherit;

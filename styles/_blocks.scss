@@ -42,7 +42,7 @@
     }
     background: white;
     flex-direction: column;
-    box-shadow: 0 0 0 2px $divider-color;
+    box-shadow: 0 0 0 2px var(--color-grey-300);
     border-radius: 4px;
     box-sizing: border-box;
     display: flex;
@@ -51,12 +51,12 @@
     max-width: 100%;
     text-align: center;
     padding: 4.8rem 1.6rem 3.2rem;
-    color: $text_color;
+    color: var(--color-grey-700);
 
     svg {
       max-width: 3.2rem;
       max-height: 3.2rem;
-      color: $muted-color;
+      color: var(--color-grey-500);
       margin: auto;
     }
 

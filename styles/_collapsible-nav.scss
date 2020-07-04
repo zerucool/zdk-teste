@@ -83,12 +83,12 @@
       }
     }
 
-    color: $text_color;
+    color: var(--color-grey-700);
     line-height: 40rem;
     order: 1; // All elements have the same order
 
     a {
-      color: $text_color;
+      color: var(--color-grey-700);
       display: block;
       font-size: 1.6rem
     }
@@ -123,14 +123,14 @@
   li.current {
     @include tablet {
       // border-bottom: 4px solid $brand_color;
-      box-shadow: 0 2px 0 $text_color;
+      box-shadow: 0 2px 0 var(--color-grey-700);
       order: 1;
     }
 
     order: 0; //Move to top of menu
     position: relative;
 
-    a { color: $text_color; }
+    a { color: var(--color-grey-700); }
   }
 }
 

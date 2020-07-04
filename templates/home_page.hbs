@@ -13,13 +13,13 @@
 
 <div class="container">
 
-  <section class="anonymous">
+  <section class="anonymous message">
     <p>Please log to the Extranet to view this content. If you have a DataSource account but never used the Extranet you can register and representive will set your account up.</p><br>
     <p><a href="http://extranet.cnetcontent.com" target="_blank" class="button button-primary"><span>Login</span></a><span>&nbsp;&nbsp;or&nbsp;&nbsp;</span><a href="http://cnetcontent.com/register" target="_blank" class="button button-secondary"><span>Register</span></a></p><br>
     <p>Learn more about <a href="http://cnetcontent.com/datasource" target="_blank">DataSource</a> or <a href="http://cnetcontent.com/contact" target="_blank">contact a representive</a> for more details.</p><br>
   </section>
 
-  <section class="customer" class="blocks">
+  <section class="customer blocks">
     <br>
     <ul class="blocks-list">
       {{#each categories}}
@@ -59,7 +59,7 @@
   </section>
 
   {{#if promoted_articles}}
-    <section class="customer" class="articles">
+    <section class="customer articles">
       <h2 class="section-header">{{t 'promoted_articles'}}</h2>
       <ul class="article-list promoted-articles">
         {{#each promoted_articles}}
@@ -80,7 +80,7 @@
   {{/if}}
 
   {{#if settings.show_recent_activity}}
-  <section class="customer" class="section home-section activity">
+  <section class="customer section home-section activity">
     {{recent_activity}}
   </section>
   {{/if}}

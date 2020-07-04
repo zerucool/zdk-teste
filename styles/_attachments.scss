@@ -9,7 +9,7 @@
     &:last-child { margin-bottom: 0; }
 
     .attachment-icon {
-      color: $text_color;
+      color: var(--color-grey-700);
       left: 0;
       position: absolute;
       top: 5px;

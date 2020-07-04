@@ -12,9 +12,7 @@
   @include tablet {
     height: 288px;
   }
-  &:before {
-    // background-image: linear-gradient(90deg, rgb(1, 43, 145) 0%, rgb(2, 108, 223) 50%, rgb(0, 41, 141) 100%);
-    // background-color: rgb(2, 108, 223);
+  &:after {
     bottom: 0;
     content: "";
     left: 0;
@@ -23,6 +21,7 @@
     right: 0;
     top: 0;
     z-index: 1;
+    background: var(--color-grey-100);
   }
   h2 {
     font-weight: 800;
@@ -31,13 +30,14 @@
     color: black;
     text-align: center;
     text-shadow: 0 0 25px rgba(white, 0.25);
-    padding-top: 1.6rem;
+    padding-top: 2.4rem;
+    display: block;
   }
   p {
-    color: rgba(black, 0.50);
-    font-size: 1.8rem;
-    font-weight: 600;
+    font-size: 1.6rem;
+    font-weight: 500;
     text-shadow: 0 0 12.5px rgba(white, 0.125);
+    margin-bottom: 0;
   }
   &-inner {
     @include vertical-align;
@@ -52,12 +52,14 @@
     justify-content: space-around;
     max-width: 55.4rem;
     margin: auto;
+    filter: drop-shadow(0 0 0.72rem var(--color-grey-200));
+
     &::before {
       z-index: 10;
       font-family: Material Icons;
       content: "search";
       font-size: 24px;
-      color: #666;
+      color: var(--color-grey-500);
       font-weight: 400;
       position: absolute;
       left: 1.6rem;

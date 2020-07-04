@@ -3,14 +3,12 @@
 // Colors
 $brand_color: #0161cd !default;
 $brand_text_color: #fff !default; // Color for text with an accent color background
-$text_color: #374957 !default;
 $link_color: $brand_color !default;
 $background_color: white !default; // #eef0f1
 
 $visited-link-color: darken($link_color, 20%);
 $hover-button-color: darken($brand_color, 20%);
-$secondary-text-color: lighten($text_color, 20%);
-$muted-color: #777;
+$secondary-text-color: lighten(#49545C, 20%);
 
 $primary-shade: darken($background_color, 3%); // #f8f8f8 for the default background_color
 $secondary-shade: darken($background_color, 5%); // #f2f2f2 for the default background_color
@@ -21,13 +19,12 @@ $font-size-navigation: 1.4rem;
 $font-size-small: 1.2rem;
 $font-size-smaller: 1rem;
 
-$border-color: rgba(0, 0, 0, 0.2);
-$divider-color: rgba(0, 0, 0, 0.1);
+$border-color: var(--color-grey-300);
 $button-color: $brand_color;
-$dark-color: rgba(0, 0, 0, 0.9);
+$dark-color: var(--color-black);
 
 $input-font-size: 1.4rem;
-$field-text-color: $muted-color;
+$field-text-color: var(--color-grey-500);
 $field-text-focus-color: $brand_color;
 
 // Breakpoints variables
@@ -45,7 +42,7 @@ $font-weight-semibold: 700;
 
 :root {
   --btn-hue-label: #{$dark-color};
-  --btn-hue-fill: #E5E5E5;
+  --btn-hue-fill: var(--color-grey-200);
   --btn-height: 3.8rem;
   --btn-padding: 2.4rem;
   --btn-font-size: 1.4rem;

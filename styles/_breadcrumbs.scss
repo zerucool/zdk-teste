@@ -8,7 +8,7 @@
   padding: 0;
 
   li {
-    color: $muted-color;
+    color: var(--color-grey-400);
     display: inline;
     font-size: 1.6rem;
     max-width: 450px;
@@ -18,7 +18,7 @@
 
     + li::before {
       font-weight: 400;
-      color: $muted-color;
+      color: inherit;
       font-family: Material Icons;
       content: "chevron_right";
       font-size: 2.4rem;
@@ -26,7 +26,7 @@
       margin: 0 .4rem;
       min-height: 5rem;
     }
-    
+
     a:hover {
       color: $link_color;
       text-decoration: underline;

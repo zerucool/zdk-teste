@@ -21,14 +21,14 @@
 
   &-inner {
     @include max-width-container;
-    @include desktop {
+    @include tablet {
       display: flex;
       justify-content: space-between;
     }
   }
 
   p {
-    @include desktop {
+    @include tablet {
       display: inline-flex;
       justify-content: space-evenly;
       line-height: 1;

@@ -6,7 +6,7 @@
 
 body {
   background-color: $background_color;
-  color: $text_color;
+  color: var(--color-grey-700);
   font-family: $text_font;
   font-size: $font-size-base;
   font-weight: $font-weight-base;

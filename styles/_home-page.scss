@@ -8,7 +8,6 @@
   + .section {
     padding-top: 0;
   }
-  // margin-bottom: 4rem;
   &-header {
     font-size: 2.4rem;
     font-weight: 800;
@@ -28,6 +27,13 @@
       bottom: -1.8rem;
     }
   }
+}
+
+.anonymous.message {
+  display: block;
+  text-align: center;
+  max-width: 640px;
+  margin: auto;
 }
 
 
@@ -59,7 +65,7 @@
       display: block;
       border-bottom: 1px solid $border-color;
       padding: 15px 0;
-      color: $text_color;
+      color: var(--color-grey-700);
     }
 
     .icon-lock {

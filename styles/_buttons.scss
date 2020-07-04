@@ -1,7 +1,7 @@
 /***** Buttons *****/
 
 
-@mixin button-base {
+@mixin button-base($case:uppercase) {
   @include ripple($color: currentColor);
   -webkit-touch-callout: none;
   align-items: center;
@@ -9,12 +9,13 @@
   display: inline-flex;
   justify-content: center;
   line-height: 1;
+  outline: none;
   text-decoration: none;
+  text-transform: $case;
   transition: background-color .12s ease-in-out, border-color .12s ease-in-out, color .15s ease-in-out;
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
-  text-transform: uppercase;
 }
 
 .button, input[type="submit"] {
@@ -28,8 +29,8 @@
   padding: 0 var(--btn-padding);
   @include button-base;
   &:hover {
-    --btn-hue-fill: #E5EEFC;
-    --btn-hue-label: #{$brand_color};
+    --btn-hue-fill: var(--color-grey-300);
+    --btn-hue-label: inherit;
   }
   &.button-primary {
     --btn-hue-fill: #{$brand_color};
@@ -38,8 +39,8 @@
   }
   &[data-disabled], &[disabled] {
     cursor: default;
-    --btn-hue-fill: #ddd;
-    --btn-hue-label: #999;
+    --btn-hue-fill: var(--color-grey-200);
+    --btn-hue-label: var(--color-grey-400);
     &::before {
       color: transparent;
     }

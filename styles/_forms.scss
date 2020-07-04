@@ -14,7 +14,7 @@
   padding: 1.4rem 1.6rem;
   border-width: 2px;
   border-style: solid;
-  border-color: $divider-color;
+  border-color: var(--color-grey-300);
   border-radius: 4px;
 
 
@@ -32,7 +32,7 @@
    pointer-events: none;
    font-size: 1.2rem;
    font-weight: 700;
-   color: $muted-color;
+   color: var(--color-grey-500);
    padding: 0 0 .8rem;
    text-transform: uppercase;
    letter-spacing: .01em;
@@ -42,7 +42,7 @@
     border: none;
     margin: -1px;
     padding: 0;
-    color: $text_color;
+    color: var(--color-grey-700);
     font-size: 1.8rem;
     font-weight: 500;
     border-radius: 2px;
