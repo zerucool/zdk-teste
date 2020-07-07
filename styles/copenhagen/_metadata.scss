@@ -9,7 +9,7 @@
 
 .meta-data {
 
-  @include tag(#{var(--color-grey-700)});
+  @include tag(#{var(--color-grey-500)});
   display: inline-flex;
   align-items: center;
   vertical-align: middle;

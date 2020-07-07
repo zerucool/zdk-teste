@@ -12,12 +12,14 @@
 
     &-item {
       border-top: 2px solid var(--color-grey-300);
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       padding: .8rem 2.4rem;
+      min-height: 4.8rem;
       font-weight: var(--font-weight-medium);
       position: relative;
       display: flex;
-      justify-content: space-between;
+      align-items: center;
+
       color: var(--color-grey-500);
 
 
@@ -32,6 +34,8 @@
         font-size: 24px;
         vertical-align: middle;
         color: var(--color-grey-400);
+        position: absolute;
+        right: 1.6rem;
       }
 
       a {
@@ -46,8 +50,14 @@
           color: var(--color-blue-500);
           text-decoration: underline;
         }
-      }
 
+      }
+      .material-icons {
+        font-size: 1.8rem;
+        margin: 0 0.8rem;
+        align-self: center;
+        color: var(--color-grey-400);
+      }
     }
   }
 }

@@ -1,7 +1,7 @@
 /***** Buttons *****/
 
 
-@mixin button-base($case:uppercase) {
+@mixin button-base($case:none) {
   @include ripple($color: currentColor);
   -webkit-touch-callout: none;
   align-items: center;

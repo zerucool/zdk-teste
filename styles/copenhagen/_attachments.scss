@@ -18,7 +18,6 @@
       a {
         font-weight: var(--font-weight-bold);
         color: var(--color-black);
-        text-decoration: underline;
       }
       a:hover {
         color: var(--color-blue-500);
@@ -36,6 +35,10 @@
       font-family: $glyph_icon;
       margin-right: 1.6rem;
       text-decoration: none;
+    }
+
+    .meta-group {
+      a { text-decoration: none; }
     }
 
     [dir="rtl"] & {

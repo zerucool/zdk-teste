@@ -97,13 +97,13 @@
     justify-content: center;
     padding: 2rem 3rem;
     font-weight: var(--font-weight-semibold);
+    text-decoration: none;
 
 
     &:hover,
     &:active {
       color: var(--color-blue-500);
-
-      //text-decoration: none;
+      text-decoration: underline;
       //background: #E7F3FB;
     }
 
