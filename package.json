@@ -1,6 +1,6 @@
 {
-  "name": "Zendesk",
-  "version": "0.0.2",
+  "name": "Base Theme",
+  "version": "0.2.5",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/CNETContentSolutions/Zendesk-Theme.git"
