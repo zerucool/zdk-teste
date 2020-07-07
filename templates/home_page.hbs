@@ -1,25 +1,28 @@
 
-<h1 class="visibility-hidden">{{ help_center.name }}</h1>
-
-<section id="main-content" class="section hero">
+<section class="hero">
+  <img class="banner" src="{{asset 'hero-desktop-warm.jpg'}}">
   <div class="hero-inner">
     <h2>DataSource Knowledge Base</h2>
+    <p class="anonymous">Please log into the <a href="http://extranet.cnetcontent.com" target="_blank">Extranet</a> to view this content.</p>
     <div class="customer">
       <p>Search our Help Center for quick answers</p>
       {{search submit=false instant=settings.instant_search placeholder='Enter Keywords'}}
     </div>
   </div>
+  <style> .header::before { opacity: .4 !important; background: black } </style>
 </section>
 
-<div class="container">
-
-  <section class="anonymous message">
-    <p>Please log to the Extranet to view this content. If you have a DataSource account but never used the Extranet you can register and representive will set your account up.</p><br>
+<section class="anonymous container">
+  <div class="message">
+    <p>If you have a DataSource account but have never used the Extranet, please register and a representive will help you set up your account.</p><br>
     <p><a href="http://extranet.cnetcontent.com" target="_blank" class="button button-primary"><span>Login</span></a><span>&nbsp;&nbsp;or&nbsp;&nbsp;</span><a href="http://cnetcontent.com/register" target="_blank" class="button button-secondary"><span>Register</span></a></p><br>
     <p>Learn more about <a href="http://cnetcontent.com/datasource" target="_blank">DataSource</a> or <a href="http://cnetcontent.com/contact" target="_blank">contact a representive</a> for more details.</p><br>
-  </section>
+  </div>
+</section>
 
-  <section class="customer blocks">
+<section class="customer container">
+
+  <div class="blocks">
     <br>
     <ul class="blocks-list">
       {{#each categories}}
@@ -56,11 +59,11 @@
       {{/each}}
     </ul>
     {{pagination}}
-  </section>
+  </div>
 
   {{#if promoted_articles}}
-    <section class="customer articles">
-      <h2 class="section-header">{{t 'promoted_articles'}}</h2>
+    <div class="articles">
+      <h2 class="section-header bline">{{t 'promoted_articles'}}</h2>
       <ul class="article-list promoted-articles">
         {{#each promoted_articles}}
           <li class="promoted-articles-item">
@@ -76,16 +79,16 @@
           </li>
         {{/each}}
       </ul>
-    </section>
+    </div>
   {{/if}}
 
   {{#if settings.show_recent_activity}}
-  <section class="customer section home-section activity">
+  <div class="section home-section activity">
     {{recent_activity}}
-  </section>
+  </div>
   {{/if}}
 
-</div>
+</section>
 
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
   <symbol id="icon-faqs" viewBox="0 0 24 20">

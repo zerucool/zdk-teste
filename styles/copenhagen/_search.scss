@@ -1,0 +1,57 @@
+/***** Search field *****/
+.search {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  &::before {
+    font-family: $glyph_icon;
+    content: "search";
+    padding-top: .3rem;
+    margin-right: -4rem;
+    font-size: 24px;
+    color: var(--color-grey-500);
+  }
+
+  input[type="search"] {
+    border-radius: 3rem;
+    border: 2px solid $border-color;
+    padding: 0 2.4rem 0 4.8rem;
+    font-size: 1.6rem;
+    height: 4rem;
+    font-weight: var(--font-weight-medium);
+    &:focus {
+      color: $field-text-focus-color;
+      font-weight: 600;
+    }
+
+    [dir="rtl"] & {
+      padding-right: 40px;
+      padding-left: 2rem;
+    }
+
+  }
+
+  &-full input[type="search"] {
+    border: 1px solid #fff;
+  }
+}
+
+.search-icon {
+  @include vertical-align;
+  position: absolute;
+  left: 15px;
+  z-index: 1;
+  width: 18px;
+  height: 18px;
+  color: #777;
+
+  [dir="rtl"] & {
+    right: 15px;
+    left: auto;
+  }
+}
+
+.search-container {
+  position: relative;
+}

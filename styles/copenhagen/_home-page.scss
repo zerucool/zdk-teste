@@ -1,0 +1,108 @@
+/***** Homepage *****/
+
+.section {
+  //@include tablet {
+  //
+  //}
+  margin-bottom: 4rem;
+  + .section {
+    padding-top: 0;
+  }
+  &-header {
+    font-size: 2.4rem;
+    font-weight: var(--font-weight-heavy);
+    color: var(--color-black);
+    text-align: center;
+    margin: 0 0 4.8rem;
+    position: relative;
+  }
+}
+
+.bline {
+  &::after {
+    content: "";
+    display: block;
+    width: 36px;
+    height: 3px;
+    background-color: var(--color-blue-500);
+    position: absolute;
+    left: 50%;
+    margin-left: -1.8rem;
+    bottom: -1.8rem;
+  }
+}
+
+.message {
+  display: block;
+  text-align: center;
+  max-width: 640px;
+  margin: auto;
+}
+
+
+/***** Promoted articles *****/
+
+.promoted-articles {
+  @include desktop { flex-direction: row; }
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  &-item {
+    @include desktop {
+      align-self: flex-end;
+      flex: 0 0 auto;
+      padding-right: 3rem;
+      width: 33%; /* Three columns on desktop */
+
+      [dir="rtl"] & { padding: 0 0 0 3rem; }
+    }
+
+    flex: 1 0 auto;
+
+    &:nth-child(3n) {
+      padding-right: 0;
+    }
+
+    a {
+      display: block;
+      border-bottom: 1px solid $border-color;
+      padding: 15px 0;
+      color: var(--color-grey-700);
+    }
+
+    .icon-lock {
+      vertical-align: baseline;
+    }
+
+    &:last-child a {
+
+      @include desktop {
+        border-bottom: 1px solid $border-color;
+      }
+
+      border: 0;
+    }
+  }
+
+}
+
+/***** Community section in homepage *****/
+.community {
+  text-align: center;
+
+  &-image {
+    min-height: 300px;
+    background-image: url('../assets/jumbotron.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    max-width: 100%;
+  }
+
+}
+
+.community,
+.activity {
+  //border-top: 1px solid $border-color;
+  padding: 3rem 0;
+}

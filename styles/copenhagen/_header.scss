@@ -1,0 +1,213 @@
+/***** Header *****/
+$header-height: 80px;
+
+.header {
+  background-color: transparent;
+  //background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.05));
+  //border-bottom: solid 2px rgba(255,255,255,.01);
+  position: relative;
+  margin-bottom: calc(#{$header-height} * -1);
+  z-index: 3;
+  width: 100%;
+  &::before {
+    background-color: var(--color-blue-600);
+    bottom: 0;
+    content: "";
+    left: 0;
+    //opacity: .6;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+  }
+
+
+  &-inner {
+    position: relative;
+    align-items: center;
+    display: flex;
+    min-height: $header-height;
+    justify-content: space-between;
+    @include max-width-container;
+    z-index: 10;
+    position: relative;
+  }
+
+}
+.logo {
+  display: flex;
+  align-items: center;
+  @include tablet {
+    img {
+      max-height: 40px;
+      margin-top: .4rem;
+    }
+    span {
+      display: flex;
+      align-items: center;
+      color: white;
+      font-weight: var(--font-weight-heavy);
+      font-size: 2rem;
+      font-kerning: none;
+      letter-spacing: .02em;
+      word-spacing: .1em;
+      line-height: 1;
+      &::before {
+        background: white;
+        content: ' ';
+        display: flex;
+        height: 4rem;
+        margin: auto 3.2rem;
+        opacity: .3;
+        width: .2rem;
+      }
+    }
+  }
+}
+
+.user-nav {
+  @include tablet { position: relative; }
+  display: inline-block;
+  position: absolute;
+  white-space: nowrap;
+
+  &[aria-expanded="true"] {
+    background-color: #fff;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, .15), 0 4px 10px 0 rgba(0, 0, 0, .1);
+    border: solid 1px #ddd;
+    right: 0;
+    left: 0;
+    top: $header-height;
+    z-index: 1;
+
+    > a {
+      display: block;
+      margin: 2rem;
+    }
+  }
+}
+
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  border: 0;
+  color: var(--color-blue-500);
+  padding: 0 2rem 0 0;
+  width: auto;
+
+  a {
+    @include tablet {
+      display: inline-block;
+    }
+
+    [dir="rtl"] & { padding: 0 0 0 2rem;}
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: transparent;
+      color: white;
+      text-decoration: underline;
+    }
+
+    &.sign-in, &.new-request {
+      display: inline-flex;
+      font-size: 1.6rem;
+      font-weight: var(--font-weight-bold);
+      color: #FFF;
+      text-decoration: none;
+      margin-left: 3.2rem;
+
+      .font-icon {
+        margin-right: .8rem;
+        margin-left: 1.6rem;
+        opacity: .9;
+      }
+
+    }
+
+    &.new-request {
+      background: rgba(0,0,0,.05);
+      border: solid 2px rgba(255, 255, 255, 0.3);
+      padding: 0 2.4rem;
+      border-radius: 30px;
+      font-weight: var(--font-weight-bold);
+      color: #fff;
+      line-height: 3.4rem;
+    }
+  }
+
+  .my-account {
+    font-size: 1.6rem;
+    font-weight: var(--font-weight-bold);
+    color: #FFF;
+    text-decoration: none;
+  }
+
+  .menu-button {
+    @include tablet { display: none; }
+    background: none;
+    border: 0;
+    color: var(--color-blue-500);
+    display: inline-block;
+    margin-right: 10px;
+    padding: 0;
+    width: auto;
+
+    .icon-menu {
+      vertical-align: middle;
+      width: 13px;
+      height: 13px;
+    }
+
+    [dir="rtl"] & {
+      margin-left: 10px;
+      margin-right: 0;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: transparent;
+      color: var(--color-blue-500);
+    }
+  }
+}
+
+.skip-navigation {
+  align-items: center;
+  background-color: var(--color-black);
+  color: white;
+  display: flex;
+  font-size: 1.4rem;
+  justify-content: center;
+  left: -999px;
+  margin: 2rem;
+  padding: 2rem;
+  overflow: hidden;
+  position: absolute;
+  top: auto;
+  z-index: -999;
+
+
+  [dir="rtl"] & {
+    left: initial;
+    right: -999px;
+  }
+
+  &:focus,
+  &:active {
+    left: auto;
+    overflow: auto;
+    text-align: center;
+    text-decoration: none;
+    top: auto;
+    z-index: 999;
+
+
+  [dir="rtl"] & {
+    left: initial;
+    right: auto;
+  }
+  }
+}

@@ -1,0 +1,133 @@
+
+/***** Base *****/
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+    background: var(--color-blue-100);
+}
+
+body {
+  background-color: $background_color;
+  color: var(--color-grey-700);
+  font-family: $text_font;
+  font-size: $font-size-base;
+  font-weight: var(--font-weight-medium);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+
+  > main {
+    word-spacing: .06em;
+    @include desktop {
+      min-height: 65vh;
+    }
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading_font;
+  font-weight: var(--font-weight-medium);
+  margin: .8rem 0;
+  font-kerning: none;
+  letter-spacing: .01em;
+  word-spacing: .05em;
+}
+
+h1, h2 { font-size: 2.4rem; font-weight: var(--font-weight-heavy); color: var(--color-black); }
+h3 {
+  font-size: 1.8rem;
+  font-weight: var(--font-weight-bold);
+}
+
+h4 { font-size: 1.8rem; }
+
+a {
+  color: var(--color-blue-500)
+  &:visited {
+    color: rebeccapurple;
+  }
+}
+
+// input,
+// textarea {
+//   color: #000;
+//   font-size: $input-font-size;
+// }
+
+// input {
+//   font-weight: var(--font-weight-normal);
+//   max-width: 100%;
+//   box-sizing: border-box;
+//   transition: border .12s ease-in-out;
+//
+//   &:not([type="checkbox"]) {
+//     outline: none;
+//
+//     &:focus {
+//       border-color: $border-color;
+//     }
+//   }
+// }
+
+// input[disabled] {
+//   background-color: #ddd;
+// }
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7' viewBox='0 0 11 7'%3E%3Cpath fill='%23666' d='M0 0h10L5 6 0 0z'/%3E%3C/svg%3E%0A") no-repeat #fff;
+  background-position: right 13px center;
+  border: 1px solid $border-color;
+  border-radius: 4px;
+  padding: 8px 3rem 8px 13px;
+  outline: none;
+  color: $field-text-focus-color;
+  width: 100%;
+  font-weight: var(--font-weight-medium);
+
+  &:focus {
+    border: 1px solid var(--color-blue-500);
+  }
+
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+// textarea {
+//   //border: 1px solid $border-color;
+//   border-radius: 2px;
+//   resize: vertical;
+//   width: 100%;
+//   outline: none;
+//   padding: 10px;
+//
+//   //&:focus {
+//   //  border: 1px solid var(--color-blue-500);
+//   //}
+// }
+
+.container {
+  @include max-width-container;
+}
+
+.container-divider {
+  border-top: 2px solid $border-color;
+  margin-bottom: 2rem;
+}
+
+.error-page {
+  @include max-width-container;
+}
+
+.visibility-hidden {
+  @include visually-hidden;
+}
+
+.visibility-tablet {
+  @include mobile {
+    @include visually-hidden;
+  }
+}

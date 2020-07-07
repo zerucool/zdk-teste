@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.getElementsByTagName("html")[0].className += " js";</script>
+  <link rel="stylesheet" href="css/style.css">
+  <link id="codyframe" rel="stylesheet" href="css/style.css">
+  <!-- browsers not supporting CSS variables -->
+  <script>
+    if(!('CSS' in window) || !CSS.supports('color', 'var(--color-var)')) {var cfStyle = document.getElementById('codyframe');if(cfStyle) {var href = cfStyle.getAttribute('href');href = href.replace('style.css', 'style-fallback.css');cfStyle.setAttribute('href', href);}}
+  </script>
+  <title>Title</title>
+</head>
+<body>
+<script src="js/util.js"></script>
+
+
+<div class="padding-lg">
+  <div class="margin-bottom-lg">
+   <h4 class="margin-bottom-sm">Themes</h4>
+
+   <div class="flex flex-wrap gap-xxs">
+    <button class="btn">Basic</button>
+    <button class="btn btn--primary">Primary</button>
+    <button class="btn btn--subtle">Subtle</button>
+    <button class="btn btn--accent">Accent</button>
+   </div>
+  </div>
+
+  <div class="margin-bottom-lg">
+   <h4 class="margin-bottom-sm">Feedback</h4>
+   <button class="btn btn--disabled">Disabled</button>
+  </div>
+
+  <div>
+   <h4 class="margin-bottom-sm">Sizes</h4>
+   <div class="flex flex-wrap gap-xxs items-center">
+    <div><button class="btn btn--primary btn--sm">Button sm</button></div>
+    <div><button class="btn btn--primary">Button</button></div>
+    <div><button class="btn btn--primary btn--md">Button md</button></div>
+    <div><button class="btn btn--primary btn--lg">Button lg</button></div>
+   </div>
+  </div>
+ </div>
