@@ -27,12 +27,12 @@
     <ul class="blocks-list">
       {{#each categories}}
         {{#if ../has_multiple_categories}}
-          <li class="blocks-item">
-            <a href='{{url}}' class="blocks-item-link">
+          <!-- li class="blocks-item">
+            <a class="blocks-item-link" href='{{url}}'>
               <span class="blocks-item-title">{{name}}</span>
               <span class="blocks-item-description">{{excerpt description}}</span>
             </a>
-          </li>
+          </li -->
         {{else}}
           {{#each sections}}
             <li class="blocks-item">
@@ -41,10 +41,8 @@
               {{#is id 360008355712}}<svg class="icon-faqs"><use xlink:href="#icon-faqs"/></svg>{{/is}}
               {{#is id 360008463611}}<svg class="icon-text"><use xlink:href="#icon-text"/></svg>{{/is}}
               {{#is id 360008355692}}<svg class="icon-teacher"><use xlink:href="#icon-teacher"/></svg>{{/is}}
-              <a href='{{url}}' class="blocks-item-link">
-                <span class="blocks-item-title">
-                  {{name}}
-                </span>
+              <a class="blocks-item-link" href='{{url}}'>
+                <span class="blocks-item-title">{{name}}</span>
                 <span class="blocks-item-description">{{excerpt description}}</span>
               </a>
             </li>
@@ -67,8 +65,8 @@
       <ul class="article-list promoted-articles">
         {{#each promoted_articles}}
           <li class="promoted-articles-item">
-              <a href="{{url}}">{{title}}</a>
-              {{#if internal}}<i class="material-icons">lock</i>{{/if}}
+            <a href="{{url}}">{{title}}</a>
+            {{#if internal}}<i class="material-icons">lock</i>{{/if}}
           </li>
         {{/each}}
       </ul>

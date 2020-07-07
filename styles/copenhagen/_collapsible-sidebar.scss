@@ -2,13 +2,17 @@
 .collapsible-sidebar {
 
     border: solid 2px var(--color-grey-300);
-    border-radius: .5rem;
     padding: .75rem;
     cursor: pointer;
+    border-radius: .5rem;
+
+    .sidenav-item a {
+      padding: .4rem 0;
+    }
 
   @include desktop {
     border: none;
-    border-radius: .5rem;
+    border-radius: .25rem;
     padding: 0;
     cursor: default;
   }
@@ -20,41 +24,41 @@
   position: relative;
 
   ul {
-    padding-left: 0;
+    list-style: disc;
+    padding: .8em 0 0 2.4rem;
+    margin: 0 auto 1.6rem;
+    display: flex;
+    flex-flow: column;
 
     li {
-      display: flex;
+      list-style-position: inside;
       white-space: nowrap;
-      vertical-align: middle;
-      align-items: center;
-      a {
-        width: 100%;
-        padding-left: 2rem;
-        line-height: 3.2rem;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        text-decoration: none;
-        color: var(--color-grey-700);
-
-        &:hover {
-          color: var(--color-blue-500);
-          text-decoration: underline;
-        }
-      }
+      overflow: hidden;
+      text-overflow: ellipsis;
+      min-height: 2.5rem;
     }
   }
+
 
   @include desktop {
     max-height: none;
 
     ul {
       background: white;
+      padding-left:  0;
+      list-style: none;
+      width: 250px;
 
       li {
         max-width: 250px;
 
         a {
           border-left: solid 2px var(--color-grey-300);
+          padding: 1rem 0 1rem 1rem;
+          text-decoration: none;
+          color: var(--color-grey-700);
+          line-height: 3.8rem;
+          margin: -1px 0 0;
 
           &.current {
             color: var(--color-blue-500);
@@ -124,19 +128,19 @@
 
     .collapsible-sidebar-body {
       display: block;
-      @include mobile {
-        padding-top: 2.4rem;
-      }
     }
 
   }
 
   .sidenav-title {
-    @include title;
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-black);
+    font-size: 1.6rem;
     display: inline-flex;
     padding-left: 2rem;
     @include desktop {
       padding-left: 0;
+      @include title;
     }
   }
 
@@ -151,7 +155,7 @@
     padding: 0 var(--btn-padding);
     @include button-base;
     margin-left: 1.6rem;
-    margin-bottom: 1.6rem;
+    margin-bottom: 1.4rem;
     @include desktop {
       margin-left: 0;
     }

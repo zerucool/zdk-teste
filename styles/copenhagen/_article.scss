@@ -270,6 +270,7 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      min-height: 2.5rem;
       a {
         color: var(--color-blue-500);
       }

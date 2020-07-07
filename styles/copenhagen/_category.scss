@@ -7,10 +7,10 @@
 
   &-content {
     @include desktop {
-      flex: 0 0 80%;
+      flex: 1 1 100%;
     }
-
     flex: 1;
+    padding: 2.4rem 0;
   }
 }
 
