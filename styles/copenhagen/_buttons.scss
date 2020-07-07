@@ -25,7 +25,7 @@
   border: solid 0 var(--color-grey-300);
   color: var(--color-black);
   font-size: var(--btn-font-size);
-  font-weight: var(--font-weight-heavy);
+  font-weight: var(--font-weight-bold);
   min-height: var(--btn-height);
   padding: 0 var(--btn-padding);
   @include button-base;

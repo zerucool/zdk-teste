@@ -30,6 +30,9 @@
     margin: 0 auto;
     z-index: 10;
     position: relative;
+    a {
+      color: inherit;
+    }
   }
 
   img.banner {
@@ -57,7 +60,6 @@
   p {
     font-size: 1.6rem;
     font-weight: var(--font-weight-medium);
-    margin-bottom: 0;
     opacity: .72;
   }
 

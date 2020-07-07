@@ -1,3 +1,4 @@
+
 //  Convert to vanilla JS
 $(document).ready(function() {
   if (HelpCenter.user.role==["anonymous"]){
@@ -14,8 +15,23 @@ $(document).ready(function() {
   }
 });
 
-
 document.addEventListener('DOMContentLoaded', function() {
+
+  // var groups = HelpCenter.user.groups;
+  // for (var i = 0; i < groups.length; i++) {
+  //   if (groups[i].name == 'anonymous' && groups[i].isActive == true) {
+  //     $(".anonymous").show();
+  //   }
+  //   if (groups[i].name == 'end_user' && groups[i].isActive == true) {
+  //     $(".customer").show();
+  //   }
+  //   if (groups[i].name == 'manager' && groups[i].isActive == true) {
+  //     $(".customer").show();
+  //   }
+  //   if (groups[i].name == 'agent' && groups[i].isActive == true) {
+  //     $(".customer").show();
+  //   }
+  // }
 
   // Key map
   var ENTER = 13;

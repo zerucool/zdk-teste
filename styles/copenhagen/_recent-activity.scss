@@ -116,7 +116,7 @@
   &-controls {
     background-color: var(--color-grey-200);
     border-radius: var(--btn-radius);
-    border: solid 0 var(--color-white);
+    border: solid 0 var(--color-grey-300);
     color: var(--color-black);
     font-size: var(--btn-font-size);
     font-weight: var(--font-weight-bold);
@@ -130,6 +130,7 @@
     }
     a {
       text-decoration: none;
+      color: var(--color-black);
       &:hover {
         background: var(--color-blue-100);
         color: var(--color-blue-500);

@@ -20,6 +20,7 @@
     font-size: 1.6rem;
     height: 4rem;
     font-weight: var(--font-weight-medium);
+    outline: none;
     &:focus {
       color: $field-text-focus-color;
       font-weight: 600;
