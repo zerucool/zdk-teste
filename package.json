@@ -1,6 +1,6 @@
 {
   "name": "Zendesk",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/CNETContentSolutions/Zendesk-Theme.git"
@@ -11,21 +11,11 @@
   },
   "homepage": "https://github.com/CNETContentSolutions/Zendesk-Theme#readme",
   "scripts": {
-    "gulp": "gulp",
-    "scss": "node-sass --source-map-root --watch styles -o . --source-map-embed true",
-    "postcss:autoprefixer": "postcss --use autoprefixer -b 'last 2 versions' --map",
-    "css": "npm run sass -s | npm run postcss:autoprefixer -s | exorcist style.css.map > style.css"
+    "scss": "node-sass --source-map-root --watch styles -o . --source-map-embed true"
   },
   "devDependencies": {
     "autoprefixer": "^9.4.3",
     "browser-sync": "^2.26.3",
-    "gulp": "^4.0.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-postcss": "^8.0.0",
-    "gulp-rename": "^1.4.0",
-    "gulp-sass": "^4.0.2",
-    "gulp-sass-glob": "^1.1.0",
-    "gulp-uglify": "^3.0.2",
     "postcss-calc": "^7.0.1",
     "postcss-css-variables": "git+https://github.com/CodyHouse/postcss-css-variables"
   }

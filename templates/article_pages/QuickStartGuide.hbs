@@ -1,0 +1,170 @@
+<section class="page-header">
+  <div class="page-header-inner">
+    <nav class="sub-nav">
+      {{breadcrumbs}}
+    </nav>
+    <div class="page-header-info">
+      <h1>
+        {{article.title}}{{#if article.internal}}<i class="material-icons">lock</i>{{/if}}
+      </h1>
+      <ul class="page-header-meta">
+        {{#is article.created_at article.edited_at}}
+          <li class="meta-data">{{date article.created_at timeago=true}}</li>
+          {{else}}
+          <li class="meta-data">{{date article.edited_at timeago=true}}</li>
+          <li class="meta-data">{{t 'updated'}}</li>
+        {{/is}}
+      </ul>
+      {{#if settings.show_follow_article}}
+        <div class="page-header-subscribe">{{subscribe}}</div>
+      {{/if}}
+      {{#if section.description}}
+        <p class="page-header-description">{{section.description}}</p>
+      {{/if}}
+    </div>
+  </div>
+</section>
+
+
+
+<section id="TemplateArticle" class="ccs-doc-page">
+  <article class="ccs-doc-content">
+
+    {{!-- removed breadcrumbs
+    <nav class="ccs-doc-path" aria-label="breadcrumbs">{{breadcrumbs}}</nav> --}}
+
+ <div>      {{!-- [d.s] changed the place for articles in the section. Will be gorizantal navigation panel as in the Extranet system. Should be use only for Quick start guide articles--}}
+   {{#if settings.show_articles_in_section}}
+    <section class="containerQSG">
+    <p class="ccs-doc-title">DataSource Introduction</p> {{!-- previuse {{t 'articles_in_section'}}--}}
+    <nav>
+      {{#each section.articles}}
+      {{#isnt id 360045033491}} {{!-- hiding lists of the articles from the container with not the main articles --}}
+      {{#isnt id 360045029351}}
+      {{#isnt id 360045029111}}
+      {{#isnt id 360044586332}}
+      {{#isnt id 360044586172}}
+      {{#isnt id 360044586092}}
+      {{#isnt id 360044535112}}
+      <a href="{{url}}" class="{{#is id ../article.id}}active{{/is}}">{{title}}</a>
+      {{/isnt}}
+      {{/isnt}}
+      {{/isnt}}
+      {{/isnt}}
+      {{/isnt}}
+      {{/isnt}}
+      {{/isnt}}
+      {{/each}}
+    </nav>
+    {{#if section.more_articles}}<br><a href="{{section.url}}" class="ccs-btn-subtle" role="button">{{t 'see_more'}}</a>{{/if}}
+    </section>
+  {{/if}}
+</div>  {{!-- [d.s] end --}}
+
+    <header class="ccs-doc-header">
+      <h1 class="ccs-doc-heading{{#if article.internal}} internal{{/if}}">{{article.title}}</h1>
+      {{#if settings.show_article_author}}
+      <div class="ccs-doc-details">
+        <div class="ccs-doc-meta">
+          <span class="ccs-doc-modified">{{t 'updated'}} <span style="opacity: 0.6">&bull;</span> {{#is article.created_at article.edited_at}}<time>{{date article.created_at timeago=true}}{{else}}{{date article.edited_at timeago=true}}</time>{{/is}}</span>
+        </div>
+      </div>
+      {{/if}}
+    </header>
+
+
+    <div class="ccs-doc-body">
+      {{article.body}}
+
+      {{#if attachments}}
+      <div class="">
+         <ul class="attachments"><h4>Download PDF:<h4>
+              {{#each attachments}}
+                <li class="attachment-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16" class="attachment-icon">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" d="M9.5 4v7.7c0 .8-.7 1.5-1.5 1.5s-1.5-.7-1.5-1.5V3C6.5 1.6 7.6.5 9 .5s2.5 1.1 2.5 2.5v9c0 1.9-1.6 3.5-3.5 3.5S4.5 13.9 4.5 12V4"/>
+                  </svg>
+                  <a href="{{url}}" target="_blank">{{name}}</a>
+                 <div class="attachment-position">
+                    <span class="attachment-size-download">Size:{{size}}: </span>
+                    <a href="{{url}}" target="_blank" class="attachment-size-download"> Download </a>
+                  </div>
+                </li>
+              {{/each}}
+            </ul>
+           </div>
+        {{/if}}
+    </div>
+
+
+    <footer class="ccs-doc-footer">
+      {{#with article}}
+        <div class="ccs-doc-votes">
+          <p><b>{{t 'was_this_article_helpful'}}</b></p>
+          <div class="btn-group" role="group" aria-label="votes">
+            {{vote 'up' role='radio' class='ccs-btn-up' selected_class="selected"}}
+            {{vote 'down' role='radio' class='ccs-btn-down' selected_class="selected"}}
+          </div>
+          <p><small>{{vote 'label' class='article-vote-label'}}</small></p>
+        </div>
+      {{/with}}
+      <br>
+      <small><p class="ccs-doc-questions">{{request_callout}}</p></small>
+      <br>
+    </footer>
+  </article>
+</section>
+
+
+<aside class="ccs-doc-nav" role="navigation">
+
+  <div> {{!--[d.s] added links on the training videos in the sidebar and links on the main articles in the sub sections. Should be use only for articles from QuickStartguide section.  --}}
+     <p>
+    <strong class="ccs-static-title">Quick Start Guides</strong>
+     </p>
+      <ul>
+	      <li class="">
+	      <a href="/hc/en-us/articles/360041567532">DataSource Introduction</a>
+	      </li>
+	      <li class="">
+	       <a href="/hc/en-us/articles/360041568832">Integration Guide </a>
+	      </li>
+      </ul>
+      <p>
+    <strong class="ccs-static-title">TRAINING VIDEOS</strong>
+     </p>
+      <ul>
+	      <li class="">
+	      <a href="https://cdn.cnetcontent.com/sites/video/extranet/introduction.mp4">Extranet Introduction</a>
+	      </li>
+	      <li class="">
+	       <a href="https://cdn.cnetcontent.com/sites/video/extranet/account.mp4"> Your Account </a>
+	      </li>
+	      <li class="">
+	      <a href="https://cdn.cnetcontent.com/sites/video/extranet/catalog.mp4">DataSource Catalog</a>
+	      </li>
+	      <li class="">
+	      <a href="https://cdn.cnetcontent.com/sites/video/extranet/statistics.mp4">Statistics</a>
+	     </li>
+	      <li class="">
+	     <a href="https://cdn.cnetcontent.com/sites/video/extranet/claims.mp4">Claims</a>
+	     </li>
+	     <li class="">
+	     <a href="https://cdn.cnetcontent.com/sites/video/extranet/support.mp4">Support</a>
+	     </li>
+     </ul>
+</div> {{!--[d.s] end  --}}
+
+ {{!-- removed blocks with viewed articles and related articles
+  {{#if settings.show_recently_viewed_articles}}
+    {{recent_articles}}
+  {{/if}}
+
+
+  {{#if settings.show_related_articles}}
+    {{related_articles}}
+  {{/if}}
+--}}
+</aside>
+
+<a id="AppTop" class="ccs-btn-top" aria-label="jump" href="#top"></a>

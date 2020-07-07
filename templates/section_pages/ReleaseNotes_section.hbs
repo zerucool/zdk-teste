@@ -1,0 +1,131 @@
+
+<section class="page-header">
+  <div class="page-header-inner">
+    <nav class="sub-nav">
+      {{breadcrumbs}}
+    </nav>
+    <div class="page-header-info">
+      <h1>{{section.name}}</h1>
+      {{#if settings.show_follow_section}}
+        <div class="page-header-subscribe">{{subscribe}}</div>
+      {{/if}}
+      {{#if section.description}}
+        <p class="page-header-description">{{section.description}}</p>
+      {{/if}}
+    </div>
+  </div>
+</section>
+
+
+<div class="ccs-doc-page">
+<div class="ccs-doc-content">
+
+  {{#if section.sections}}
+  <div class="section-tree">
+   {{#each section.sections}}
+
+    <section class="section">
+       <h3 class="section-tree-title" style="margin-bottom:5px;!important;">
+         {{name}}  {{!--removed links - original code  <a href="{{url}}">{{name}}</a> --}}
+       </h3>
+       {{#if articles}}
+          <ul class="article-list">
+           {{#each articles}}
+             <li class="containerQSG{{#if promoted}} article-promoted{{/if}}">
+              {{#if promoted}}
+                <span data-title="{{t 'promoted'}}" class="icon-star"></span>
+              {{/if}}
+                <a href="{{url}}" class="article-list-link">{{title}}</a>
+              {{#if internal}}
+                 <span class="icon-lock" title="{{t 'internal'}}"></span>
+              {{/if}}
+             </li>
+            {{/each}}
+           </ul>
+             {{#if more_articles}}
+              <a href="{{url}}" class="see-all-articles">{{t 'show_all_articles' count=article_count}}</a>
+            {{/if}}
+       {{/if}}
+     </section>
+   {{/each}}
+{{/if}}
+
+          {{#if section.articles}}
+    <div class="section-tree">
+        <ul class="article-list">
+          {{#each section.articles}}
+            <li class="article-list-itemCNET Section-articaleCNET {{#if promoted}} article-promoted{{/if}}">
+              {{#if promoted}}
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 12 12" class="icon-star" title="{{t 'promoted'}}">
+                  <path fill="currentColor" d="M2.88 11.73c-.19 0-.39-.06-.55-.18a.938.938 0 01-.37-1.01l.8-3L.35 5.57a.938.938 0 01-.3-1.03c.12-.37.45-.63.85-.65L4 3.73 5.12.83c.14-.37.49-.61.88-.61s.74.24.88.6L8 3.73l3.11.17a.946.946 0 01.55 1.68L9.24 7.53l.8 3a.95.95 0 01-1.43 1.04L6 9.88l-2.61 1.69c-.16.1-.34.16-.51.16z"/>
+                </svg>
+              {{/if}}
+              <a href="{{url}}" class="article-list-link">{{title}}</a>
+              {{#if internal}}
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16" class="icon-lock" title="{{t 'internal'}}">
+                  <rect width="12" height="9" x="2" y="7" fill="currentColor" rx="1" ry="1"/>
+                  <path fill="none" stroke="currentColor" d="M4.5 7.5V4a3.5 3.5 0 017 0v3.5"/>
+                </svg>
+              {{/if}}
+            </li>
+          {{/each}}
+        </ul>
+      {{else}}
+        <i class="section-empty">
+          <a href="{{section.url}}">{{t 'empty'}}</a>
+        </i>
+      {{/if}}
+
+      {{pagination}}
+  </div>
+</div>
+  </div>
+
+
+
+<aside class="ccs-doc-nav" role="navigation">
+
+   {{!-- {{#if section.articles}}
+  <section class="ccs-doc-block">
+    <p class="ccs-doc-title">{{t 'articles_in_section'}}</p>
+    <nav>
+      {{#each section.articles}}
+      <a href="{{url}}" {{#if promoted}}class="promoted"{{/if}}>{{title}}</a>
+      {{/each}}
+    </nav>
+  </section>
+  {{else}}
+  {{/if}}
+ --}}
+    <div> {{!--[d.s] added links on the training videos in the sidebar and links on the main articles in the sub sections. Should be use only for articles from QuickStartguide section.  --}}
+      <p>
+    <strong class="ccs-static-title">TRAINING VIDEOS</strong>
+     </p>
+      <ul>
+	      <li class="">
+	      <a href="https://cdn.cnetcontent.com/sites/video/extranet/introduction.mp4">Extranet Introduction</a>
+	      </li>
+	      <li class="">
+	       <a href="https://cdn.cnetcontent.com/sites/video/extranet/account.mp4"> Your Account </a>
+	      </li>
+	      <li class="">
+	      <a href="https://cdn.cnetcontent.com/sites/video/extranet/catalog.mp4">DataSource Catalog</a>
+	      </li>
+	      <li class="">
+	      <a href="https://cdn.cnetcontent.com/sites/video/extranet/statistics.mp4">Statistics</a>
+	     </li>
+	      <li class="">
+	     <a href="https://cdn.cnetcontent.com/sites/video/extranet/claims.mp4">Claims</a>
+	     </li>
+	     <li class="">
+	     <a href="https://cdn.cnetcontent.com/sites/video/extranet/support.mp4">Support</a>
+	     </li>
+     </ul>
+</div> {{!--[d.s] end  --}}
+
+  {{!-- removed blocks with viewed articles
+  {{#if settings.show_recently_viewed_articles}}
+    {{recent_articles}}
+  {{/if}}
+--}}
+</aside>
