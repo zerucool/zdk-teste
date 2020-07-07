@@ -61,10 +61,16 @@
   }
 }
 
+.detail-group {
+  margin: 2.4rem 0;
+  border: 2px solid var(--color-grey-300);
+  border-radius: 1.6rem;
+}
 
 details {
   display: flex;
   flex-direction: column;
+
   + details {
     border-top: solid 2px var(--color-grey-200)
   }
@@ -72,19 +78,24 @@ details {
     color: var(--color-blue-500);
   }
   summary {
-    outline: none;
-    min-height: 40px;
-    display: inline-flex;
     align-items: center;
-    justify-content: flex-start;
+    color: var(--color-black);
     cursor: pointer;
-    font-weight: var(--font-weight-bold);
+    display: inline-flex;
+    font-size: 1.6rem;
+    font-weight: var(--font-weight-medium);
+    justify-content: flex-start;
+    min-height: 4.8rem;
+    outline: none;
+    padding: .8rem 2.4rem;
+    position: relative;
     &:hover {
       color: var(--color-blue-500);
     }
     + div {
       align-self: flex-start;
       justify-content: flex-start;
+      padding: 0 2.4rem .8rem;
     }
   }
 }
