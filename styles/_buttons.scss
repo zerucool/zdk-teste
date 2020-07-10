@@ -1,0 +1,75 @@
+:root {
+  --button-text: #{$brand_text_color};
+  --button-color: #{$brand_color};
+}
+/***** Buttons *****/
+.button,
+[role='button'] {
+  @include tablet {
+    width: auto;
+  }
+  // TODO: Look into styles for smaller buttons
+  -webkit-touch-callout: none;
+  align-items: center;
+  background: var(--button-color);
+  border-radius: $border-radius;
+  border: none;
+  box-shadow: none;
+  color: var(--button-text);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: $font-size-navigation;
+  font-weight: $font-weight-bold !important;
+  justify-content: center;
+  line-height: 2.34; // Taken from Zendesk garden bedrock
+  margin: 0;
+  outline: none;
+  padding: 0 20px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translateY(0);
+  transition: all 0.3s ease;
+  user-select: none;
+  white-space: nowrap;
+  width: 100%;
+  @include ripple;
+
+  &:active {
+    transform: translateY(2px);
+  }
+
+  &:hover,
+  &:active,
+  &:focus,
+  &[aria-selected='true'] {
+    text-decoration: none;
+  }
+
+  &[data-disabled] {
+    cursor: not-allowed;
+  }
+  * {
+    text-decoration: none;
+    color: inherit;
+    font-weight: inherit;
+  }
+}
+
+.button-secondary {
+  background-color: transparent;
+  color: var(--button-text);
+  box-shadow: inset 0 0 0 2px var(--button-color);
+}
+
+.button-large,
+input[type='submit'] {
+  @include tablet {
+    width: auto;
+  }
+  border-radius: 40px;
+  font-weight: $font-weight-heavy;
+  min-width: 96px;
+  padding: 0 1.9286em;
+  width: 100%;
+}

@@ -1,10 +1,78 @@
 <footer class="footer">
   <div class="footer-inner">
-    <p>
-      <a>Privacy Policy</a>
-      <a>Terms of Use</a>
-      <a>Patents</a>
-    </p>
-    <p><i>© <script>document.write(new Date().getFullYear());</script> CBS Interactive Inc. All rights reserved.</i></p>
+    {{#if settings.show_business_links}}
+    <nav class="footer-nav">
+      <div class="footer-nav-column">
+        <h3 class="footer-nav-title">Solutions</h3>
+        <ul class="footer-nav-list">
+          <li><a target="_blank" rel="noopener">ContentCast</a></li>
+          <li><a target="_blank" rel="noopener">PartnerAccess</a></li>
+          <li><a target="_blank" rel="noopener">DataSource</a></li>
+          <li><a target="_blank" rel="noopener">ChannelOnline</a></li>
+          <li><a target="_blank" rel="noopener">Brand Service</a></li>
+          <li><a target="_blank" rel="noopener">Retail Service</a></li>
+        </ul>
+      </div>
+      <div class="footer-nav-column">
+        <h3 class="footer-nav-title">Company</h3>
+        <ul class="footer-nav-list">
+          <li><a href target="_blank" rel="noopener">About CBS</a></li>
+          <li><a href target="_blank" rel="noopener">News &amp; Media</a></li>
+          <li><a href target="_blank" rel="noopener">Clients &amp; Awards</a></li>
+          <li><a href target="_blank" rel="noopener">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-nav-column">
+        <h3 class="footer-nav-title">Resources</h3>
+        <ul class="footer-nav-list">
+          <li>{{#link 'help_center'}}Help Center{{/link}}</li>
+          <li><a href target="_blank" rel="noopener">Privacy Policy</a></li>
+          <li><a href target="_blank" rel="noopener">Terms of Use</a></li>
+          <li><a href target="_blank" rel="noopener">Patents</a></li>
+        </ul>
+      </div>
+      <div class="footer-nav-column">
+        <h3 class="footer-nav-title">Contact</h3>
+        <ul class="footer-nav-list">
+          <li>{{#link 'help_center'}}Help Center{{/link}}</li>
+          <li>{{#link 'new_request'}}Submit a request{{/link}}</li>
+          <li>Americas & Asia Pacific:</li>
+          <li>+1.877.276.5560 Toll-free</li>
+          <li>Europe:</li>
+          <li>+41.21.943.0350</li>
+        </ul>
+      </div>
+    </nav>
+    {{else}}
+    <div class="footer-bottom">
+      <nav class="footer-bottom-legal">
+        <a target="_blank" rel="noopener" href="https://www.cbsinteractive.com/legal/cbsi/terms-of-use">Terms of use</a>
+        <a target="_blank" rel="noopener" href="http://www.cbsinteractive.com/legal/cbsi/patents">Patents</a>
+        <a target="_blank" rel="noopener" href="https://www.cbsinteractive.com/legal/cbsi/privacy-policy/highlights">Privacy Policy</a>
+        <a target="_blank" rel="noopener" href="https://ca.privacy.cbs">California Privacy/Info We Collect</a>
+        <a target="_blank" rel="noopener" href="https://ca.privacy.cbs/donotsell">California Do Not Sell My Info</a>
+      </nav>
+    </div>
+    {{/if}}
+    <div class="footer-bottom">
+      <div class="footer-bottom-copyright">© <script>document.write(new Date().getFullYear());</script> CBS Interactive Inc. All rights reserved.</div>
+      {{#if alternative_locales}}
+      <div class="footer-bottom-language-selector">
+        <div class="dropdown language-selector" aria-haspopup="true">
+          <a class="dropdown-toggle">
+            {{current_locale.name}}
+          </a>
+          <span class="dropdown-menu dropdown-menu-end" role="menu">
+            {{#each alternative_locales}}
+            <a href="{{url}}" dir="{{direction}}" rel="nofollow" role="menuitem">
+              {{name}}
+            </a>
+            {{/each}}
+          </span>
+        </div>
+      </div>
+      {{/if}}
+    </div>
   </div>
 </footer>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>

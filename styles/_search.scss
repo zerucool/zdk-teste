@@ -1,0 +1,69 @@
+/***** Search field *****/
+.search {
+  position: relative;
+
+  input[type='search'] {
+    border: 1px solid $border-color;
+    font-weight: $font-weight-semibold;
+    box-sizing: border-box;
+    height: 32px;
+    padding-left: 48px;
+    padding-right: 20px;
+    -webkit-appearance: none;
+    width: 100%;
+    border-radius: $border-radius;
+    transition: 0.2s ease-in-out;
+    border-radius: 32px;
+
+    [dir='rtl'] & {
+      padding-right: 40px;
+      padding-left: 20px;
+    }
+
+    &:focus {
+      color: $link_color;
+      background-color: white;
+      border: 1px solid $input-focus-color;
+    }
+  }
+
+  &::before {
+    @extend .icon;
+    @include vertical-align;
+    color: $secondary-text-color;
+    content: '\1F50D';
+    font-size: 18px;
+    position: absolute;
+    left: 18px;
+
+    [dir='rtl'] & {
+      right: 18px;
+      left: auto;
+    }
+  }
+
+  &-full input[type='search'] {
+    height: 48px;
+    background-color: white;
+    border: none;
+    box-shadow: 0 2px 2px 0 rgba(black, 0.14), 0 3px 1px -2px rgba(black, 0.12),
+      0 1px 5px 0 rgba(black, 0.2);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+    &:focus {
+      box-shadow: 0 6px 12px 0 rgba(black, 0.28), 0 3px 1px -2px rgba(black, 0.12),
+        0 1px 5px 0 rgba(black, 0.2);
+      border: none;
+    }
+  }
+
+  &-header input[type='search'] {
+    background-color: lighten($text-color, 15%);
+    border: none;
+  }
+
+  &-header input[type='search']::placeholder {
+    font-weight: $font-weight-medium;
+    color: #777;
+  }
+}

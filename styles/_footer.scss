@@ -1,0 +1,130 @@
+/***** Footer *****/
+.footer {
+  background-color: $text_color;
+  background-image: url($footer_background_image);
+  background-repeat: no-repeat;
+  background-position: center;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-navigation;
+  color: $brand_text_color;
+  //margin-top: -1px;
+  @include desktop {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    height: 120px;
+  }
+
+  a {
+    color: $brand_text_color;
+    font-weight: $font-weight-semibold;
+  }
+
+  a:hover {
+    text-decoration: underline;
+    color: $brand_text_color;
+  }
+
+  &-inner {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 32px 5% 24px 5%;
+
+    @media (min-width: 1160px) {
+      padding: 32px 0 24px;
+      width: 90%;
+    }
+  }
+
+  &-nav {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 0 16px 0;
+
+    &-column {
+      width: 50%;
+      float: left;
+      flex: 1 0 275px;
+      display: flex;
+      flex-direction: column;
+      margin: 0 16px 16px;
+      text-align: center;
+
+      @media (min-width: 1024px) {
+        width: 25%;
+        float: left;
+        flex: 1 0 190px;
+        display: flex;
+        flex-direction: column;
+        margin: 0 16px 16px 0;
+        text-align: left;
+      }
+    }
+
+    &-title {
+      color: $brand_text_color;
+      margin-bottom: 4px;
+    }
+
+    &-list {
+      white-space: nowrap;
+      margin-bottom: 24px;
+      color: $brand_text_color;
+    }
+  }
+
+  &-bottom {
+    display: inline-flex;
+    width: 100%;
+    @include desktop {
+      justify-content: center;
+    }
+
+    &-copyright {
+      padding-top: 8px;
+    }
+
+    &-legal {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      width: 100%;
+
+      a {
+        display: inline-block;
+        line-height: 34px;
+      }
+
+      @include desktop {
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+        a[href] + a {
+          padding-left: 36px;
+        }
+      }
+    }
+
+    &-language-selector {
+      font-weight: $font-weight-base;
+      color: $brand_text_color;
+      float: right;
+      border: 1px solid;
+      padding: 4px 8px;
+      margin-right: 12px;
+      border-radius: $border-radius;
+    }
+
+    &-social {
+      float: right;
+      font-size: 24px;
+
+      & a {
+        transition: 0.2s;
+      }
+    }
+  }
+}

@@ -1,22 +1,33 @@
 {
-  "name": "Base Theme",
-  "version": "0.2.8",
+  "name": "datasource-extranet-theme",
+  "version": "0.3.0",
+  "description": "CCS Theme for Zendesk Guide",
+  "license": "ISC",
+  "homepage": "https://github.com/CNETContentSolutions/Zendesk-Theme#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/CNETContentSolutions/Zendesk-Theme.git"
   },
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/CNETContentSolutions/Zendesk-Theme/issues"
-  },
-  "homepage": "https://github.com/CNETContentSolutions/Zendesk-Theme#readme",
   "scripts": {
-    "scss": "node-sass --source-map-root --watch styles -o . --source-map-embed true"
+    "preview": "zat theme preview",
+    "prettier:write": "prettier --write \"./**/*.{js,json,scss,md}\"",
+    "prettier:check": "prettier --check \"./**/*.{js,json,scss,md}\"",
+    "styles:watch": "sass styles/index.scss:style.css --watch",
+    "styles:build": "sass styles/index.scss:style.css --style compressed && postcss style.css --use autoprefixer --replace --no-map"
   },
   "devDependencies": {
-    "autoprefixer": "^9.4.3",
-    "browser-sync": "^2.26.3",
-    "postcss-calc": "^7.0.1",
-    "postcss-css-variables": "git+https://github.com/CodyHouse/postcss-css-variables"
+    "autoprefixer": "^9.6.0",
+    "browserslist": "^4.6.3",
+    "postcss-cli": "^7.1.0",
+    "prettier": "^2.0.2",
+    "sass": "^1.22.2"
+  },
+  "browserslist": [
+    "defaults"
+  ],
+  "prettier": {
+    "printWidth": 100,
+    "singleQuote": true,
+    "tabWidth": 2
   }
 }

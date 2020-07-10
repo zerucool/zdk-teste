@@ -1,16 +1,22 @@
+<nav class="my-activities-nav collapsible-nav">
+  <ul class="collapsible-nav-list container">
+    {{#if help_center.request_management_enabled}}
+      <li>{{link 'requests'}}</li>
+    {{/if}}
+    <li>{{link 'contributions'}}</li>
+    <li aria-selected=true>{{t 'following'}}</li>
+  </ul>
+</nav>
 
-<div class="container subscriptions-page">
+<div class="container">
   <header class="my-activities-header">
     <h1>{{t 'following'}}</h1>
   </header>
 
-  <!-- div class="my-activities-following-header">
+  <div class="my-activities-following-header">
     <span class="dropdown">
       <button class="dropdown-toggle" aria-haspopup="true">
         {{current_filter.label}}
-        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="dropdown-chevron-icon">
-          <path fill="none" stroke="currentColor" stroke-linecap="round" d="M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5"/>
-        </svg>
       </button>
       <span class="dropdown-menu" role="menu">
         {{#each filters}}
@@ -20,9 +26,9 @@
         {{/each}}
       </span>
     </span>
-  </div -->
+  </div>
 
-  <div id="main-content" class="requests">
+  <div class="requests">
     {{#if subscriptions}}
       <table class="table my-activities-table subscriptions-table">
         <thead>
@@ -45,10 +51,8 @@
                 </a>
               </td>
               <td>{{name}}</td>
-              <td>{{following}}</td>
-              <td class="subscriptions-subscribe">
-                {{subscribe}}
-              </td>
+              <td>{{subscribe}}</td>
+              <td class="subscriptions-unsubscribe">{{unsubscribe}}</td>
             </tr>
           {{/each}}
         </tbody>

@@ -1,85 +1,102 @@
-
-<section class="hero">
-  <img class="banner" src="{{asset 'hero-desktop-warm.jpg'}}">
-  <div class="hero-inner">
-    <h2>DataSource Knowledge Base</h2>
-    <p class="anonymous">Please log into the <a href="http://extranet.cnetcontent.com" target="_blank">Extranet</a> to view this content.</p>
-    <div class="customer">
-      <p>Search our Help Center for quick answers</p>
-      {{search submit=false instant=settings.instant_search placeholder='Enter Keywords'}}
+<section class="hero hero-large">
+  <img src="{{settings.homepage_background_image}}" class="blur banner">
+  <div class="hero-inner anonymous">
+    <h1 class="hero-inner-home-heading">DataSource Knowledge Base</h1>
+    <div class="hero-inner-description">
+      <p>Please log into the DataSource Extranet to view this content.</p>
+      <p><a href="http://extranet.cnetcontent.com" target="_blank" class="button button-large"><span>Login</span></a><span>&nbsp;&nbsp;or&nbsp;&nbsp;</span><a href="http://cnetcontent.com/register" target="_blank" class="button button-large button-secondary"><span>Register</span></a></p>
     </div>
   </div>
-  <style> .header::before { opacity: .4 !important; background: black } </style>
-</section>
-
-<section class="anonymous container">
-  <div class="message">
-    <p>If you have a DataSource account but have never used the Extranet, please register and a representive will help you set up your account.</p><br>
-    <p><a href="http://extranet.cnetcontent.com" target="_blank" class="button button-primary"><span>Login</span></a><span>&nbsp;&nbsp;or&nbsp;&nbsp;</span><a href="http://cnetcontent.com/register" target="_blank" class="button button-secondary"><span>Register</span></a></p><br>
-    <p>Learn more about <a href="http://cnetcontent.com/datasource" target="_blank">DataSource</a> or <a href="https://extranetsandbox.zendesk.com/hc/en-us/requests/new" target="_blank">contact a representive</a> for more details.</p><br>
+  <div class="hero-inner customer">
+    <h1 class="hero-inner-home-heading">👋 Hi. How can we help?</h1>
+    <div class="hero-inner-search">
+      {{search placeholder="Find answers" submit=false scoped=settings.scoped_kb_search instant=settings.instant_search class="search search-full"}}
+    </div>
+    <p class="hero-inner-description">Started with the <u>Extranet Introduction</u> and <u>Your Account</u> videos.</p>
   </div>
 </section>
 
-<section class="customer container">
+<div class="container">
 
-  <div class="blocks">
-    <br>
-    <ul class="blocks-list">
-      {{#each categories}}
+
+  <section class="anonymous message">
+    <p>If you have a DataSource account but have never used the Extranet, please register and a representive will help you set up your account. Learn more about <a href="http://cnetcontent.com/datasource" target="_blank">DataSource</a> or <a href="https://extranetsandbox.zendesk.com/hc/en-us/requests/new" target="_blank">contact a representive</a> for more details.</p>
+  </section>
+
+  <section class="customer section knowledge-base">
+    <h1 class="home-categories-heading" id="browse-knowledge-base">Browse Sections</h1>
+    <section class="categories blocks">
+      <ul class="blocks-list">
+        {{#each categories}}
         {{#if ../has_multiple_categories}}
-          <!-- li class="blocks-item">
-            <a class="blocks-item-link" href='{{url}}'>
-              <span class="blocks-item-title">{{name}}</span>
-              <span class="blocks-item-description">{{excerpt description}}</span>
-            </a>
-          </li -->
+        <li class="blocks-item">
+          <a href='{{url}}' class="blocks-item-link">
+            <h2 class="blocks-item-title">{{name}}</h2>
+            <p class="blocks-item-description">{{excerpt description}}</p>
+          </a>
+        </li>
         {{else}}
-          {{#each sections}}
-            <li class="blocks-item">
-              {{#is id 360008463631}}<svg class="icon-launch"><use xlink:href="#icon-launch"/></svg>{{/is}}
-              {{#is id 360008355672}}<svg class="icon-reader"><use xlink:href="#icon-reader"/></svg>{{/is}}
-              {{#is id 360008355712}}<svg class="icon-faqs"><use xlink:href="#icon-faqs"/></svg>{{/is}}
-              {{#is id 360008463611}}<svg class="icon-text"><use xlink:href="#icon-text"/></svg>{{/is}}
-              {{#is id 360008355692}}<svg class="icon-teacher"><use xlink:href="#icon-teacher"/></svg>{{/is}}
-              <a class="blocks-item-link" href='{{url}}'>
-                <span class="blocks-item-title">{{name}}</span>
-                <span class="blocks-item-description">{{excerpt description}}</span>
-              </a>
-            </li>
-          {{/each}}
-          <li class="blocks-item">
+        {{#each sections}}
+        <li class="blocks-item">
+          <a class="blocks-item-link" href='{{url}}'>
+            {{#is id 360008463631}}<svg class="icon-launch"><use xlink:href="#icon-launch"/></svg>{{/is}}
+            {{#is id 360008355672}}<svg class="icon-reader"><use xlink:href="#icon-reader"/></svg>{{/is}}
+            {{#is id 360008355712}}<svg class="icon-faqs"><use xlink:href="#icon-faqs"/></svg>{{/is}}
+            {{#is id 360008463611}}<svg class="icon-text"><use xlink:href="#icon-text"/></svg>{{/is}}
+            {{#is id 360008355692}}<svg class="icon-teacher"><use xlink:href="#icon-teacher"/></svg>{{/is}}
+            <h2 class="blocks-item-title">{{name}}</h2>
+            <p class="blocks-item-description">{{excerpt description}}</p>
+          </a>
+        </li>
+        {{/each}}
+        <li class="blocks-item">
+          <a href="javascript:void(0)" class="blocks-item-link">
             <svg class="icon-video"><use xlink:href="#icon-video"/></svg>
-            <a href="javascript:void(0)" class="blocks-item-link">
-              <span class="blocks-item-title">Training Videos</span>
-            </a>
-          <li>
+            <span class="blocks-item-title">Training Videos</span>
+          </a>
+        <li>
         {{/if}}
-      {{/each}}
-    </ul>
-    {{pagination}}
-  </div>
-
-  {{#if promoted_articles}}
-    <div class="articles">
-      <h2 class="section-header bline">{{t 'promoted_articles'}}</h2>
-      <ul class="article-list promoted-articles">
-        {{#each promoted_articles}}
-          <li class="promoted-articles-item">
-            <a href="{{url}}">{{title}}</a>
-            {{#if internal}}<i class="material-icons">lock</i>{{/if}}
-          </li>
         {{/each}}
       </ul>
-    </div>
-  {{/if}}
+      {{pagination}}
+    </section>
 
-  {{#if settings.show_recent_activity}}
-  <div class="section home-section activity">
+  {{!-- #if promoted_articles}}
+  <section class="articles">
+    <h3>{{t 'promoted_articles'}}</h3>
+    <ul class="article-list promoted-articles">
+      {{#each promoted_articles}}
+      <li class="promoted-articles-item">
+        <a href="{{url}}">
+          {{title}}
+          {{#if internal}}
+          <span class="icon-lock" title="{{t 'internal'}}"></span>
+          {{/if}}
+        </a>
+      </li>
+      {{/each}}
+    </ul>
+  </section>
+  {{/if --}}
+
+  {{!-- #if help_center.community_enabled}}
+  <section class="section community">
+    <h2>{{t 'community'}}</h2>
+    {{#link 'community' class='community-link'}}
+    {{t 'join_conversation'}}
+    {{/link}}
+    <div class="community-image"></div>
+  </section>
+  {{/if --}}
+
+  {{!-- #if settings.show_recent_activity}}
+  {{<section class="section activity">
     {{recent_activity}}
-  </div>
-  {{/if}}
+  </section>}}
+  {{/if --}}
 
-</section>
+</div>
+
 
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
   <symbol id="icon-faqs" viewBox="0 0 24 20">

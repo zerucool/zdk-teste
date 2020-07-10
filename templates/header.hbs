@@ -1,12 +1,24 @@
-<a class="skip-navigation" tabindex="1" href="#main-content">{{t 'skip_navigation' }}</a>
 <header class="header">
-  <section class="header-inner">
-    <div class="logo">
-      {{#link 'help_center'}}<img src="{{asset 'content-solutions-dark.svg'}}" alt="Extranet Help Center">{{/link}}
-      <span class="visibility-tablet">Extranet Help</span>
+  <div class="header-inner">
+    <div class="header-logo-wrapper">
+      <div class="header-logo-image">
+        {{#link 'help_center'}}
+          <img src="{{settings.logo}}" alt="{{t 'logo'}}">
+        {{/link}}
+      </div>
+      <div class="header-logo-title">
+        <a href="/hc/en-us">Extranet Help</a>
+      </div>
     </div>
-    <div class="nav-wrapper visibility-tablet">
-      <a class="new-request" href="/hc/en-us/requests/ne  w">Contact Us</a>
+    <div class="nav-wrapper">
+      <span class="icon-menu" tabindex="0" role="button" aria-controls="user-nav" aria-expanded="false"
+        aria-label="{{t 'toggle_navigation'}}"></span>
+      <nav class="user-nav" id="user-nav">
+        {{!-- link 'community' class='community-link' --}}
+        {{!--#link 'new_request' class='submit-a-request'}}Contact Us{{/link --}}
+        <a class="button button-secondary button-large" href="/hc/en-us/requests/new">Contact Us</a>
+      </nav>
+      {{!-- user_info --}}
     </div>
   </div>
 </header>

@@ -1,0 +1,87 @@
+.powered-by-zendesk {
+  display: none;
+}
+
+zd-autocomplete {
+  display: flex;
+  flex-flow: column;
+  margin-top: 1.6rem;
+  border-radius: 0.8rem;
+  zd-autocomplete-multibrand {
+    padding: 1.6rem 2.4rem;
+    box-shadow: none;
+    &:first-child {
+      border-radius: 0.8rem 0.8rem 0 0;
+    }
+    &:last-child {
+      border-radius: 0 0 0.8rem 0.8rem;
+      border-bottom: none;
+    }
+  }
+  zd-autocomplete-breadcrumbs-multibrand {
+    padding-top: 0.8rem;
+  }
+  zd-autocomplete-title-multibrand {
+    color: var(--color-blue-500);
+  }
+}
+
+[class~='anonymous'],
+[class~='customer'] {
+  display: none;
+}
+
+.wf-loading,
+.wf-inactive {
+  color: transparent;
+}
+
+.font-icon {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2.4rem;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+.icon-launch {
+  width: 27px;
+  height: 26px;
+}
+
+.icon-teacher {
+  width: 26px;
+  height: 20px;
+}
+
+.icon-text {
+  width: 26px;
+  height: 18px;
+}
+
+.icon-faqs {
+  width: 24px;
+  height: 20px;
+}
+
+.icon-video {
+  width: 28px;
+  height: 16px;
+}
+
+.icon-reader {
+  width: 28px;
+  height: 24px;
+}
+
+.wf-loading * {
+  color: transparent;
+}

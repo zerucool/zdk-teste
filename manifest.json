@@ -1,8 +1,8 @@
 {
-  "name": "Base Theme",
+  "name": "CCS theme",
   "author": "CNET Content Solutions",
-  "version": "0.2.8",
-  "api_version": 2,
+  "version": "0.3.0",
+  "api_version": 1,
   "default_locale": "en-us",
   "settings": [
     {
@@ -13,7 +13,7 @@
           "type": "color",
           "description": "brand_color_description",
           "label": "brand_color_label",
-          "value": "#005cb9"
+          "value": "#0072EF"
         },
         {
           "identifier": "brand_text_color",
@@ -27,14 +27,14 @@
           "type": "color",
           "description": "text_color_description",
           "label": "text_color_label",
-          "value": "#394660"
+          "value": "#333333"
         },
         {
           "identifier": "link_color",
           "type": "color",
           "description": "link_color_description",
           "label": "link_color_label",
-          "value": "#0366d6"
+          "value": "#0072EF"
         },
         {
           "identifier": "background_color",
@@ -42,6 +42,13 @@
           "description": "background_color_description",
           "label": "background_color_label",
           "value": "#FFFFFF"
+        },
+        {
+          "identifier": "center_name",
+          "type": "text",
+          "description": "Header Branding",
+          "label": "center_name_label",
+          "value": "Extranet Help"
         }
       ]
     },
@@ -55,20 +62,20 @@
           "label": "heading_font_label",
           "options": [
             {
+              "label": "System",
+              "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
+            },
+            {
+              "label": "Segoe UI",
+              "value": "'Segoe UI', Helvetica, Arial, sans-serif"
+            },
+            {
               "label": "Lato",
               "value": "'lato', sans-serif"
             },
             {
-              "label": "System UI",
-              "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif"
-            },
-            {
-              "label": "Arial",
-              "value": "Arial, 'Helvetica Neue', Helvetica, sans-serif"
-            },
-            {
-              "label": "Helvetica",
-              "value": "'Helvetica Neue', Helvetica, Arial, sans-serif"
+              "label": "Roboto Mono",
+              "value": "'roboto mono', monospace;"
             }
           ],
           "value": "'lato', sans-serif"
@@ -80,20 +87,20 @@
           "label": "text_font_label",
           "options": [
             {
+              "label": "System",
+              "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
+            },
+            {
+              "label": "Segoe UI",
+              "value": "'Segoe UI', Helvetica, Arial, sans-serif"
+            },
+            {
               "label": "Lato",
               "value": "'lato', sans-serif"
             },
             {
-              "label": "System UI",
-              "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif"
-            },
-            {
-              "label": "Arial",
-              "value": "Arial, 'Helvetica Neue', Helvetica, sans-serif"
-            },
-            {
-              "label": "Helvetica",
-              "value": "'Helvetica Neue', Helvetica, Arial, sans-serif"
+              "label": "Roboto Mono",
+              "value": "'roboto mono', monospace;"
             }
           ],
           "value": "'lato', sans-serif"
@@ -125,6 +132,12 @@
           "type": "file",
           "description": "homepage_background_image_description",
           "label": "homepage_background_image_label"
+        },
+        {
+          "identifier": "footer_background_image",
+          "type": "file",
+          "description": "footer_background_image_description",
+          "label": "footer_background_image_label"
         },
         {
           "identifier": "community_background_image",
@@ -162,6 +175,18 @@
           "type": "checkbox",
           "description": "scoped_community_search_description",
           "label": "scoped_community_search_label",
+          "value": true
+        }
+      ]
+    },
+    {
+      "label": "footer_business_links_label",
+      "variables": [
+        {
+          "identifier": "show_business_links",
+          "type": "checkbox",
+          "description": "business_links_description",
+          "label": "business_links_label",
           "value": false
         }
       ]
@@ -221,7 +246,7 @@
           "type": "checkbox",
           "description": "related_articles_description",
           "label": "related_articles_label",
-          "value": true
+          "value": false
         },
         {
           "identifier": "show_article_sharing",

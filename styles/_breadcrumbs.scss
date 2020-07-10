@@ -1,0 +1,78 @@
+/***** Breadcrumbs *****/
+.breadcrumbs {
+  @include tablet {
+    margin: 0;
+  }
+
+  margin: 0 0 15px 0;
+  padding: 0;
+
+  li {
+    color: $secondary-text-color;
+    display: inline;
+    font-weight: $font-weight-base;
+    font-size: $font-size-navigation;
+    max-width: 450px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    a {
+      color: $text_color;
+      font-weight: $font-weight-medium;
+      &:hover {
+        color: $link_color;
+      }
+    }
+
+    &:first-child {
+      cursor: pointer;
+      margin-left: -0.2rem;
+      vertical-align: text-bottom;
+      display: inline-flex;
+      opacity: 0.9;
+      padding-left: 4px;
+
+      a {
+        position: relative;
+        color: transparent;
+        display: inline-flex;
+        font-size: 0;
+        text-decoration: none;
+
+        &:hover {
+          color: transparent;
+        }
+
+        &::after {
+          color: $text_color;
+          font-family: 'Font Awesome 5 Free';
+          font-weight: 900;
+          content: '\f015';
+          padding: 0 0 4px 0;
+          font-size: 18px;
+          line-height: 1;
+        }
+
+        &:hover::after {
+          color: $link_color;
+        }
+      }
+    }
+
+    + li {
+      cursor: default;
+      display: inline-flex;
+      align-items: center;
+      &::before {
+        content: '';
+        color: $secondary-text-color;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' focusable='false' viewBox='0 0 16 16' aria-hidden='true'%3E%3Cpath fill='none' stroke='%238091a1' stroke-linecap='round' stroke-width='2' d='M5 14.5l6.1-6.1c.2-.2.2-.5 0-.7L5 1.5'%3E%3C/path%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 16px;
+        width: 32px;
+        vertical-align: middle;
+      }
+    }
+  }
+}

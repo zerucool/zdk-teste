@@ -1,0 +1,63 @@
+// Variables
+
+// ################################################
+// Colors
+// ################################################
+$brand_color: #0161cd !default;
+$brand_text_color: white !default;
+$text_color: #345 !default;
+$link_color: #1473e6 !default;
+$background_color: white !default;
+$brand-yellow-color: #fbc337 !default;
+$brand-red-color: #e9495f !default;
+$brand-blue-color: #51c2e1 !default;
+
+$secondary-text-color: desaturate(lighten($text_color, 30%), 10%);
+$primary-shade: darken($brand_color, 10%);
+$secondary-shade: #e1eff8;
+
+$input-focus-color: #999;
+$border-color: rgba($secondary-text-color, 0.3) !default;
+
+// ################################################
+// Breakpoints
+// ################################################
+$tablet-width: 512px;
+$desktop-width: 960px;
+$max-width-container: 1024px;
+
+// ################################################
+// Fonts
+// ################################################
+$heading_font: 'lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+  Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !default;
+$text_font: 'lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+  sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !default;
+$mono_font: 'roboto mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace !default;
+
+$font-weight-base: 400;
+$font-weight-bold: 700;
+$font-weight-heavy: 800;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+
+$font-size-small: 13px;
+$font-size-navigation: 14px;
+$font-size-base: 16px;
+$font-size-bigger: 18px;
+
+// ################################################
+// Common values
+// ################################################
+$border-radius: 4px;
+$header-height: 70px;
+
+// ################################################
+// CSS assets (necessary for use with scss and zendesk assets)
+// ################################################
+$assets-dropdown-arrow-svg: '$assets-dropdown-arrow-svg';
+$assets-loader-gif: '$assets-loader-gif';
+$homepage_background_image: '$homepage_background_image';
+$footer_background_image: '$footer_background_image';
+$community_image: '$community_image';
+$community_background_image: '$community_background_image';

@@ -1,121 +1,28 @@
-<div class="container new-request">
+<section class="hero hero-small">
+  <header class="hero-inner">
+    <div class="hero-inner-search">
+      {{search submit=false instant=settings.instant_search class="search search-full"}}
+    </div>
+  </header>
+</section>
+
+<div class="container">
   <nav class="sub-nav">
     {{breadcrumbs}}
   </nav>
 
-  <h1>
-    {{t 'submit_a_request'}}
-    <span class="follow-up-hint">
-      {{follow_up}}
-    </span>
-  </h1>
-
-
-  <div id="main-content" class="form">
-    {{!-- request_form --}}
-    <br>
-    <script src="https://www.google.com/recaptcha/api.js"></script>
-    <script>
-      function timestamp() {
-        var response = document.getElementById("g-recaptcha-response");
-        if (response == null || response.value.trim() == "") {
-          var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);
-          elems["ts"] = JSON.stringify(new Date().getTime());
-          document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems);
-        }
-      }
-      setInterval(timestamp, 500);
-    </script>
-
-    <form id="ExtranetSupport" method="POST" autocomplete="off" action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8">
-      <input id="captcha_settings" type="hidden" name="captcha_settings" value='{"keyname":"CCS_Websites","fallback":"true","orgId":"00D2000000002px","ts":""}'>
-      <input id="OrgId" type="hidden" name="orgid" value="00D2000000002px" />
-      <input id="00N57000006TtjL" type="hidden" name="00N57000006TtjL" value="https://extranetsandbox.zendesk.com/hc/en-us/requests/new" title="Submission URL" />
-      <input id="GetURL" type="hidden" name="retURL" value="https://extranetsandbox.zendesk.com/hc/en-us/requests/new?inquiry=true">
-      <input id="External" type="hidden" name="external" value="1" />
-      <input id="RecordType" type="hidden" name="recordType" value="012200000009kgN" />
-      <input id="00N20000000LlHl" type="hidden" name="00N20000000LlHl" title="Involved Product" value="DataSource" />
-      <input id="Origin" type="hidden" name="origin" value="Extranet" />
-      <!-- input id="Debug" type="hidden" name="debug" value="1" /-->
-      <!-- input id="DebugEmail" type="hidden" name="debugEmail" value="valerie.mardorf@cbs.com" /-->
-        <div class="form-field">
-          <label class="form-label" for="name" onclick="document.getElementById('name').focus(); return false;">Your Name</label>
-          <input class="form-control" id="name" aria-required="true" maxlength="80" name="name" type="text" data-validate-field="name" />
-        </div>
-        <div class="form-field">
-          <label class="form-label" for="email">Work Email</label>
-          <input class="form-control" id="email" aria-required="true" maxlength="80" name="email" size="40" type="text" data-validate-field="email" />
-        </div>
-        <div class="form-field">
-          <label class="form-label" for="company">Company</label>
-          <input class="form-control" id="company" aria-required="true" maxlength="80" name="company" size="40" type="text" data-validate-field="company" />
-        </div>
-        <div class="form-field">
-          <label class="form-label" for="subject">Subject</label>
-          <input class="form-control" id="subject" aria-required="true" maxlength="80" name="subject" type="text" data-validate-field="subject" />
-        </div>
-        <div class="form-field">
-          <label class="form-label" for="description">Message</label>
-          <textarea class="form-control" id="description" aria-required="true" name="description" data-validate-field="description" onkeydown="if(this.value.length&gt;=4000)this.value=this.value.substring(0,3999);"></textarea>
-        </div>
-        <br>
-        <label for="g-recaptcha-response" style="display:none">reCAPTCHA</label>
-        <div class="g-recaptcha" data-sitekey="6Lc7zy8UAAAAANNrjVoPAH7vvxssVeozhBNt6fN1" name="g-recaptcha"></div>
-        <br><p><button class="button button-primary" type="submit"> Submit </button></p><br>
-
-    </form>
-
-    <br>
-    <div id="FormAlert" style="display:none" onclick="closeBar()"><span>Message Sent <i class="close">×</i></span></div>
-    <style>
-      #FormAlert {  position: fixed; z-index: 9000; top: 4rem; left: 50%; min-width: 14rem; margin-left: -7rem; padding: 1rem; text-align: center; display: flex; justify-content: space-around; font-weight: 700; line-height: 1rem; color: rgba(0,0,0,0.9); border-radius: .25rem; background-color: #FFED42; font-size: 1rem; box-shadow: 2.5px 4px 30px 0 rgba(0,0,0,0.5); cursor: pointer }
-    </style>
+  <div class="form">
+    <header class="form-header">
+      <h1 class="form-header-heading">
+        <i class="fas fa-paper-plane"></i> {{t 'submit_a_request'}}
+        {{#if follow_up}}
+        <span class="follow-up-hint">{{follow_up}}</span>
+        {{/if}}
+      </h1>
+      <p class="form-header-description">Technical issues, questions, feedback, bug reports, warranty claims - fill out
+        the form to get in touch with a human 🤖
+      </p>
+    </header>
+    {{request_form}}
   </div>
 </div>
-
-
-<script src="https://cdn.cnetcontent.com/sites/scripts/just-validate.min.js"></script>
-<script>
-  $('div.form-field').click(function() {
-    $(this).find('> input[type="text"]').focus();
-  });
-  function closeBar() {
-    var e = document.getElementById("FormAlert");
-    "none" === e.style.display ? e.style.display = "block" : e.style.display = "none"
-  }
-  new window.JustValidate("#ExtranetSupport", {
-    rules: {
-      name: {
-        required: !0
-      },
-      email: {
-        required: !0,
-        email: !0
-      },
-      company: {
-        required: !0
-      },
-      subject: {
-        required: !0
-      },
-      description: {
-        required: !0
-      },
-      "00N20000000LlHl": {
-        required: !0
-      }
-    },
-    messages: {
-      "name": "First and last name is required",
-      "email": "Valid work email address is required",
-      "company": "Company name is required",
-      "subject": "Summarized subject for addressing the matter",
-      "description": "Details so we can begin resolving the issue",
-      "00N20000000LlHl": "*"
-    },
-    submitHandler: function() {
-      if ("" == grecaptcha.getResponse()) return event.preventDefault(), alert("Please click the reCAPTCHA checkbox"), !1;
-      document.getElementById("ExtranetSupport").submit()
-    }
-  }), /true|success|sent/.test(window.location.href) && (document.getElementById("FormAlert").style.display = "block");
-</script>

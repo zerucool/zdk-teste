@@ -1,0 +1,99 @@
+/***** Blocks *****/
+/* Used in Homepage#categories and Community#topics */
+.blocks {
+  max-width: $desktop-width;
+  width: 100%;
+  margin: 0 auto;
+  padding: 24px 0;
+
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    list-style: none;
+    padding: 0;
+    grid-template-columns: repeat(3, 1fr);
+    //grid-gap: 24px;
+  }
+
+  &-item {
+    border-radius: $border-radius;
+    box-sizing: border-box;
+    background-color: $brand_text_color;
+    display: flex;
+    flex: 1 0 240px;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 16px 32px;
+    padding: 6px 8px;
+    max-width: 100%;
+    min-height: 185px;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 0 0 2px rgba($secondary-text-color, 0.3);
+
+    svg {
+      color: currentColor;
+      margin: 0 auto 16px;
+      max-height: 3.2rem;
+      max-width: 3.2rem;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      * {
+        text-decoration: none;
+        color: $brand_color;
+      }
+      svg,
+      a {
+        color: $brand_color;
+      }
+    }
+
+    &-internal {
+      background-color: transparent;
+      border: 1px solid $border-color;
+
+      .icon-lock::before {
+        content: '\1F512';
+        font-size: 15px;
+        bottom: 5px;
+        position: relative;
+      }
+    }
+  }
+
+  &-item-link {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    padding: 2rem 3rem;
+    text-decoration: none;
+    color: $text-color;
+
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: underline;
+      color: inherit;
+    }
+  }
+
+  &-item-title {
+    margin-bottom: 0;
+    font-weight: $font-weight-semibold;
+    font-size: $font-size-base;
+  }
+
+  &-item-description {
+    font-weight: $font-weight-base;
+    margin: 0;
+  }
+
+  &-item-description:not(:empty) {
+    margin-top: 10px;
+  }
+}
