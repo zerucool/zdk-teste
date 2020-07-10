@@ -1,53 +1,37 @@
 <section class="page-header">
   <div class="page-header-inner">
-    <nav class="sub-nav">
-      {{breadcrumbs}}
-    </nav>
+    <nav class="sub-nav">{{breadcrumbs}}</nav>
     <div class="page-header-info">
       <h1>{{section.name}}</h1>
-      {{#if settings.show_follow_section}}
-        <div class="page-header-subscribe">{{subscribe}}</div>
-      {{/if}}
-      {{#if section.description}}
-        <p class="page-header-description">{{section.description}}</p>
-      {{/if}}
+      {{#if settings.show_follow_section}}<div class="page-header-subscribe">{{subscribe}}</div>{{/if}}
+      {{#if section.description}}<p class="page-header-description">{{section.description}}</p>{{/if}}
     </div>
   </div>
 </section>
 
 
-<div class="section-page">
-  <div class="section-container container">
-    <section id="main-content" class="section-content">
-
-
-      {{#if section.articles}}
+<div class="section-container container">
+  <section id="main-content" class="section-content">
+    {{#if section.articles}}
+      <ul class="group-list">
+        {{#each section.articles}}
+          <li class="group-list-item{{#if promoted}} promoted{{/if}}{{#if internal}} internal{{/if}}">
+            {{#if promoted}}<i class="material-icons">flag</i>{{/if}}
+            <a href="{{url}}" class="group-list-link">{{title}}</a>
+            {{#if internal}}<i class="material-icons">lock</i>{{/if}}
+          </li>
+        {{/each}}
+      </ul>
+      {{else}}
+      {{#if section.sections}}
         <ul class="group-list">
-          {{#each section.articles}}
-            <li class="group-list-item{{#if promoted}} promoted{{/if}}{{#if internal}} internal{{/if}}">
-              {{#if promoted}}<i class="material-icons">flag</i>{{/if}}
-              <a href="{{url}}" class="group-list-link">{{title}}</a>
-              {{#if internal}}<i class="material-icons">lock</i>{{/if}}
-            </li>
+          {{#each section.sections}}
+          <li class="group-list-item"><a href="{{url}}"><span>{{name}}</span></a></li>
           {{/each}}
+          <a tabindex="0" class="see-all-sections-trigger" aria-hidden="true" id="see-all-sections-trigger" title="{{t 'see_all_sections'}}">{{t 'see_all_sections'}}</a>
         </ul>
-        {{else}}
-        {{#if section.sections}}
-          <ul class="group-list">
-            {{#each section.sections}}
-            <li class="group-list-item">
-                <a href="{{url}}">
-                  <span>{{name}}</span>
-                </a>
-              </li>
-            {{/each}}
-            <a tabindex="0" class="see-all-sections-trigger" aria-hidden="true" id="see-all-sections-trigger" title="{{t 'see_all_sections'}}">{{t 'see_all_sections'}}</a>
-          </ul>
-        {{/if}}
       {{/if}}
-
-      {{pagination}}
-
-    </section>
-  </div>
+    {{/if}}
+    {{pagination}}
+  </section>
 </div>

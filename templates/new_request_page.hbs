@@ -26,19 +26,18 @@
       }
       setInterval(timestamp, 500);
     </script>
-    
+
     <form id="ExtranetSupport" method="POST" autocomplete="off" action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8">
       <input id="captcha_settings" type="hidden" name="captcha_settings" value='{"keyname":"CCS_Websites","fallback":"true","orgId":"00D2000000002px","ts":""}'>
       <input id="OrgId" type="hidden" name="orgid" value="00D2000000002px" />
       <input id="00N57000006TtjL" type="hidden" name="00N57000006TtjL" value="https://extranetsandbox.zendesk.com/hc/en-us/requests/new" title="Submission URL" />
-      <input id="GetURL" type="hidden" name="retURL" value="?inquiry=true">
+      <input id="GetURL" type="hidden" name="retURL" value="https://extranetsandbox.zendesk.com/hc/en-us/requests/new?inquiry=true">
       <input id="External" type="hidden" name="external" value="1" />
       <input id="RecordType" type="hidden" name="recordType" value="012200000009kgN" />
       <input id="00N20000000LlHl" type="hidden" name="00N20000000LlHl" title="Involved Product" value="DataSource" />
       <input id="Origin" type="hidden" name="origin" value="Extranet" />
       <!-- input id="Debug" type="hidden" name="debug" value="1" /-->
       <!-- input id="DebugEmail" type="hidden" name="debugEmail" value="valerie.mardorf@cbs.com" /-->
-
         <div class="form-field">
           <label class="form-label" for="name" onclick="document.getElementById('name').focus(); return false;">Your Name</label>
           <input class="form-control" id="name" aria-required="true" maxlength="80" name="name" type="text" data-validate-field="name" />
