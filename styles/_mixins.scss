@@ -181,13 +181,13 @@
     }
 
     tr {
-      background-color: $background_color;
+      // background-color: $background_color;
       border-bottom: 1px solid $border_color;
     }
 
-    tr:nth-child(odd) {
-      background-color: $primary-shade;
-    }
+    // tr:nth-child(odd) {
+    //   background-color: $primary-shade;
+    // }
 
     tr:last-child {
       border-bottom: none;

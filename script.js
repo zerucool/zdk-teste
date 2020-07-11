@@ -2,19 +2,19 @@
 $(document).ready(function () {
   if (HelpCenter.user.role == ['anonymous']) {
     $('.anonymous').show();
-    $(".banner").addClass("blur");
+    $('.banner').addClass('blur');
   }
   if (HelpCenter.user.role == ['end_user']) {
     $('.customer').show();
-    $(".banner").removeClass("blur");
+    $('.banner').removeClass('blur');
   }
   if (HelpCenter.user.role == ['manager']) {
     $('.customer').show();
-    $(".banner").removeClass("blur");
+    $('.banner').removeClass('blur');
   }
   if (HelpCenter.user.role == ['agent']) {
     $('.customer').show();
-    $(".banner").removeClass("blur");
+    $('.banner').removeClass('blur');
   }
 });
 

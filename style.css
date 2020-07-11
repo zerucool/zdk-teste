@@ -1003,14 +1003,15 @@ input[type=submit] {
 }
 .hero .banner {
   backface-visibility: hidden;
+  background-attachment: fixed;
   filter: blur(0px) grayscale(50%) contrast(100%) saturate(50%);
   left: 0;
   min-height: 100%;
+  object-fit: cover;
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 45%;
+  transform: translateY(-45%);
   transition: opacity ease-out 0.5s;
-  width: 100%;
   z-index: -1;
 }
 .hero .banner.blur {
@@ -1731,11 +1732,7 @@ input[type=submit] {
   border-bottom: 1px solid rgba(128, 145, 161, 0.3);
 }
 .article-body table tr {
-  background-color: white;
   border-bottom: 1px solid rgba(128, 145, 161, 0.3);
-}
-.article-body table tr:nth-child(odd) {
-  background-color: #01499a;
 }
 .article-body table tr:last-child {
   border-bottom: none;
@@ -2277,11 +2274,7 @@ input[type=submit] {
   border-bottom: 1px solid rgba(128, 145, 161, 0.3);
 }
 .comment-body table tr {
-  background-color: white;
   border-bottom: 1px solid rgba(128, 145, 161, 0.3);
-}
-.comment-body table tr:nth-child(odd) {
-  background-color: #01499a;
 }
 .comment-body table tr:last-child {
   border-bottom: none;
@@ -2846,11 +2839,7 @@ input[type=submit] {
   border-bottom: 1px solid rgba(128, 145, 161, 0.3);
 }
 .post-body table tr {
-  background-color: white;
   border-bottom: 1px solid rgba(128, 145, 161, 0.3);
-}
-.post-body table tr:nth-child(odd) {
-  background-color: #01499a;
 }
 .post-body table tr:last-child {
   border-bottom: none;

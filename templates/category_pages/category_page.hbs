@@ -1,0 +1,33 @@
+<section class="hero hero-small">
+  <header class="hero-inner">
+    <div class="hero-inner-search">
+      {{search submit=false scoped=settings.scoped_kb_search class="search search-full"}}
+    </div>
+  </header>
+</section>
+
+<div class="container">
+
+  <nav class="sub-nav">
+    {{breadcrumbs}}
+  </nav>
+
+
+  <div class="category-container">
+    <div class="category-content">
+      <header class="page-header">
+        {{!-- <h1>{{category.name}}</h1> --}}
+        {{#if category.description}}
+        <p class="page-header-description">{{category.description}}</p>
+        {{/if}}
+      </header>
+
+      <div class="section-tree">
+        <section class="section">
+          {{section_tree_with_article}}
+        </section>
+      </div>
+
+    </div>
+  </div>
+</div>
