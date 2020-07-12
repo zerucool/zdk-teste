@@ -1,3 +1,4 @@
+
 <section class="hero hero-small">
   <header class="hero-inner">
     <div class="hero-inner-search">
@@ -12,6 +13,9 @@
   </nav>
   <div class="article-container" id="article-container">
     <section class="article-sidebar">
+      <button id="cmd">generate PDF</button>
+      <div id="editor"></div>
+      <br>
       {{#if settings.show_articles_in_section}}
       <section class="section-articles collapsible-sidebar">
         <h3 class="collapsible-sidebar-title sidenav-title">{{t 'articles_in_section'}}</h3>
@@ -33,75 +37,62 @@
     </section>
 
     <article class="article">
-
-      <header class="article-header">
-        <h1 class="article-title" title="{{article.title}}">
-          {{article.title}}
-          {{#if article.internal}}
-          <span class="icon-lock" title="{{t 'internal'}}"></span>
-          {{/if}}
-        </h1>
-
-        <div class="article-author">
-          {{#if settings.show_article_author}}
-          <div class="avatar article-avatar">
-            {{#if article.author.agent}}
-            <span class="icon-agent"></span>
+      <div id="html2pdf">
+        <header class="article-header">
+          <h1 class="article-title" title="{{article.title}}">
+            {{article.title}}
+            {{#if article.internal}}
+            <span class="icon-lock" title="{{t 'internal'}}"></span>
             {{/if}}
-            <img src="{{article.author.avatar_url}}" alt="" class="user-avatar" />
-          </div>
-          {{/if}}
-          <div class="article-meta">
+          </h1>
+
+          <div class="article-author">
             {{#if settings.show_article_author}}
-            {{#link 'user_profile' id=article.author.id}}
-            {{article.author.name}}
-            {{/link}}
+            <div class="avatar article-avatar">
+              {{#if article.author.agent}}
+              <span class="icon-agent"></span>
+              {{/if}}
+              <img src="{{article.author.avatar_url}}" alt="" class="user-avatar" />
+            </div>
             {{/if}}
+            <div class="article-meta">
+              {{#if settings.show_article_author}}
+              {{#link 'user_profile' id=article.author.id}}
+              {{article.author.name}}
+              {{/link}}
+              {{/if}}
 
-            <div class="article-date">
-              {{#if article.edited_at}}Last updated {{date article.edited_at timeago=true}}
-              {{else}}Published {{date article.created_at timeago=true}}{{/if}}
+              <div class="article-date">
+                {{#if article.edited_at}}Last updated {{date article.edited_at timeago=true}}
+                {{else}}Published {{date article.created_at timeago=true}}{{/if}}
+              </div>
             </div>
           </div>
-        </div>
 
-        {{#if settings.show_follow_article}}
-        {{subscribe}}
-        {{/if}}
-      </header>
+          {{#if settings.show_follow_article}}
+          {{subscribe}}
+          {{/if}}
+        </header>
+        <section class="article-info">
+          <div class="article-content">
+            <div class="article-body">{{article.body}}</div>
 
-      <section class="article-info">
-        <div class="article-content">
-          <div class="article-body">{{article.body}}</div>
-
-          <div class="article-attachments">
-            <ul class="attachments">
-              {{#each attachments}}
-              <li class="attachment-item">
-                <a href="{{url}}" target="_blank">{{name}}</a>
-                <span class="attachment-meta-item meta-data">{{size}}</span>
-              </li>
-              {{/each}}
-            </ul>
+            <div class="article-attachments">
+              <ul class="attachments">
+                {{#each attachments}}
+                <li class="attachment-item">
+                  <a href="{{url}}" target="_blank">{{name}}</a>
+                  <span class="attachment-meta-item meta-data">{{size}}</span>
+                </li>
+                {{/each}}
+              </ul>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
       <footer>
-        {{!-- TODO: consider social sharing and layout for the entier article footer
-        <div class="article-footer">
-          {{#if settings.show_article_sharing}}
-          <div class="article-share">{{share}}</div>
-          {{/if}}
-          {{#if settings.show_article_comments}}
-          {{#if comments}}
-          <a href="#article-comments" class="article-comment-count">
-            <span class="icon-comments"></span>
-            {{article.comment_count}}
-          </a>
-          {{/if}}
-          {{/if}}
-        </div> --}}
+
         {{#with article}}
         <div class="article-votes">
           <span class="article-votes-question">{{t 'was_this_article_helpful'}}</span>
@@ -232,6 +223,26 @@
     </article>
   </div>
 </div>
+
+
+{{!-- Download as PDF --}}
+<script src="{{asset 'jspdf.min.js'}}"></script>
+<script>
+  var doc = new jsPDF();
+  doc.setFontSize(18);
+  var specialElementHandlers = {
+    '#editor': function (element, renderer) {
+      return true;
+    }
+  };
+  $('#cmd').click(function () {
+    doc.fromHTML($('#html2pdf').html(), 15, 15, {
+      'width': 170,
+      'elementHandlers': specialElementHandlers
+    });
+    doc.save('extranet-kb-{{article.id}}.pdf');
+  });
+</script>
 
 {{!-- Smooth scrolling --}}
 <script src="{{asset 'smooth-scroll.polyfills.min.js'}}"></script>

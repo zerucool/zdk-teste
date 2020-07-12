@@ -31,6 +31,12 @@
         {{#if ../has_multiple_categories}}
         <li class="blocks-item">
           <a href='{{url}}' class="blocks-item-link">
+            {{#is name 'Quickstart Guides'}}<svg class="icon-launch"><use xlink:href="#icon-launch"/></svg>{{/is}}
+            {{#is name 'Documentation'}}<svg class="icon-reader"><use xlink:href="#icon-reader"/></svg>{{/is}}
+            {{#is name 'Release Notes'}}<svg class="icon-faqs"><use xlink:href="#icon-faqs"/></svg>{{/is}}
+            {{#is name 'Technical Bulletin'}}<svg class="icon-text"><use xlink:href="#icon-text"/></svg>{{/is}}
+            {{#is name 'FAQs'}}<svg class="icon-teacher"><use xlink:href="#icon-teacher"/></svg>{{/is}}
+            {{#is name 'Video Training'}}<svg class="icon-video"><use xlink:href="#icon-video"/></svg>{{/is}}
             <h2 class="blocks-item-title">{{name}}</h2>
             <p class="blocks-item-description">{{excerpt description}}</p>
           </a>
@@ -39,22 +45,11 @@
         {{#each sections}}
         <li class="blocks-item">
           <a class="blocks-item-link" href='{{url}}'>
-            {{#is id 360008463631}}<svg class="icon-launch"><use xlink:href="#icon-launch"/></svg>{{/is}}
-            {{#is id 360008355672}}<svg class="icon-reader"><use xlink:href="#icon-reader"/></svg>{{/is}}
-            {{#is id 360008355712}}<svg class="icon-faqs"><use xlink:href="#icon-faqs"/></svg>{{/is}}
-            {{#is id 360008463611}}<svg class="icon-text"><use xlink:href="#icon-text"/></svg>{{/is}}
-            {{#is id 360008355692}}<svg class="icon-teacher"><use xlink:href="#icon-teacher"/></svg>{{/is}}
             <h2 class="blocks-item-title">{{name}}</h2>
             <p class="blocks-item-description">{{excerpt description}}</p>
           </a>
         </li>
         {{/each}}
-        <li class="blocks-item">
-          <a href="javascript:void(0)" class="blocks-item-link">
-            <svg class="icon-video"><use xlink:href="#icon-video"/></svg>
-            <span class="blocks-item-title">Training Videos</span>
-          </a>
-        <li>
         {{/if}}
         {{/each}}
       </ul>

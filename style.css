@@ -1468,12 +1468,10 @@ input[type=submit] {
 }
 
 .article-list {
-  list-style: disc;
   padding: 0 20px;
   margin: 0px 0 16px 12px;
 }
 .article-list-item {
-  font-size: 18px;
   padding: 8px 0;
 }
 .article-list-item:first-child {
@@ -1484,6 +1482,10 @@ input[type=submit] {
 }
 .article-list-item .icon-lock::before {
   vertical-align: baseline;
+}
+
+.article-list .article-body {
+  visibility: hidden;
 }
 
 .see-all-articles {
