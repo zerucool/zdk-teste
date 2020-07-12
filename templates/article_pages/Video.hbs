@@ -1,3 +1,5 @@
+<link href="{{asset 'plyr-style.min.css'}}" rel="stylesheet" media="screen" />
+<script src="{{asset 'plyr-polyfill.min.js'}}"></script>
 
 <section class="hero hero-small">
   <header class="hero-inner">
@@ -30,44 +32,22 @@
     </section>
     <article class="article">
       <header class="article-header">
-        <h1 class="article-title" title="{{article.title}}">
+        <h1 class="article-title">
           {{article.title}}
           {{#if article.internal}}
-          <span class="icon-lock" title="{{t 'internal'}}"></span>
+            <span class="icon-lock" title="{{t 'internal'}}"></span>
           {{/if}}
         </h1>
-
-        <div class="article-author">
-          {{#if settings.show_article_author}}
-          <div class="avatar article-avatar">
-            {{#if article.author.agent}}
-            <span class="icon-agent"></span>
-            {{/if}}
-            <img src="{{article.author.avatar_url}}" alt="" class="user-avatar" />
-          </div>
-          {{/if}}
-          <div class="article-meta">
-            {{#if settings.show_article_author}}
-            {{#link 'user_profile' id=article.author.id}}
-            {{article.author.name}}
-            {{/link}}
-            {{/if}}
-
-            <div class="article-date">
-              {{#if article.edited_at}}Last updated {{date article.edited_at timeago=true}}
-              {{else}}Published {{date article.created_at timeago=true}}{{/if}}
-            </div>
+        <div class="article-meta">
+          <div class="article-date">
+            {{#if article.edited_at}}Last updated {{date article.edited_at timeago=true}}
+            {{else}}Published {{date article.created_at timeago=true}}{{/if}}
           </div>
         </div>
-
-        {{#if settings.show_follow_article}}
-        {{subscribe}}
-        {{/if}}
       </header>
       <section class="article-info">
         <div class="article-content">
           <div class="article-body">{{article.body}}</div>
-
           <div class="article-attachments">
             <ul class="attachments">
               {{#each attachments}}
@@ -93,7 +73,6 @@
           </small>
         </div>
         {{/with}}
-
         <div class="article-more-questions">
           {{request_callout}}
         </div>
@@ -105,116 +84,20 @@
         {{#if settings.show_recently_viewed_articles}}
         {{recent_articles}}
         {{/if}}
-        {{#if settings.show_related_articles}}
-        {{related_articles}}
-        {{/if}}
       </section>
-      {{#if settings.show_article_comments}}
-        <div class="article-comments" id="article-comments">
-          <section class="comments">
-            <header class="comment-overview">
-              <h3 class="comment-heading">
-                {{t 'comments'}}
-              </h3>
-              <p class="comment-callout">{{t 'comments_count' count=article.comment_count}}</p>
-              {{#if comments}}
-              <div class="dropdown comment-sorter">
-                <button class="dropdown-toggle" aria-haspopup="true">
-                  {{t 'sort_by'}}
-                </button>
-                <span class="dropdown-menu" role="menu">
-                  {{#each comment_sorters}}
-                  <a aria-selected="{{selected}}" href="{{url}}" role="menuitem">{{name}}</a>
-                  {{/each}}
-                </span>
-              </div>
-              {{/if}}
-            </header>
-
-            <ul id="comments" class="comment-list">
-              {{#each comments}}
-              <li id="{{anchor}}" class="comment">
-                <div class="comment-wrapper">
-                  <div class="comment-info">
-                    <div class="comment-author">
-                      <div class="avatar comment-avatar">
-                        {{#if author.agent}}
-                        <span class="icon-agent"></span>
-                        {{/if}}
-                        <img src="{{author.avatar_url}}" alt="" class="user-avatar" />
-                      </div>
-                      <div class="comment-meta">
-                        <span title="{{author.name}}">
-                          {{#link 'user_profile' id=author.id}}
-                          {{author.name}}
-                          {{/link}}
-                        </span>
-
-                        <ul class="meta-group">
-                          {{#if editor}}
-                          <li class="meta-data">{{date edited_at timeago=true}}</li>
-                          <li class="meta-data">{{t 'edited'}}</li>
-                          {{else}}
-                          <li class="meta-data">{{date created_at timeago=true}}</li>
-                          {{/if}}
-                        </ul>
-                      </div>
-                      <div class="comment-labels">
-                        {{#with ticket}}
-                        <a href="{{url}}" target="_zendesk_lotus" class="status-label escalation-badge">
-                          {{t 'request'}}{{id}}
-                        </a>
-                        {{/with}}
-                        {{#if pending}}
-                        <span class="comment-pending status-label status-label-pending">{{t 'pending_approval'}}</span>
-                        {{/if}}
-                      </div>
-                    </div>
-
-                    <section class="comment-body">{{body}}</section>
-                  </div>
-
-                  <div class="comment-actions-container">
-                    <div class="comment-vote vote" role='radiogroup'>
-                      {{vote 'up' role='radio' class='vote-up' selected_class='vote-voted'}}
-                      {{vote 'sum' class='vote-sum'}}
-                      {{vote 'down' role='radio' class='vote-down' selected_class='vote-voted'}}
-                    </div>
-                    <div class="comment-actions actions">
-                      {{actions}}
-                    </div>
-                  </div>
-                </div>
-              </li>
-              {{/each}}
-            </ul>
-
-            {{pagination}}
-
-            {{#form 'comment' class='comment-form'}}
-            <div class="avatar comment-avatar">
-              {{user_avatar class='user-avatar'}}
-            </div>
-            <div class="comment-container">
-              {{wysiwyg 'body'}}
-              <div class="comment-form-controls">
-                {{input type='submit'}}
-              </div>
-            </div>
-            {{/form}}
-
-            <p class="comment-callout">{{comment_callout}}</p>
-          </section>
-        </div>
-      {{/if}}
     </article>
   </div>
 </div>
 
-
-<script src="{{asset 'plyr-polyfill.min.js'}}"></script>
 <script src="{{asset 'plyr-video.min.js'}}"></script>
 <script>
-  const player = new Plyr('video', {captions: {active: false}});
-  window.player = player;
+  document.addEventListener('DOMContentLoaded', () => {
+    const player = new Plyr('#player'); window.player = player; player.volume = 0.5;
+    function on(selector, type, callback) { document.querySelector(selector).addEventListener(type, callback, false); }
+    on('.js-play', 'click', () => { player.play(); });
+    on('.js-pause', 'click', () => { player.pause(); });
+    on('.js-stop', 'click', () => { player.stop(); });
+    on('.js-rewind', 'click', () => { player.rewind(); });
+    on('.js-forward', 'click', () => { player.forward(); });
+  });
 </script>
