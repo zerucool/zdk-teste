@@ -313,3 +313,10 @@
     margin-bottom: 15px;
   }
 }
+
+#player-block {
+  max-width: 840px;
+  .plyr__progress__container {
+    width: 100%;
+  }
+}

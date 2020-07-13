@@ -15,7 +15,6 @@
   </nav>
   <div class="article-container" id="article-container">
     <section class="article-sidebar">
-      <br>
       {{#if settings.show_articles_in_section}}
       <section class="section-articles collapsible-sidebar">
         <h3 class="collapsible-sidebar-title sidenav-title">{{t 'articles_in_section'}}</h3>
@@ -92,12 +91,14 @@
 <script src="{{asset 'plyr-video.min.js'}}"></script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const player = new Plyr('#player'); window.player = player; player.volume = 0.5;
-    function on(selector, type, callback) { document.querySelector(selector).addEventListener(type, callback, false); }
-    on('.js-play', 'click', () => { player.play(); });
-    on('.js-pause', 'click', () => { player.pause(); });
-    on('.js-stop', 'click', () => { player.stop(); });
-    on('.js-rewind', 'click', () => { player.rewind(); });
-    on('.js-forward', 'click', () => { player.forward(); });
+    const player = new Plyr('#player', { player.volume = 0.5; });
+    window.player = player;
+    function on(selector, type, callback) {
+      document.querySelector(selector).addEventListener(type, callback, false); }
+      on('.js-play', 'click', () => { player.play(); });
+      on('.js-pause', 'click', () => { player.pause(); });
+      on('.js-stop', 'click', () => { player.stop(); });
+      on('.js-rewind', 'click', () => { player.rewind(); });
+      on('.js-forward', 'click', () => { player.forward(); });
   });
 </script>
