@@ -12,12 +12,12 @@ $brand-yellow-color: #fbc337 !default;
 $brand-red-color: #e9495f !default;
 $brand-blue-color: #51c2e1 !default;
 
-$secondary-text-color: desaturate(lighten($text_color, 30%), 10%);
+$hue-muted: desaturate(lighten($text_color, 30%), 10%);
 $primary-shade: darken($brand_color, 10%);
 $secondary-shade: #e1eff8;
 
 $input-focus-color: #999;
-$border-color: rgba($secondary-text-color, 0.3) !default;
+$border-color: rgba($hue-muted, 0.3) !default;
 
 // ################################################
 // Breakpoints

@@ -16,7 +16,7 @@
 }
 
 .vote-sum {
-  color: $secondary-text-color;
+  color: $hue-muted;
   display: block;
   margin: 3px 0;
 
@@ -34,7 +34,7 @@
 .vote-up::before,
 .vote-down::before {
   @extend .icon;
-  color: $secondary-text-color;
+  color: $hue-muted;
   font-size: 24px;
 }
 

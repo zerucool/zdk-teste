@@ -1,9 +1,9 @@
 /***** Blocks *****/
 /* Used in Homepage#categories and Community#topics */
 .blocks {
-  max-width: $desktop-width;
+  //max-width: $desktop-width;
   width: 100%;
-  margin: 0 auto;
+  margin: auto -12px;
   padding: 24px 0;
 
   &-list {
@@ -30,13 +30,19 @@
     min-height: 185px;
     text-align: center;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    box-shadow: 0 0 0 2px rgba($secondary-text-color, 0.3);
+    box-shadow: 0 0 0 2px rgba($hue-muted, 0.3);
 
     svg {
       color: currentColor;
       margin: 0 auto 16px;
       max-height: 3.2rem;
       max-width: 3.2rem;
+    }
+
+    .fas {
+      text-decoration: none;
+      margin-bottom: 8px;
+      opacity: .9;
     }
 
     &:hover,
@@ -77,23 +83,30 @@
     &:hover,
     &:focus,
     &:active {
-      text-decoration: underline;
       color: inherit;
+      > .blocks-item-title {
+        text-decoration: underline;
+      }
+    }
+    > .fas {
+      text-decoration: none;
     }
   }
 
   &-item-title {
     margin-bottom: 0;
-    font-weight: $font-weight-semibold;
-    font-size: $font-size-base;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-bigger;
   }
 
   &-item-description {
     font-weight: $font-weight-base;
     margin: 0;
+    font-size: $font-size-small;
+    color: $hue-muted;
   }
 
   &-item-description:not(:empty) {
-    margin-top: 10px;
+    margin-top: 8px;
   }
 }

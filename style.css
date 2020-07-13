@@ -1145,13 +1145,11 @@ input[type=submit] {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-bottom: 15px;
-  min-height: 50px;
-  padding-bottom: 15px;
+  min-height: 56px;
 }
 @media (min-width: 512px) {
   .sub-nav {
-    align-items: baseline;
+    align-items: center;
     flex-direction: row;
   }
 }
@@ -1167,9 +1165,8 @@ input[type=submit] {
 /***** Blocks *****/
 /* Used in Homepage#categories and Community#topics */
 .blocks {
-  max-width: 960px;
   width: 100%;
-  margin: 0 auto;
+  margin: auto -12px;
   padding: 24px 0;
 }
 .blocks-list {
@@ -1202,6 +1199,11 @@ input[type=submit] {
   max-height: 3.2rem;
   max-width: 3.2rem;
 }
+.blocks-item .fas {
+  text-decoration: none;
+  margin-bottom: 8px;
+  opacity: 0.9;
+}
 .blocks-item:hover *, .blocks-item:focus *, .blocks-item:active * {
   text-decoration: none;
   color: #0161cd;
@@ -1232,20 +1234,27 @@ input[type=submit] {
   color: #345;
 }
 .blocks-item-link:hover, .blocks-item-link:focus, .blocks-item-link:active {
-  text-decoration: underline;
   color: inherit;
+}
+.blocks-item-link:hover > .blocks-item-title, .blocks-item-link:focus > .blocks-item-title, .blocks-item-link:active > .blocks-item-title {
+  text-decoration: underline;
+}
+.blocks-item-link > .fas {
+  text-decoration: none;
 }
 .blocks-item-title {
   margin-bottom: 0;
-  font-weight: 600;
-  font-size: 16px;
+  font-weight: 700;
+  font-size: 18px;
 }
 .blocks-item-description {
   font-weight: 400;
   margin: 0;
+  font-size: 13px;
+  color: #8091a1;
 }
 .blocks-item-description:not(:empty) {
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
 /***** Homepage *****/

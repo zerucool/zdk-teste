@@ -30,7 +30,7 @@
   &::before {
     @extend .icon;
     @include vertical-align;
-    color: $secondary-text-color;
+    color: $hue-muted;
     content: '\1F50D';
     font-size: 18px;
     position: absolute;

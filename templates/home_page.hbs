@@ -12,7 +12,7 @@
     <div class="hero-inner-search">
       {{search placeholder="Find answers" submit=false scoped=settings.scoped_kb_search instant=settings.instant_search class="search search-full"}}
     </div>
-    <p class="hero-inner-description">Started with the <u>Extranet Introduction</u> and <u>Your Account</u> videos.</p>
+    <p class="hero-inner-description">Started with the <a href="/hc/en-us/articles/360045726612" target="_self"><u>Extranet Introduction</u></a> and <a href="/hc/en-us/articles/360045728832-Your-Account" target="_self"><u>Your Account</u></a> videos.</p>
   </div>
 </section>
 
@@ -20,7 +20,7 @@
 
 
   <section class="anonymous message">
-    <p>If you have a DataSource account but have never used the Extranet, please register and a representive will help you set up your account. Learn more about <a href="http://cnetcontent.com/datasource" target="_blank">DataSource</a> or <a href="https://extranetsandbox.zendesk.com/hc/en-us/requests/new" target="_blank">contact a representive</a> for more details.</p>
+    <p>If you have a DataSource account but have never used the Extranet, please register and a representive will help you set up your account. Learn more about <a href="http://cnetcontent.com/datasource" target="_blank"><u>DataSource</u></a> or <a href="https://extranetsandbox.zendesk.com/hc/en-us/requests/new" target="_blank">contact a representive</a> for more details.</p>
   </section>
 
   <section class="customer section knowledge-base">
@@ -31,12 +31,12 @@
         {{#if ../has_multiple_categories}}
         <li class="blocks-item">
           <a href='{{url}}' class="blocks-item-link">
-            {{#is name 'Quickstart Guides'}}<svg class="icon-launch"><use xlink:href="#icon-launch"/></svg>{{/is}}
-            {{#is name 'Documentation'}}<svg class="icon-reader"><use xlink:href="#icon-reader"/></svg>{{/is}}
-            {{#is name 'Release Notes'}}<svg class="icon-faqs"><use xlink:href="#icon-faqs"/></svg>{{/is}}
-            {{#is name 'Technical Bulletin'}}<svg class="icon-text"><use xlink:href="#icon-text"/></svg>{{/is}}
-            {{#is name 'FAQs'}}<svg class="icon-teacher"><use xlink:href="#icon-teacher"/></svg>{{/is}}
-            {{#is name 'Video Training'}}<svg class="icon-video"><use xlink:href="#icon-video"/></svg>{{/is}}
+            {{#is name 'Quickstart Guides'}}<i class="fas fa-stopwatch fa-2x"></i>{{/is}}
+            {{#is name 'Documentation'}}<i class="fas fa-book-reader fa-2x"></i>{{/is}}
+            {{#is name 'Release Notes'}}<i class="fas fa-list-ul fa-2x"></i>{{/is}}
+            {{#is name 'Technical Bulletin'}}<i class="fas fa-align-left fa-2x"></i>{{/is}}
+            {{#is name 'FAQs'}}<i class="fas fa-comments fa-2x"></i>{{/is}}
+            {{#is name 'Video Training'}}<i class="fas fa-video fa-2x"></i>{{/is}}
             <h2 class="blocks-item-title">{{name}}</h2>
             <p class="blocks-item-description">{{excerpt description}}</p>
           </a>

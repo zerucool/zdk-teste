@@ -8,7 +8,7 @@
   padding: 0;
 
   li {
-    color: $secondary-text-color;
+    color: $hue-muted;
     display: inline;
     font-weight: $font-weight-base;
     font-size: $font-size-navigation;
@@ -65,7 +65,7 @@
       align-items: center;
       &::before {
         content: '';
-        color: $secondary-text-color;
+        color: $hue-muted;
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' focusable='false' viewBox='0 0 16 16' aria-hidden='true'%3E%3Cpath fill='none' stroke='%238091a1' stroke-linecap='round' stroke-width='2' d='M5 14.5l6.1-6.1c.2-.2.2-.5 0-.7L5 1.5'%3E%3C/path%3E%3C/svg%3E");
         background-repeat: no-repeat;
         background-position: center;

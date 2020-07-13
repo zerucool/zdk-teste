@@ -1,15 +1,13 @@
 .sub-nav {
   @include tablet {
-    align-items: baseline;
+    align-items: center;
     flex-direction: row;
   }
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-bottom: 15px;
-  min-height: 50px;
-  padding-bottom: 15px;
+  min-height: 56px;
 
   //Inner pages search field
   input[type='search'] {
