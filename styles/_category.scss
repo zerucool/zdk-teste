@@ -33,7 +33,6 @@
     }
   }
 
-
   &-title {
     margin-bottom: 0px;
     padding-bottom: 6px;
@@ -72,7 +71,6 @@
     padding-bottom: 16px;
   }
 
-
   .article-list {
     font-size: $font-size-navigation;
     margin: 0;
@@ -94,21 +92,20 @@
       padding: 0 0 0 16px;
       overflow: hidden;
       + li {
-         border-top: solid 1px $border-color;
+        border-top: solid 1px $border-color;
       }
       a {
         display: block;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-       }
+      }
       article {
         display: none;
       }
     }
   }
 }
-
 
 .article-list {
   //list-style: disc;
@@ -135,7 +132,6 @@
 
 .article-list {
   li {
-
   }
   .article-body {
     visibility: hidden;
